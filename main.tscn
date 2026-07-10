@@ -5,6 +5,5 @@
 [node name="Main" type="Node2D" unique_id=963142286]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1003068895]
-position = Vector2(256, 247)
-scale = Vector2(2.5078125, 2.5078125)
+position = Vector2(240, 180)
 texture = ExtResource("1_ig7tw")

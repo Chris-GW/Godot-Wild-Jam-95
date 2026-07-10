@@ -7,3 +7,5 @@
 
 *.tmp
 exports/
+
+.vscode/
