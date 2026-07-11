@@ -44,6 +44,16 @@ func set_items(items: Array[Item], selected_index: int) -> void:
 			description_panel.item = null
 			description_panel.hide()
 
+func set_loadout_items(items: Array[Item]) -> void:
+	for i in _rows.size():
+		if items.has(_rows[i].item):
+			_rows[i].show_equipped()
+		else:
+			_rows[i].show_equippable()
+
+	if description_panel:
+		description_panel.set_loadout_items(items)
+
 func set_selected_index(index: int) -> void:
 	var selected_item: Item
 

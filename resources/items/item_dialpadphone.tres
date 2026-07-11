@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_odh78")
-id = 3
+id = 5
 name = "Dial-Pad Phone"
-description = "Dial-Pad Phone makes the enemy miss their next attack."
+item_class = 1
+mana_cost = 8
+description = "Dial-Pad Phone repeats the last basic attack with double damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

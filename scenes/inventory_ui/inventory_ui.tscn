@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="4_yvfb2"]
 [ext_resource type="Resource" uid="uid://dedm6iyra2m5" path="res://resources/items/item_vinyllp.tres" id="5_i6gqg"]
 [ext_resource type="Resource" uid="uid://bvd55q5ctxygr" path="res://resources/items/item_dialpadphone.tres" id="6_55d1a"]
-[ext_resource type="Resource" uid="uid://88xctukh6jrx" path="res://resources/items/item_nintendods.tres" id="6_t5bre"]
+[ext_resource type="Resource" uid="uid://88xctukh6jrx" path="res://resources/items/item_gameboy.tres" id="6_t5bre"]
 [ext_resource type="Resource" uid="uid://bqv07iriv6clw" path="res://resources/items/item_vhs.tres" id="9_vl8np"]
 [ext_resource type="Resource" uid="uid://b6cdkptolh2ni" path="res://resources/items/item_cassette.tres" id="10_v2la8"]
 [ext_resource type="Resource" uid="uid://bsvdnmij7ywsm" path="res://resources/items/item_mp3.tres" id="11_mjglk"]

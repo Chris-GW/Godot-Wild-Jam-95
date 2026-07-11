@@ -19,4 +19,13 @@ func _ready() -> void:
 
 func _refresh() -> void:
 	if label:
-		label.text = item.description if item else "<item_description>"
+		if item:
+			if not Engine.is_editor_hint() and Loadout.is_equipped(item):
+				label.text = item.description + " (equipped)"
+			else:
+				label.text = item.description + " (Space to equip)"
+		else:
+			label.text = "<item_description>"
+
+func set_loadout_items(_items: Array[Item]) -> void:
+	_refresh()

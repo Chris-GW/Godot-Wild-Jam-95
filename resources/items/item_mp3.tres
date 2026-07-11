@@ -6,5 +6,7 @@
 script = ExtResource("1_r4ght")
 id = 6
 name = "MP3 Player"
-description = "MP3 Player hits the enemy for 7 damage."
+item_class = 1
+mana_cost = 3
+description = "MP3 Player makes the enemy miss their attack next turn."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

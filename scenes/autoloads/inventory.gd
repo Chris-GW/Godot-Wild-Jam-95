@@ -3,7 +3,7 @@ extends Node
 var _item_pool: Array[Item] = [
 	preload("res://resources/items/item_cdrom.tres"),
 	preload("res://resources/items/item_vinyllp.tres"),
-	preload("res://resources/items/item_nintendods.tres"),
+	preload("res://resources/items/item_gameboy.tres"),
 	preload("res://resources/items/item_dialpadphone.tres"),
 	preload("res://resources/items/item_vhs.tres"),
 	preload("res://resources/items/item_cassette.tres"),
@@ -24,6 +24,12 @@ func _process(_delta: float) -> void:
 
 func _emit_changed() -> void:
 	GameEvents.emit_inventory_changed(_items)
+
+func get_item(index: int) -> Item:
+	if index < 0 or index >= _items.size():
+		return null
+
+	return _items[index]
 
 func add(item: Item) -> void:
 	if not _items.has(item):

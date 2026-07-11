@@ -6,5 +6,7 @@
 script = ExtResource("1_htj0w")
 id = 8
 name = "CRT Television"
-description = "CRT Television hits the enemy for 20 damage."
+item_class = 1
+mana_cost = 6
+description = "CRT Television cuts the enemy's current HP in half."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

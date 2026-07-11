@@ -6,5 +6,7 @@
 script = ExtResource("1_h47iq")
 id = 7
 name = "Fax Machine"
-description = "Fax Machine hits the enemy for 12 damage."
+item_class = 1
+mana_cost = 2
+description = "Fax Machine makes the enemy deal half damage next turn."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

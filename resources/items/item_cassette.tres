@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_ctbhj")
-id = 5
+id = 0
 name = "Cassette Tape"
-description = "Cassette Tape hits the enemy for 6 damage."
+item_class = null
+description = "Cassette Tape hits the enemy for 4 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

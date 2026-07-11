@@ -2,6 +2,8 @@
 class_name Item
 extends Resource
 
+enum ItemClass { BASIC, MAGIC }
+
 @export
 var id := -1:
 	set(value):
@@ -13,6 +15,20 @@ var id := -1:
 var name := "<item>":
 	set(value):
 		name = value
+
+		emit_changed()
+
+@export
+var item_class := ItemClass.BASIC:
+	set(value):
+		item_class = value
+
+		emit_changed()
+
+@export
+var mana_cost := 0:
+	set(value):
+		mana_cost = value
 
 		emit_changed()
 

@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_e5nfw")
-id = 1
+id = 3
 name = "Vinyl LP"
-description = "Vinyl LP hits the enemy for 8 damage."
+item_class = null
+description = "Vinyl LP hits the enemy for 12 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"
