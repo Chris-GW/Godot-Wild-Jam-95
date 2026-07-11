@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://c5v1cyk8xkowq"]
+
+[ext_resource type="Texture2D" uid="uid://dmd8sd6nprd31" path="res://assets/third_party/world_tilesets_remastered/characters.png" id="1_8afob"]
+[ext_resource type="Script" uid="uid://dwflowdshs6vl" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="AudioStream" uid="uid://cug2w5woh7nj2" path="res://assets/audio/Shoe Step Gravel Hard A.wav" id="2_gmlin"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://bciqdyn4itlam" path="res://scenes/player/player_state_machine.tres" id="2_lvxji"]
+
+[sub_resource type="Animation" id="Animation_dovo2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qek5x"]
+resource_name = "idle_down"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5gtgg"]
+resource_name = "idle_left"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_8afob"]
+resource_name = "idle_right"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_0owmy"]
+resource_name = "idle_up"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p47bc"]
+resource_name = "run_down"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_75vfm"]
+resource_name = "run_left"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 3), Vector2i(2, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_gmlin"]
+resource_name = "run_right"
+length = 0.39999999999999997
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 2), Vector2i(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_lvxji"]
+resource_name = "run_up"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 1), Vector2i(2, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0owmy"]
+_data = {
+&"RESET": SubResource("Animation_dovo2"),
+&"idle_down": SubResource("Animation_qek5x"),
+&"idle_left": SubResource("Animation_5gtgg"),
+&"idle_right": SubResource("Animation_8afob"),
+&"idle_up": SubResource("Animation_0owmy"),
+&"run_down": SubResource("Animation_p47bc"),
+&"run_left": SubResource("Animation_75vfm"),
+&"run_right": SubResource("Animation_gmlin"),
+&"run_up": SubResource("Animation_lvxji")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eur1h"]
+radius = 8.062258
+
+[node name="Player" type="CharacterBody2D" unique_id=1594590048]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_dovo2")
+move_speed = 200.0
+move_smoothing = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1091889977]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_0owmy")
+autoplay = &"idle_down"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1774750657]
+callback_mode_process = 0
+tree_root = ExtResource("2_lvxji")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/idle/blend_position = Vector2(-0.07912457, 0.55251145)
+parameters/run/blend_position = Vector2(0.06397307, 0.64383554)
+
+[node name="StepSfxTimer" type="Timer" parent="." unique_id=1011535704]
+wait_time = 0.7
+
+[node name="StepSfxPlayer" type="AudioStreamPlayer" parent="." unique_id=1524964073]
+stream = ExtResource("2_gmlin")
+volume_db = -10.0
+bus = &"sfx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=496295188]
+position = Vector2(0, -14)
+scale = Vector2(2, 2)
+texture = ExtResource("1_8afob")
+hframes = 3
+vframes = 4
+region_enabled = true
+region_rect = Rect2(0, 80, 48, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1738780006]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_eur1h")
