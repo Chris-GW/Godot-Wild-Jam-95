@@ -6,6 +6,5 @@
 script = ExtResource("1_hlwfo")
 id = 2
 name = "VHS Tape"
-item_class = null
 description = "VHS Tape hits the enemy for 8 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

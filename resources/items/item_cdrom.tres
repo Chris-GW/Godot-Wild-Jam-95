@@ -6,6 +6,5 @@
 script = ExtResource("1_6u03e")
 id = 1
 name = "CD-ROM"
-item_class = null
 description = "CD-ROM hits the enemy for 6 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"
