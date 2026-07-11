@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dedm6iyra2m5"]
+
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_e5nfw"]
+
+[resource]
+script = ExtResource("1_e5nfw")
+id = 1
+name = "Vinyl LP"
+description = "Vinyl LP hits the enemy for 8 damage."
+metadata/_custom_type_script = "uid://cbfayiutuavjm"

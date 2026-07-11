@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvd55q5ctxygr"]
+
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_odh78"]
+
+[resource]
+script = ExtResource("1_odh78")
+id = 3
+name = "Dial-Pad Phone"
+description = "Dial-Pad Phone makes the enemy miss their next attack."
+metadata/_custom_type_script = "uid://cbfayiutuavjm"

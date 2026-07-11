@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cvpi21c0p54r5"]
+
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_6u03e"]
+
+[resource]
+script = ExtResource("1_6u03e")
+id = 0
+name = "CD-ROM"
+description = "CD-ROM hits the enemy for 5 damage."
+metadata/_custom_type_script = "uid://cbfayiutuavjm"

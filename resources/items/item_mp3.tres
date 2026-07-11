@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bsvdnmij7ywsm"]
+
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_r4ght"]
+
+[resource]
+script = ExtResource("1_r4ght")
+id = 6
+name = "MP3 Player"
+description = "MP3 Player hits the enemy for 7 damage."
+metadata/_custom_type_script = "uid://cbfayiutuavjm"

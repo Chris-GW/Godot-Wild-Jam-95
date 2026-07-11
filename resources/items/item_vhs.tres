@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bqv07iriv6clw"]
+
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_hlwfo"]
+
+[resource]
+script = ExtResource("1_hlwfo")
+id = 4
+name = "VHS Tape"
+description = "VHS Tape hits the enemy for 4 damage."
+metadata/_custom_type_script = "uid://cbfayiutuavjm"

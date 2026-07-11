@@ -1,0 +1,26 @@
+class_name InventoryUIState
+extends Node
+
+signal state_transition_requested(new_state: InventoryUI.State, state_data: InventoryUIStateData)
+
+var _inventory_ui: InventoryUI = null
+var _state_data: InventoryUIStateData = null
+var _appearance: InventoryUIAppearance = null
+var _selected_index_tracker: IndexTracker = null
+
+func setup(
+	inventory_ui: InventoryUI,
+	state_data: InventoryUIStateData,
+	appearance: InventoryUIAppearance,
+	selected_index_tracker: IndexTracker,
+) -> void:
+	_inventory_ui = inventory_ui
+	_state_data = state_data
+	_appearance = appearance
+	_selected_index_tracker = selected_index_tracker
+
+func transition_state(
+	new_state: InventoryUI.State,
+	state_data := InventoryUIStateData.new(),
+) -> void:
+	state_transition_requested.emit(new_state, state_data)

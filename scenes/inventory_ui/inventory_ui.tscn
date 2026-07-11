@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dewwe832lpv1t"]
+
+[ext_resource type="Script" uid="uid://cklf8ambl5cui" path="res://scenes/inventory_ui/inventory_ui.gd" id="1_ov55q"]
+[ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="2_fi5bj"]
+[ext_resource type="Script" uid="uid://bsdtg2mnv6n18" path="res://scenes/inventory_ui/inventory_ui_appearance.gd" id="2_t5bre"]
+[ext_resource type="PackedScene" uid="uid://t3d4fsyv7dna" path="res://scenes/item_description_panel/item_description_panel.tscn" id="3_bpkym"]
+[ext_resource type="PackedScene" uid="uid://b2b214wxjm7nk" path="res://scenes/inventory_item_row/inventory_item_row.tscn" id="3_w4fn2"]
+[ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="4_yvfb2"]
+[ext_resource type="Resource" uid="uid://dedm6iyra2m5" path="res://resources/items/item_vinyllp.tres" id="5_i6gqg"]
+[ext_resource type="Resource" uid="uid://bvd55q5ctxygr" path="res://resources/items/item_dialpadphone.tres" id="6_55d1a"]
+[ext_resource type="Resource" uid="uid://88xctukh6jrx" path="res://resources/items/item_nintendods.tres" id="6_t5bre"]
+[ext_resource type="Resource" uid="uid://bqv07iriv6clw" path="res://resources/items/item_vhs.tres" id="9_vl8np"]
+[ext_resource type="Resource" uid="uid://b6cdkptolh2ni" path="res://resources/items/item_cassette.tres" id="10_v2la8"]
+[ext_resource type="Resource" uid="uid://bsvdnmij7ywsm" path="res://resources/items/item_mp3.tres" id="11_mjglk"]
+[ext_resource type="Resource" uid="uid://bvt0pkqo1gbir" path="res://resources/items/item_fax.tres" id="12_vj7c3"]
+[ext_resource type="Resource" uid="uid://c0p7luy0dj6ob" path="res://resources/items/item_crttv.tres" id="13_pa177"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=1225508954]
+script = ExtResource("1_ov55q")
+selected_index = 0
+
+[node name="Appearance" type="Node" parent="." unique_id=1986645868 node_paths=PackedStringArray("base_control", "empty_label", "rows_parent", "description_panel")]
+unique_name_in_owner = true
+script = ExtResource("2_t5bre")
+base_control = NodePath("../MarginContainer")
+empty_label = NodePath("../MarginContainer/VBoxContainer/Inventory/MarginContainer/EmptyLabel")
+rows_parent = NodePath("../MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows")
+description_panel = NodePath("../MarginContainer/VBoxContainer/ItemDescriptionPanel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=168200865]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fi5bj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=308277340]
+layout_mode = 2
+
+[node name="Inventory" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1547616880]
+custom_minimum_size = Vector2(180, 74)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Inventory" unique_id=194725808]
+layout_mode = 2
+
+[node name="EmptyLabel" type="Label" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer" unique_id=629419479]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+text = "Your inventory is empty!"
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer" unique_id=882514419]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="InventoryItemRow0" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1758540430 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("4_yvfb2")
+selected = true
+
+[node name="InventoryItemRow1" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1631987107 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("5_i6gqg")
+
+[node name="InventoryItemRow2" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1858893562 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("6_t5bre")
+
+[node name="InventoryItemRow3" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1476501948 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("6_55d1a")
+
+[node name="InventoryItemRow4" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1619698102 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("9_vl8np")
+
+[node name="InventoryItemRow5" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=455461726 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("10_v2la8")
+
+[node name="InventoryItemRow6" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1202917380 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("11_mjglk")
+
+[node name="InventoryItemRow7" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=283121983 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("12_vj7c3")
+
+[node name="InventoryItemRow8" parent="MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows" unique_id=1150428564 instance=ExtResource("3_w4fn2")]
+layout_mode = 2
+item = ExtResource("13_pa177")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1459544835]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemDescriptionPanel" parent="MarginContainer/VBoxContainer" unique_id=1449413544 instance=ExtResource("3_bpkym")]
+layout_mode = 2
+item = ExtResource("4_yvfb2")

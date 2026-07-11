@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://t3d4fsyv7dna"]
+
+[ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="1_q87o7"]
+[ext_resource type="Script" uid="uid://bo503271wn53v" path="res://scenes/item_description_panel/item_description_panel.gd" id="2_7ofwj"]
+
+[node name="ItemDescriptionPanel" type="PanelContainer" unique_id=1449413544]
+custom_minimum_size = Vector2(240, 60)
+size_flags_vertical = 8
+theme = ExtResource("1_q87o7")
+script = ExtResource("2_7ofwj")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=650918292]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1518574563]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "<item_description>"

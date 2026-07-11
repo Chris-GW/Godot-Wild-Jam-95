@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://b6s755x3ajnxw"]
 
 [ext_resource type="Texture2D" uid="uid://g4vo2kkj8caa" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dewwe832lpv1t" path="res://scenes/inventory_ui/inventory_ui.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D" unique_id=963142286]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1003068895]
 position = Vector2(240, 180)
 texture = ExtResource("1_ig7tw")
+
+[node name="InventoryUI" parent="." unique_id=1225508954 instance=ExtResource("2_0xm2m")]
