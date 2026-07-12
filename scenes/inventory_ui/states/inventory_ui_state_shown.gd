@@ -14,6 +14,8 @@ func _enter_tree() -> void:
 		GameEvents.loadout_changed,
 		_on_loadout_changed)
 
+	GameEvents.emit_inventory_shown()
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
 		transition_state(InventoryUI.State.HIDDEN)

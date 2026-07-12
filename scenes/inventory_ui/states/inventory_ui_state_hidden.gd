@@ -10,6 +10,8 @@ func _enter_tree() -> void:
 		GameEvents.inventory_changed,
 		_on_inventory_changed)
 
+	GameEvents.emit_inventory_hidden()
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
 		transition_state(InventoryUI.State.SHOWN)

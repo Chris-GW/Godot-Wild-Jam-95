@@ -1,11 +1,20 @@
 extends Node
 
+signal inventory_shown
+signal inventory_hidden
+
 signal inventory_changed(items: Array[Item])
 signal loadout_changed(items: Array[Item])
 
 signal map_transition_requested(map_scene_path: String, enter_node_name: String)
 
 signal player_attack_chosen(index: int)
+
+func emit_inventory_shown() -> void:
+	inventory_shown.emit()
+
+func emit_inventory_hidden() -> void:
+	inventory_hidden.emit()
 
 func emit_inventory_changed(items: Array[Item]) -> void:
 	inventory_changed.emit(items)

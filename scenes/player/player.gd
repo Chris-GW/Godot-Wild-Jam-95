@@ -1,5 +1,7 @@
-class_name Player 
+class_name Player
 extends CharacterBody2D
+
+enum State { PAUSED, ACTIVE }
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -10,30 +12,33 @@ extends CharacterBody2D
 @export var move_speed: float
 @export var move_smoothing: float
 
+var _state_factory := PlayerStateFactory.new()
+var _current_state: PlayerState = null
 
 func _ready() -> void:
-	# looping step sfx on timeout
-	step_sfx_timer.timeout.connect(step_sfx_player.play)
+	switch_state(Player.State.ACTIVE)
 
+func switch_state(state: Player.State, state_data := PlayerStateData.new()) -> void:
+	if _current_state != null:
+		_current_state.queue_free()
 
-func _physics_process(delta: float) -> void:
-	_update_movement_velocity(delta)
-	_update_animation()
-	move_and_slide()
+	_current_state = _state_factory.get_fresh_state(state)
 
+	_current_state.setup(
+		self,
+		state_data)
 
-func _update_movement_velocity(delta: float) -> void:
-	var input_direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var velocity_weight := 1.0 - exp(-move_smoothing * delta)
-	var target_velocity := input_direction * move_speed
-	velocity = velocity.lerp(target_velocity, velocity_weight)
+	_current_state.state_transition_requested.connect(switch_state)
+	_current_state.name = "PlayerStateMachine: %s" % str(state)
 
-func _update_animation() -> void:
+	call_deferred("add_child", _current_state)
+
+func update_animation() -> void:
 	if velocity.length_squared() > 30.0:
 		var velocity_direction := velocity.normalized()
 		animation_tree.set("parameters/idle/blend_position", velocity_direction)
 		animation_tree.set("parameters/run/blend_position", velocity_direction)
-		
+
 		if step_sfx_timer.is_stopped():
 			step_sfx_timer.start()
 			step_sfx_player.play()
