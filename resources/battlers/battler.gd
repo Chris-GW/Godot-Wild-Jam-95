@@ -16,9 +16,12 @@ var health: Health:
 
 		emit_changed()
 
-func take_damage(damage_resolver: NumberResolver) -> void:
+func take_damage(damage_resolver: NumberResolver) -> int:
 	if health:
-		health.take_damage(damage_resolver)
+		var damage_dealt := health.take_damage(damage_resolver)
+		return damage_dealt
+
+	return 0
 
 func is_dead() -> bool:
 	return health and health.is_empty()

@@ -74,3 +74,7 @@ func for_shown() -> void:
 func for_hidden() -> void:
 	if base_control:
 		base_control.hide()
+
+func for_paused() -> void:
+	if base_control:
+		base_control.hide()

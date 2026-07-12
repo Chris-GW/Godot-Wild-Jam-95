@@ -6,6 +6,7 @@ func _init() -> void:
 	states = {
 		InventoryUI.State.HIDDEN: InventoryUIStateHidden,
 		InventoryUI.State.SHOWN: InventoryUIStateShown,
+		InventoryUI.State.PAUSED: InventoryUIStatePaused,
 	}
 
 func get_fresh_state(state: InventoryUI.State) -> InventoryUIState:

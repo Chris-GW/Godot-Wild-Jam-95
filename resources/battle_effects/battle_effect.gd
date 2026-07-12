@@ -3,14 +3,8 @@
 class_name BattleEffect
 extends Resource
 
-func apply(_battle: Battle) -> void:
-	pass
+func apply(_battle: Battle) -> EffectAttempt:
+	return null
 
 func can_repeat() -> bool:
-	return false
-
-func did_apply() -> bool:
-	return false
-
-func did_deal_damage() -> bool:
 	return false

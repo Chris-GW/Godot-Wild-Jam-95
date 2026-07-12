@@ -7,27 +7,27 @@ var battler_resolver: BattlerResolver
 @export
 var damage_resolver: NumberResolver
 
-var _did_hit := false
+func apply(battle: Battle) -> EffectAttempt:
+	var attempt := EffectAttempt.new(self)
 
-func apply(battle: Battle) -> void:
 	if not battler_resolver:
-		CustomLogger.info("No battler resolver is set")
-		return
+		attempt.attempt_text = "But it didn't work!"
+		return attempt
 
 	if not damage_resolver:
-		CustomLogger.info("No damage resolver is set")
-		return
+		attempt.attempt_text = "But it didn't work!"
+		return attempt
 
-	var battler := battler_resolver.resolve(battle)
-	if battler:
-		battler.take_damage(damage_resolver)
-		_did_hit = true
+	var battler = battler_resolver.resolve(battle)
+	attempt.target = battler
+
+	if battler and not battler.is_dead():
+		attempt.target_was_valid = true
+		attempt.did_hit = true
+		attempt.damage_dealt = battler.take_damage(damage_resolver)
+		attempt.attempt_text = "Hit %s for %d damage!" % [battler.name, attempt.damage_dealt]
+
+	return attempt
 
 func can_repeat() -> bool:
 	return true
-
-func did_apply() -> bool:
-	return _did_hit
-
-func did_deal_damage() -> bool:
-	return _did_hit

@@ -7,84 +7,77 @@ var enemy: EnemyBattler
 @export
 var player: PlayerBattler
 
-var _player_effect_history: Array[BattleEffect] = []
-var _enemy_effect_history: Array[BattleEffect] = []
+var _player_effect_history: Array[EffectAttempt] = []
+var _enemy_effect_history: Array[EffectAttempt] = []
 
+signal event_occurred(text: String)
 signal ended(winner: Battler)
 
-func start() -> void:
+func try_start() -> bool:
 	if not player:
-		CustomLogger.warning("Battle does not have a player!")
-		return
+		event_occurred.emit("Battle does not have a player!")
+		ended.emit(null)
+		return false
 
 	if not enemy:
-		CustomLogger.warning("Battle does not have an enemy!")
-		return
+		event_occurred.emit("Battle does not have an enemy!")
+		ended.emit(null)
+		return false
 
 	_player_effect_history.clear()
 	_enemy_effect_history.clear()
 
-	_wait_for_player_choice()
+	return true
 
-func _on_player_attack_chosen(index: int) -> void:
-	_do_player_turn(index)
-
-	if _check_ended():
-		return
-
-	_do_enemy_turn()
-
-	if _check_ended():
-		return
-
-	_wait_for_player_choice()
-
-func _check_ended() -> bool:
+func check_ended() -> bool:
 	# player wins if the both battlers died at the same time
 	if enemy.is_dead():
+		event_occurred.emit("Enemy %s died!" % enemy.name)
 		ended.emit(player)
 		return true
 
 	if player.is_dead():
+		event_occurred.emit("Player %s died!" % player.name)
 		ended.emit(enemy)
 		return true
 
 	return false
 
-func _do_player_turn(index: int) -> void:
+func do_player_turn(index: int) -> void:
+	var event_text := ""
+
 	var item := Loadout.get_item(index)
-	if not item:
-		CustomLogger.info("No item at index %d" % index)
-		return
+	if item:
+		var battle_effect := item.battle_effect
+		if battle_effect:
+			var attempt := battle_effect.apply(self)
+			_player_effect_history.append(attempt)
 
-	var battle_effect := item.battle_effect
-	if battle_effect:
-		battle_effect.apply(self)
+			event_text = "Player %s attacked using %s! %s" % [player.name, item.name, attempt.attempt_text]
+		else:
+			event_text = "Player %s skipped their turn." % player.name
+	else:
+		event_text = "No item at index %d" % index
 
-		if battle_effect.did_apply():
-			_player_effect_history.append(battle_effect)
+	event_occurred.emit(event_text)
 
-	CustomLogger.info("Player effect history: %d effect(s)" % _player_effect_history.size())
+	CustomLogger.debug("Player effect history: %d effect(s)" % _player_effect_history.size())
 
-func _do_enemy_turn() -> void:
+func do_enemy_turn() -> void:
+	var event_text := ""
 	var battle_effect := enemy.battle_effect
 
 	if battle_effect:
-		battle_effect.apply(self)
+		var attempt := battle_effect.apply(self)
+		_enemy_effect_history.append(attempt)
 
-		if battle_effect.did_apply():
-			_enemy_effect_history.append(battle_effect)
+		event_text = "Enemy %s attacked! %s" % [enemy.name, attempt.attempt_text]
 	else:
-		CustomLogger.info("Enemy %s skips their turn" % enemy.name)
+		event_text = "Enemy %s skipped their turn." % enemy.name
 
-	CustomLogger.info("Enemy effect history: %d effect(s)" % _enemy_effect_history.size())
+	event_occurred.emit(event_text)
 
-func _wait_for_player_choice() -> void:
-	SignalHelper.once(
-		GameEvents.player_attack_chosen,
-		_on_player_attack_chosen)
+	CustomLogger.debug("Enemy effect history: %d effect(s)" % _enemy_effect_history.size())
 
-	CustomLogger.info("Waiting for player choice...")
-
-func get_last_effect() -> BattleEffect:
+func get_last_attempt() -> EffectAttempt:
 	return _player_effect_history.back() if _player_effect_history.size() > 0 else null

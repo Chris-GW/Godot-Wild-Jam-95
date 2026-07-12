@@ -4,33 +4,26 @@ extends BattleEffect
 @export
 var repeat_count := 1
 
-var _last_effect: BattleEffect = null
-var _hit_count := 0
+func apply(battle: Battle) -> EffectAttempt:
+	var attempt := RepeatEffectAttempt.new(self)
 
-func apply(battle: Battle) -> void:
-	_last_effect = battle.get_last_effect()
-	if not _last_effect:
-		CustomLogger.info("No effect to repeat!")
-		return
+	var last_attempt = battle.get_last_attempt()
 
-	if not _last_effect.can_repeat():
-		CustomLogger.info("Last effect cannot be repeated!")
-		return
+	if not last_attempt:
+		attempt.attempt_text = "But there was no effect to repeat!"
+		return attempt
 
-	if not _last_effect.did_deal_damage():
-		CustomLogger.info("Last effect did not deal damage!")
-		return
+	if not last_attempt.can_repeat():
+		attempt.attempt_text = "But the last effect could not be repeated!"
+		return attempt
 
-	CustomLogger.info("Repeating last damage effect %d time(s)..." % repeat_count)
+	if last_attempt.damage_dealt <= 0:
+		attempt.attempt_text = "But the last effect did not deal damage!"
+		return attempt
 
 	for i in repeat_count:
-		_last_effect.apply(battle)
+		var repeat_attempt := last_attempt.get_effect().apply(battle)
+		attempt.add_attempt(repeat_attempt)
 
-		if _last_effect.did_apply():
-			_hit_count += 1
-
-func did_apply() -> bool:
-	return _hit_count > 0
-
-func did_deal_damage() -> bool:
-	return _last_effect and _last_effect.did_deal_damage()
+	attempt.complete()
+	return attempt

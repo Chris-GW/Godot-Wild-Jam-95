@@ -21,7 +21,7 @@ var current_health := 50:
 
 signal current_health_changed(new_health: int, old_health: int)
 
-func take_damage(damage_resolver: NumberResolver) -> void:
+func take_damage(damage_resolver: NumberResolver) -> int:
 	var old_health := current_health
 
 	current_health -= int(damage_resolver.resolve())
@@ -29,6 +29,8 @@ func take_damage(damage_resolver: NumberResolver) -> void:
 	if current_health != old_health:
 		CustomLogger.info("Health %d -> %d" % [old_health, current_health])
 		current_health_changed.emit(current_health, old_health)
+
+	return old_health - current_health
 
 func is_empty() -> bool:
 	return current_health <= 0

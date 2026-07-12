@@ -5,14 +5,18 @@ func _enter_tree() -> void:
 	CustomLogger.debug("%s is now active" % _player.name)
 
 	# looping step sfx on timeout
-	_player.step_sfx_timer.timeout.connect(_player.step_sfx_player.play)
+	SignalHelper.persist(_player.step_sfx_timer.timeout, _play_step_sfx)
 
 	SignalHelper.once(
 		GameEvents.inventory_shown,
-		transition_state.bind(Player.State.PAUSED))
+		_to_paused)
 
-func _exit_tree() -> void:
-	_player.step_sfx_timer.timeout.disconnect(_player.step_sfx_player.play)
+	SignalHelper.once(
+		GameEvents.battle_started,
+		_to_paused)
+
+func _to_paused() -> void:
+	transition_state(Player.State.PAUSED)
 
 func _physics_process(delta: float) -> void:
 	_update_movement_velocity(delta)
@@ -25,3 +29,6 @@ func _update_movement_velocity(delta: float) -> void:
 	var velocity_weight := 1.0 - exp(-_player.move_smoothing * delta)
 	var target_velocity := input_direction * _player.move_speed
 	_player.velocity = _player.velocity.lerp(target_velocity, velocity_weight)
+
+func _play_step_sfx() -> void:
+	_player.step_sfx_player.play()

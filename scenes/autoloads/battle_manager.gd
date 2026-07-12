@@ -1,21 +1,23 @@
 extends Node
 
-var _battle: Battle = null
+const ENEMY_CASSETTE: EnemyBattler = preload("res://resources/enemies/enemy_cassette.tres")
 
-func _ready() -> void:
-	_battle = Battle.new()
+var _battle_progressor: BattleProgressor = null
 
-	_battle.enemy = preload("res://resources/enemies/enemy_cassette.tres")
-	_battle.player = PlayerManager.get_current()
+func start_example_battle() -> void:
+	var battle = Battle.new()
 
-	SignalHelper.once(_battle.ended, _on_battle_ended)
+	battle.enemy = ENEMY_CASSETTE
+	battle.player = PlayerManager.get_current()
 
-	_battle.start()
+	_battle_progressor = BattleProgressor.new()
+	_battle_progressor.battle = battle
+	add_child(_battle_progressor)
 
-func _on_battle_ended(winner: Battler) -> void:
-	CustomLogger.info("%s won the battle!" % winner.name)
+	_battle_progressor.start()
 
-	_battle = null
+func _on_battle_ended(_winner: Battler) -> void:
+	_battle_progressor = null
 
 func get_current() -> Battle:
-	return _battle
+	return _battle_progressor.battle if _battle_progressor else null

@@ -6,7 +6,14 @@ func _enter_tree() -> void:
 
 	SignalHelper.once(
 		GameEvents.inventory_hidden,
-		transition_state.bind(Player.State.ACTIVE))
+		_to_active)
+
+	SignalHelper.once(
+		GameEvents.battle_ended,
+		_to_active)
+
+func _to_active() -> void:
+	transition_state(Player.State.ACTIVE)
 
 func _physics_process(delta: float) -> void:
 	_decelerate(delta)

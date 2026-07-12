@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ba4v4shxk5egu"]
+
+[ext_resource type="Script" uid="uid://bqfv0oj0wtcw0" path="res://scenes/battle_ui/battle_ui.gd" id="1_pyo4n"]
+[ext_resource type="Script" uid="uid://cbcuel7n88qed" path="res://scenes/battle_ui/battle_ui_appearance.gd" id="2_uvu3y"]
+[ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="3_fntje"]
+[ext_resource type="PackedScene" uid="uid://b3pbwgsdixq5d" path="res://scenes/text_panel/text_panel.tscn" id="4_sebxe"]
+
+[node name="BattleUI" type="CanvasLayer" unique_id=28089230]
+layer = 2
+script = ExtResource("1_pyo4n")
+
+[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel")]
+unique_name_in_owner = true
+script = ExtResource("2_uvu3y")
+base_control = NodePath("../MarginContainer")
+text_panel = NodePath("../MarginContainer/VBoxContainer/BattleTextPanel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030879351]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_fntje")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=630176860]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1949512353]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer" unique_id=1533686706 instance=ExtResource("4_sebxe")]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "<text>"

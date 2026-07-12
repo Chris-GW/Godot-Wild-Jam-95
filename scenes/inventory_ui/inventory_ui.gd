@@ -2,7 +2,7 @@
 class_name InventoryUI
 extends CanvasLayer
 
-enum State { HIDDEN, SHOWN }
+enum State { HIDDEN, SHOWN, PAUSED }
 
 @export
 var selected_index := -1:
