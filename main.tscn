@@ -17,5 +17,6 @@ unique_name_in_owner = true
 
 [node name="WorldCamera2D" type="Camera2D" parent="MapManager/Player" unique_id=1604401945]
 unique_name_in_owner = true
+zoom = Vector2(2, 2)
 
 [node name="InventoryUI" parent="." unique_id=1225508954 instance=ExtResource("2_0xm2m")]
