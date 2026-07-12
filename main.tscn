@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://b6s755x3ajnxw"]
 
-[ext_resource type="Texture2D" uid="uid://g4vo2kkj8caa" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://d0pawe6ij8txt" path="res://scripts/map_manager.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dewwe832lpv1t" path="res://scenes/inventory_ui/inventory_ui.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c5v1cyk8xkowq" path="res://scenes/player/player.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://sj4f5q3rbbdc" path="res://scenes/maps/map_01.tscn" id="2_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=963142286]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1003068895]
-position = Vector2(240, 180)
-texture = ExtResource("1_ig7tw")
+[node name="MapManager" type="Node2D" parent="." unique_id=234274128]
+script = ExtResource("1_h2yge")
+
+[node name="CurrentMap" parent="MapManager" unique_id=632494233 instance=ExtResource("2_lquwl")]
+
+[node name="Player" parent="MapManager" unique_id=1594590048 instance=ExtResource("2_1bvp3")]
+unique_name_in_owner = true
+
+[node name="WorldCamera2D" type="Camera2D" parent="MapManager/Player" unique_id=1604401945]
+unique_name_in_owner = true
 
 [node name="InventoryUI" parent="." unique_id=1225508954 instance=ExtResource("2_0xm2m")]
