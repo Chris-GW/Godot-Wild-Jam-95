@@ -12,9 +12,10 @@ config_version=5
 
 config/name="Godot Wild Jam #95"
 config/version="0.1.0"
+config/tags=PackedStringArray("game_jam", "godot_wild_jam", "team")
 run/main_scene="uid://cy0v8djx1yyti"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://c65di63u0ocdn"
 
 [autoload]
 
