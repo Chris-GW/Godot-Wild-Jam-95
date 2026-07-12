@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvd55q5ctxygr"]
 
-[ext_resource type="Script" uid="uid://db1e6d5etagxc" path="res://resources/repeat_last_damage_effect.gd" id="1_nt02u"]
-[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_odh78"]
+[ext_resource type="Script" uid="uid://db1e6d5etagxc" path="res://resources/battle_effects/repeat_last_damage_effect.gd" id="1_nt02u"]
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_odh78"]
 
 [sub_resource type="Resource" id="Resource_odh78"]
 script = ExtResource("1_nt02u")

@@ -1,21 +1,20 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://cvpi21c0p54r5"]
 
-[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_6u03e"]
-[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/constant_number_resolver.gd" id="1_cyklg"]
-[ext_resource type="Script" uid="uid://dgggepjkx6mm4" path="res://resources/damage_enemy_effect.gd" id="2_ibwdj"]
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_6u03e"]
+[ext_resource type="Resource" uid="uid://30dafp3abbpp" path="res://resources/battler_resolvers/battler_resolver_enemy.tres" id="1_xccdr"]
+[ext_resource type="Resource" uid="uid://bbksypfy1u120" path="res://resources/damage_resolvers/damage_resolver_cdrom.tres" id="2_qhi7u"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_x1ltx"]
 
-[sub_resource type="Resource" id="Resource_1tqb4"]
-script = ExtResource("1_cyklg")
-value = 6.0
-
-[sub_resource type="Resource" id="Resource_6be0h"]
-script = ExtResource("2_ibwdj")
-damage_resolver = SubResource("Resource_1tqb4")
+[sub_resource type="Resource" id="Resource_jrowy"]
+script = ExtResource("3_x1ltx")
+battler_resolver = ExtResource("1_xccdr")
+damage_resolver = ExtResource("2_qhi7u")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
 
 [resource]
 script = ExtResource("1_6u03e")
 id = 1
 name = "CD-ROM"
-battle_effect = SubResource("Resource_6be0h")
+battle_effect = SubResource("Resource_jrowy")
 description = "CD-ROM hits the enemy for 6 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ConstantNumberResolver" format=3 uid="uid://begn42cisdolp"]
+
+[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/number_resolvers/constant_number_resolver.gd" id="1_sfuga"]
+
+[resource]
+script = ExtResource("1_sfuga")
+value = 8.0

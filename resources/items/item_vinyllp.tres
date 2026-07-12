@@ -1,21 +1,20 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dedm6iyra2m5"]
 
-[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_e5nfw"]
-[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/constant_number_resolver.gd" id="1_sr5yb"]
-[ext_resource type="Script" uid="uid://dgggepjkx6mm4" path="res://resources/damage_enemy_effect.gd" id="2_a58qt"]
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_e5nfw"]
+[ext_resource type="Resource" uid="uid://30dafp3abbpp" path="res://resources/battler_resolvers/battler_resolver_enemy.tres" id="1_k14bc"]
+[ext_resource type="Resource" uid="uid://b802g76yl270d" path="res://resources/damage_resolvers/damage_resolver_vinyllp.tres" id="2_io1t0"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_tqucd"]
 
-[sub_resource type="Resource" id="Resource_leqhv"]
-script = ExtResource("1_sr5yb")
-value = 12.0
-
-[sub_resource type="Resource" id="Resource_xccdr"]
-script = ExtResource("2_a58qt")
-damage_resolver = SubResource("Resource_leqhv")
+[sub_resource type="Resource" id="Resource_qbxt0"]
+script = ExtResource("3_tqucd")
+battler_resolver = ExtResource("1_k14bc")
+damage_resolver = ExtResource("2_io1t0")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
 
 [resource]
 script = ExtResource("1_e5nfw")
 id = 3
 name = "Vinyl LP"
-battle_effect = SubResource("Resource_xccdr")
+battle_effect = SubResource("Resource_qbxt0")
 description = "Vinyl LP hits the enemy for 12 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

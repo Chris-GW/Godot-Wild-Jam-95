@@ -7,7 +7,7 @@ script = ExtResource("1_7om7l")
 _version = 2
 _scan_rulesets = Array[Dictionary]([{
 &"allowed_file_extensions": Array[String]([]),
-&"class_restrictions": Array[StringName]([&"\"res://resources/enemy_battler.gd\""]),
+&"class_restrictions": Array[StringName]([&"\"res://resources/battlers/enemy_battler.gd\""]),
 &"recursive_scan": false,
 &"scan_directories": Array[String](["res://resources/enemies"]),
 &"scan_regex_exclude": "",

@@ -7,7 +7,7 @@ script = ExtResource("1_ot71w")
 _version = 2
 _scan_rulesets = Array[Dictionary]([{
 &"allowed_file_extensions": Array[String]([]),
-&"class_restrictions": Array[StringName]([&"\"res://resources/item.gd\""]),
+&"class_restrictions": Array[StringName]([&"\"res://resources/items/item.gd\""]),
 &"recursive_scan": false,
 &"scan_directories": Array[String](["res://resources/items"]),
 &"scan_regex_exclude": "",

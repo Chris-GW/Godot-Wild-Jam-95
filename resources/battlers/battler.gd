@@ -19,3 +19,6 @@ var health: Health:
 func take_damage(damage_resolver: NumberResolver) -> void:
 	if health:
 		health.take_damage(damage_resolver)
+
+func is_dead() -> bool:
+	return health and health.is_empty()

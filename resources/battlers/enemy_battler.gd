@@ -15,3 +15,10 @@ var description := "<description>":
 		description = value
 
 		emit_changed()
+
+@export
+var battle_effect: BattleEffect:
+	set(value):
+		battle_effect = value
+
+		emit_changed()

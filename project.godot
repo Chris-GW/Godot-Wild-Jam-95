@@ -25,6 +25,7 @@ GameEvents="*uid://bkfyrg5npn2sx"
 Inventory="*uid://cqcl5ovga5xm0"
 Loadout="*uid://dt7wqwylottt6"
 BattleManager="*uid://dbv8yau7wdct7"
+PlayerManager="*uid://wy214jdh4vgm"
 
 [display]
 

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CurrentHealthFractionResolver" format=3 uid="uid://be1dt33fnkmnn"]
+
+[ext_resource type="Resource" uid="uid://30dafp3abbpp" path="res://resources/battler_resolvers/battler_resolver_enemy.tres" id="1_7pyq2"]
+[ext_resource type="Script" uid="uid://vp61h3km15yk" path="res://resources/number_resolvers/current_health_fraction_resolver.gd" id="2_hlgqf"]
+
+[resource]
+script = ExtResource("2_hlgqf")
+battler_resolver = ExtResource("1_7pyq2")
+metadata/_custom_type_script = "uid://vp61h3km15yk"

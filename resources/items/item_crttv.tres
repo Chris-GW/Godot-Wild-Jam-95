@@ -1,29 +1,22 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://c0p7luy0dj6ob"]
 
-[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_htj0w"]
-[ext_resource type="Script" uid="uid://bvbu1gewt3n0e" path="res://resources/enemy_battler_resolver.gd" id="1_lyt8d"]
-[ext_resource type="Script" uid="uid://vp61h3km15yk" path="res://resources/current_health_fraction_resolver.gd" id="2_1p4rw"]
-[ext_resource type="Script" uid="uid://dgggepjkx6mm4" path="res://resources/damage_enemy_effect.gd" id="3_1p4rw"]
+[ext_resource type="Resource" uid="uid://30dafp3abbpp" path="res://resources/battler_resolvers/battler_resolver_enemy.tres" id="1_1p4rw"]
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_htj0w"]
+[ext_resource type="Resource" uid="uid://be1dt33fnkmnn" path="res://resources/damage_resolvers/damage_resolver_crttv.tres" id="2_1p4rw"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_6be0h"]
 
-[sub_resource type="Resource" id="Resource_gfhtu"]
-script = ExtResource("1_lyt8d")
-metadata/_custom_type_script = "uid://bvbu1gewt3n0e"
-
-[sub_resource type="Resource" id="Resource_xxbg1"]
-script = ExtResource("2_1p4rw")
-battler_resolver = SubResource("Resource_gfhtu")
-metadata/_custom_type_script = "uid://vp61h3km15yk"
-
-[sub_resource type="Resource" id="Resource_1tqb4"]
-script = ExtResource("3_1p4rw")
-damage_resolver = SubResource("Resource_xxbg1")
+[sub_resource type="Resource" id="Resource_273ll"]
+script = ExtResource("3_6be0h")
+battler_resolver = ExtResource("1_1p4rw")
+damage_resolver = ExtResource("2_1p4rw")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
 
 [resource]
 script = ExtResource("1_htj0w")
 id = 8
 name = "CRT Television"
 item_class = 1
-battle_effect = SubResource("Resource_1tqb4")
+battle_effect = SubResource("Resource_273ll")
 mana_cost = 6
 description = "CRT Television cuts the enemy's current HP in half."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"
