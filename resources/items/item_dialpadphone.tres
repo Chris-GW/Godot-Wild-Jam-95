@@ -1,12 +1,19 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvd55q5ctxygr"]
 
+[ext_resource type="Script" uid="uid://db1e6d5etagxc" path="res://resources/repeat_last_damage_effect.gd" id="1_nt02u"]
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_odh78"]
+
+[sub_resource type="Resource" id="Resource_odh78"]
+script = ExtResource("1_nt02u")
+repeat_count = 2
+metadata/_custom_type_script = "uid://db1e6d5etagxc"
 
 [resource]
 script = ExtResource("1_odh78")
 id = 5
 name = "Dial-Pad Phone"
 item_class = 1
+battle_effect = SubResource("Resource_odh78")
 mana_cost = 8
-description = "Dial-Pad Phone repeats the last basic attack with double damage."
+description = "Dial-Pad Phone repeats last turn's damaging attack, twice."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

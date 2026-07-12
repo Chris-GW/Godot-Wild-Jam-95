@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyBattler" format=3 uid="uid://bih35cd7l8jeh"]
+
+[ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/health.gd" id="1_6oxj6"]
+[ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/enemy_battler.gd" id="1_amjb6"]
+
+[sub_resource type="Resource" id="Resource_7om7l"]
+script = ExtResource("1_6oxj6")
+max_health = 20
+current_health = 20
+metadata/_custom_type_script = "uid://cnh0siqkiyn04"
+
+[resource]
+script = ExtResource("1_amjb6")
+id = 0
+description = "Cassette Tape"
+name = "Cassette Tape"
+health = SubResource("Resource_7om7l")
+metadata/_custom_type_script = "uid://d0m3e1tleoq5h"

@@ -14,6 +14,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
 		transition_state(InventoryUI.State.SHOWN)
 
+	for i in 4:
+		if Input.is_action_just_pressed("player_attack_%d" % i):
+			GameEvents.emit_player_attack_chosen(i)
+
 func _on_inventory_changed(items: Array[Item]) -> void:
 	_selected_index_tracker.set_maximum(items.size() - 1)
 

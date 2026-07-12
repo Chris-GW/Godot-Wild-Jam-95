@@ -1,10 +1,21 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bqv07iriv6clw"]
 
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/item.gd" id="1_hlwfo"]
+[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/constant_number_resolver.gd" id="1_uimtw"]
+[ext_resource type="Script" uid="uid://dgggepjkx6mm4" path="res://resources/damage_enemy_effect.gd" id="2_00evb"]
+
+[sub_resource type="Resource" id="Resource_pmlge"]
+script = ExtResource("1_uimtw")
+value = 8.0
+
+[sub_resource type="Resource" id="Resource_leqhv"]
+script = ExtResource("2_00evb")
+damage_resolver = SubResource("Resource_pmlge")
 
 [resource]
 script = ExtResource("1_hlwfo")
 id = 2
 name = "VHS Tape"
+battle_effect = SubResource("Resource_leqhv")
 description = "VHS Tape hits the enemy for 8 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

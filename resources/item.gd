@@ -26,6 +26,13 @@ var item_class := ItemClass.BASIC:
 		emit_changed()
 
 @export
+var battle_effect: BattleEffect:
+	set(value):
+		battle_effect = value
+
+		emit_changed()
+
+@export
 var mana_cost := 0:
 	set(value):
 		mana_cost = value

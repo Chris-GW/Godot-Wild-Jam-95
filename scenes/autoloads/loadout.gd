@@ -4,6 +4,12 @@ const ITEM_LIMIT := 4
 
 var _equipped_items: Array[Item] = []
 
+func get_item(index: int) -> Item:
+	if index < 0 or index >= _equipped_items.size():
+		return null
+
+	return _equipped_items[index]
+
 func equip(item: Item) -> void:
 	if not _equipped_items.has(item):
 		_equipped_items.append(item)
