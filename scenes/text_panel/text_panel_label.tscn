@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ny0ax1n8xdbi"]
+
+[node name="TextPanelLabel" type="Label" unique_id=1426628152]
+custom_minimum_size = Vector2(120, 0)
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+text = "line1"
+autowrap_mode = 2

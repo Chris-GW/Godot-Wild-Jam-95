@@ -16,6 +16,7 @@ func _process(_delta: float) -> void:
 func start() -> void:
 	if battle and battle.try_start():
 		SignalHelper.persist(battle.event_occurred, _send_battle_text)
+		SignalHelper.persist(battle.events_occurred, _do_battler_events)
 		SignalHelper.once(battle.ended, _on_battle_ended)
 
 		GameEvents.emit_battle_started()
@@ -36,8 +37,7 @@ func _wait_for_player_choice() -> void:
 func _on_player_attack_chosen(index: int) -> void:
 	battle.do_player_turn(index)
 
-	await get_tree().create_timer(TURN_WAIT_DURATION).timeout
-
+func _after_player_events() -> void:
 	if battle.check_ended():
 		return
 
@@ -68,3 +68,12 @@ func _on_battle_ended(winner: Battler) -> void:
 func _send_battle_text(battle_text: String) -> void:
 	CustomLogger.info(battle_text)
 	GameEvents.emit_battle_text_created(battle_text)
+
+func _do_battler_events(battle_texts: Array[String], battler: Battler) -> void:
+	for battle_text in battle_texts:
+		_send_battle_text(battle_text)
+
+		await get_tree().create_timer(TURN_WAIT_DURATION).timeout
+
+	if battler == battle.player:
+		_after_player_events()

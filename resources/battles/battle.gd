@@ -11,6 +11,7 @@ var _player_effect_history: Array[EffectAttempt] = []
 var _enemy_effect_history: Array[EffectAttempt] = []
 
 signal event_occurred(text: String)
+signal events_occurred(texts: Array[String], battler: Battler)
 signal ended(winner: Battler)
 
 func try_start() -> bool:
@@ -44,7 +45,7 @@ func check_ended() -> bool:
 	return false
 
 func do_player_turn(index: int) -> void:
-	var event_text := ""
+	var event_texts: Array[String] = []
 
 	var item := Loadout.get_item(index)
 	if item:
@@ -53,29 +54,31 @@ func do_player_turn(index: int) -> void:
 			var attempt := battle_effect.apply(self)
 			_player_effect_history.append(attempt)
 
-			event_text = "Player %s attacked using %s! %s" % [player.name, item.name, attempt.attempt_text]
+			event_texts.append("Player %s attacked using %s!" % [player.name, item.name])
+			event_texts.append_array(attempt.attempt_texts)
 		else:
-			event_text = "Player %s skipped their turn." % player.name
+			event_texts.append("Player %s skipped their turn." % player.name)
 	else:
-		event_text = "No item at index %d" % index
+		event_texts.append("No item at index %d" % index)
 
-	event_occurred.emit(event_text)
+	events_occurred.emit(event_texts, player)
 
 	CustomLogger.debug("Player effect history: %d effect(s)" % _player_effect_history.size())
 
 func do_enemy_turn() -> void:
-	var event_text := ""
+	var event_texts: Array[String] = []
 	var battle_effect := enemy.battle_effect
 
 	if battle_effect:
 		var attempt := battle_effect.apply(self)
 		_enemy_effect_history.append(attempt)
 
-		event_text = "Enemy %s attacked! %s" % [enemy.name, attempt.attempt_text]
+		event_texts.append("Enemy %s attacked!" % enemy.name)
+		event_texts.append_array(attempt.attempt_texts)
 	else:
-		event_text = "Enemy %s skipped their turn." % enemy.name
+		event_texts.append("Enemy %s skipped their turn." % enemy.name)
 
-	event_occurred.emit(event_text)
+	events_occurred.emit(event_texts, enemy)
 
 	CustomLogger.debug("Enemy effect history: %d effect(s)" % _enemy_effect_history.size())
 

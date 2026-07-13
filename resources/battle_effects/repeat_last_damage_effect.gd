@@ -10,15 +10,15 @@ func apply(battle: Battle) -> EffectAttempt:
 	var last_attempt = battle.get_last_attempt()
 
 	if not last_attempt:
-		attempt.attempt_text = "But there was no effect to repeat!"
+		attempt.attempt_texts.append("But there was no effect to repeat!")
 		return attempt
 
 	if not last_attempt.can_repeat():
-		attempt.attempt_text = "But the last effect could not be repeated!"
+		attempt.attempt_texts.append("But the last effect could not be repeated!")
 		return attempt
 
 	if last_attempt.damage_dealt <= 0:
-		attempt.attempt_text = "But the last effect did not deal damage!"
+		attempt.attempt_texts.append("But the last effect did not deal damage!")
 		return attempt
 
 	for i in repeat_count:

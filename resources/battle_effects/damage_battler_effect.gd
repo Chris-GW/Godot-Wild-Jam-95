@@ -11,11 +11,11 @@ func apply(battle: Battle) -> EffectAttempt:
 	var attempt := EffectAttempt.new(self)
 
 	if not battler_resolver:
-		attempt.attempt_text = "But it didn't work!"
+		attempt.attempt_texts.append("But it didn't work!")
 		return attempt
 
 	if not damage_resolver:
-		attempt.attempt_text = "But it didn't work!"
+		attempt.attempt_texts.append("But it didn't work!")
 		return attempt
 
 	var battler = battler_resolver.resolve(battle)
@@ -25,7 +25,7 @@ func apply(battle: Battle) -> EffectAttempt:
 		attempt.target_was_valid = true
 		attempt.did_hit = true
 		attempt.damage_dealt = battler.take_damage(damage_resolver)
-		attempt.attempt_text = "Hit %s for %d damage!" % [battler.name, attempt.damage_dealt]
+		attempt.attempt_texts.append("Hit %s for %d damage!" % [battler.name, attempt.damage_dealt])
 
 	return attempt
 

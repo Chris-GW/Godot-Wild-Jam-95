@@ -2,6 +2,8 @@
 class_name TextPanel
 extends PanelContainer
 
+const LABEL_SCENE := preload("uid://ny0ax1n8xdbi")
+
 const LINE_HEIGHT := 18.0
 const TWEEN_SCROLL_DURATION := 0.1
 
@@ -13,9 +15,9 @@ var max_lines := 3:
 		_refresh_for_max_lines()
 
 @export_multiline
-var text: String = "<text>":
+var lines: Array[String] = ["<text>"]:
 	set(value):
-		text = value
+		lines = value
 
 		_refresh()
 
@@ -23,29 +25,42 @@ var text: String = "<text>":
 var scroll_container: ScrollContainer = %ScrollContainer
 
 @onready
-var label: Label = %Label
-
-var _line_count := 0
+var labels_container: VBoxContainer = %LabelsContainer
 
 func _refresh_for_max_lines() -> void:
 	if scroll_container:
 		scroll_container.custom_minimum_size.y = max_lines * LINE_HEIGHT
 
 func _refresh() -> void:
-	_line_count = text.count("\n") + 1
-
-	if text.length() <= 0:
-		_line_count = 0
+	var line_count := lines.size()
 
 	if scroll_container:
-		var overflow_count := _line_count - max_lines
+		var overflow_count := line_count - max_lines
 		var new_scroll := int(LINE_HEIGHT) * overflow_count
 
 		if new_scroll != scroll_container.scroll_vertical:
 			_tween_scroll(new_scroll)
 
-	if label:
-		label.text = text
+	_ensure_enough_labels(line_count)
+
+	for i in labels_container.get_child_count():
+		var label: Label = labels_container.get_child(i)
+		if line_count > i:
+			# TODO: if this is the line that was just added, tween the visible
+			# characters ratio from 0 to 1...
+			label.show()
+			label.text = lines[i]
+		else:
+			label.hide()
+			label.text = ""
+
+func _ensure_enough_labels(line_count: int) -> void:
+	while labels_container.get_child_count() < line_count:
+		var new_label := LABEL_SCENE.instantiate()
+		new_label.name = "Label%d" % labels_container.get_child_count()
+
+		labels_container.add_child(new_label)
+		new_label.owner = labels_container
 
 func _tween_scroll(new_scroll: int) -> void:
 	var tween := create_tween()
@@ -57,10 +72,9 @@ func _tween_scroll(new_scroll: int) -> void:
 		TWEEN_SCROLL_DURATION)
 
 func clear_lines() -> void:
-	text = ""
+	lines.clear()
+	_refresh()
 
 func add_line(line: String) -> void:
-	if _line_count > 0:
-		text += "\n" + line
-	else:
-		text = line
+	lines.append(line)
+	_refresh()

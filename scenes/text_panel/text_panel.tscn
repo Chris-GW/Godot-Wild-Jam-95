@@ -2,22 +2,16 @@
 
 [ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="1_k864m"]
 [ext_resource type="Script" uid="uid://catf6dhdsfswe" path="res://scenes/text_panel/text_panel.gd" id="2_v378g"]
+[ext_resource type="PackedScene" uid="uid://ny0ax1n8xdbi" path="res://scenes/text_panel/text_panel_label.tscn" id="3_d2sfi"]
 
 [node name="TextPanel" type="PanelContainer" unique_id=1533686706]
 offset_right = 116.0
 offset_bottom = 34.0
 theme = ExtResource("1_k864m")
 script = ExtResource("2_v378g")
-text = "line1
-line2
-line3"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=864765185]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=784506128]
 unique_name_in_owner = true
@@ -26,14 +20,23 @@ layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer" unique_id=1923908925]
+[node name="LabelsContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=705926566]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/line_spacing = 0
-text = "line1
-line2
-line3"
-autowrap_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label0" parent="MarginContainer/ScrollContainer/LabelsContainer" unique_id=1426628152 instance=ExtResource("3_d2sfi")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label1" parent="MarginContainer/ScrollContainer/LabelsContainer" unique_id=81448569 instance=ExtResource("3_d2sfi")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "line2"
+
+[node name="Label2" parent="MarginContainer/ScrollContainer/LabelsContainer" unique_id=405824024 instance=ExtResource("3_d2sfi")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "line3"

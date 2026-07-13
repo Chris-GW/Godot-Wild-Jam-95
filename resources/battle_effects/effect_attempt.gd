@@ -6,7 +6,7 @@ var target: Battler = null
 var target_was_valid := false
 var did_hit := false
 var damage_dealt := 0
-var attempt_text := ""
+var attempt_texts: Array[String] = []
 
 func _init(effect: BattleEffect) -> void:
 	_effect = effect
