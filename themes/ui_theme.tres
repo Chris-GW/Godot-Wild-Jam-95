@@ -3,6 +3,23 @@
 [ext_resource type="Texture2D" uid="uid://c824g4mfsgtwx" path="res://assets/textures/ui-panel.png" id="1_gfhtu"]
 [ext_resource type="FontFile" uid="uid://hhht5lxotf5q" path="res://assets/fonts/fusion-pixel-12px-proportional-sc_5.2.5/ttf/fusion-pixel-12px-proportional-sc-latin-400-normal.ttf" id="1_xxbg1"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gfhtu"]
+texture = ExtResource("1_gfhtu")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gfhtu"]
+load_path = "res://.godot/imported/ui-panel.png-4cdd9974f20f89588a5164b4de05e214.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qa7hf"]
+texture = SubResource("CompressedTexture2D_gfhtu")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 22.0
+texture_margin_bottom = 6.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgrle"]
 texture = ExtResource("1_gfhtu")
 texture_margin_left = 4.0
@@ -13,9 +30,14 @@ texture_margin_bottom = 4.0
 [resource]
 default_font = ExtResource("1_xxbg1")
 default_font_size = 12
+Button/colors/font_color = Color(0.6784314, 0.8980392, 0.5294118, 1)
+Button/styles/normal = SubResource("StyleBoxTexture_gfhtu")
+CursorButton/base_type = &"Button"
+CursorButton/styles/normal = SubResource("StyleBoxTexture_qa7hf")
 Label/colors/font_color = Color(0.6784314, 0.8980392, 0.5294118, 1)
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_pgrle")
+RichTextLabel/colors/default_color = Color(0.6784314, 0.8980392, 0.5294118, 1)

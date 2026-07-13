@@ -14,6 +14,11 @@ func _enter_tree() -> void:
 	SignalHelper.once(
 		GameEvents.battle_started,
 		_to_paused)
+	
+	var dialogue_manager := Engine.get_singleton("DialogueManager") as DialogueManager
+	SignalHelper.once(
+		dialogue_manager.dialogue_started, 
+		func(_args): _to_paused())
 
 func _to_paused() -> void:
 	transition_state(Player.State.PAUSED)

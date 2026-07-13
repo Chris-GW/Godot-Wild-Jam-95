@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bk8d6x26ydwv3"]
+
+[ext_resource type="Script" uid="uid://cx8qoth3pchp4" path="res://themes/balloon.gd" id="1_36de5"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="PackedScene" uid="uid://ydyj60ohd5mg" path="res://themes/cursor_button.tscn" id="3_o2y3e"]
+
+[sub_resource type="Animation" id="Animation_nlsx6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progress:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qkmqt"]
+resource_name = "progress"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progress:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.2, -0.0157438, -4, -0.2, 0.0112069, 0.25, 0, -4, -0.25, 0, 0.25, 0, 0, -0.2, 0.00299701, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1337t"]
+_data = {
+&"RESET": SubResource("Animation_nlsx6"),
+&"progress": SubResource("Animation_qkmqt")
+}
+
+[node name="Balloon" type="CanvasLayer" unique_id=671306580]
+layer = 100
+script = ExtResource("1_36de5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1582126480]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1195914205]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Balloon" type="VBoxContainer" parent="MarginContainer" unique_id=335785217]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Balloon" unique_id=1253902224]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/Balloon/HBoxContainer" unique_id=1199930663]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="MarginContainer/Balloon/HBoxContainer" unique_id=2134050105 node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+alignment = 2
+script = ExtResource("3_72ixx")
+response_template = NodePath("ResponseButton")
+
+[node name="ResponseButton" parent="MarginContainer/Balloon/HBoxContainer/ResponsesMenu" unique_id=190857877 instance=ExtResource("3_o2y3e")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Balloon" unique_id=1791252469]
+clip_children = 2
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Balloon/PanelContainer" unique_id=215509717]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Balloon/PanelContainer/MarginContainer" unique_id=1382101143]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Balloon/PanelContainer/MarginContainer/HBoxContainer" unique_id=1754727674]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="RichTextLabel" parent="MarginContainer/Balloon/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=634787608]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="MarginContainer/Balloon/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1139739361 instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum"
+
+[node name="Control" type="Control" parent="MarginContainer/Balloon/PanelContainer/MarginContainer/HBoxContainer" unique_id=1238319323]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Progress" type="Polygon2D" parent="MarginContainer/Balloon/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=329405993]
+unique_name_in_owner = true
+color = Color(0.6784314, 0.8980392, 0.5294118, 1)
+polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/Balloon/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=159217258]
+libraries/ = SubResource("AnimationLibrary_1337t")
+autoplay = &"progress"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1767493892]
+unique_name_in_owner = true
+
+[connection signal="gui_input" from="MarginContainer/Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="MarginContainer/Balloon/HBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

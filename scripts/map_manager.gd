@@ -7,6 +7,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN # hide mouse
 	GameEvents.map_transition_requested.connect(_on_map_transition_requested)
 	player.reparent(current_map.y_sort)
 	player.global_position = current_map.player_spawn.global_position

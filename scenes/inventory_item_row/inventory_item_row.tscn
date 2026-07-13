@@ -44,6 +44,7 @@ custom_minimum_size = Vector2(12, 0)
 layout_mode = 2
 
 [node name="Pointer" type="TextureRect" parent="CenterContainer" unique_id=964731286]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_fgsfn")
