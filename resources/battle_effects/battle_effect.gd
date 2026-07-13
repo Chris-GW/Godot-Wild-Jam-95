@@ -6,5 +6,8 @@ extends Resource
 func apply(_battle: Battle) -> EffectAttempt:
 	return null
 
+func can_apply(_battle: Battle) -> bool:
+	return false
+
 func can_repeat() -> bool:
 	return false

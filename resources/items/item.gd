@@ -32,13 +32,6 @@ var battle_effect: BattleEffect:
 
 		emit_changed()
 
-@export
-var mana_cost := 0:
-	set(value):
-		mana_cost = value
-
-		emit_changed()
-
 @export_multiline
 var description := "<description>":
 	set(value):

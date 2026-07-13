@@ -29,5 +29,8 @@ func apply(battle: Battle) -> EffectAttempt:
 
 	return attempt
 
+func can_apply(_battle: Battle) -> bool:
+	return true
+
 func can_repeat() -> bool:
 	return true

@@ -1,12 +1,31 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://88xctukh6jrx"]
 
+[ext_resource type="Resource" uid="uid://drq1x1exhr20c" path="res://resources/battler_resolvers/battler_resolver_player.tres" id="1_3givk"]
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_tq3c8"]
+[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/number_resolvers/constant_number_resolver.gd" id="1_v88fg"]
+[ext_resource type="Script" uid="uid://b1xmqjb4fy506" path="res://resources/battle_effects/minimum_mana_requirement.gd" id="2_v88fg"]
+[ext_resource type="Script" uid="uid://de8ghpes5wg8y" path="res://resources/battle_effects/effect_with_requirement.gd" id="3_qc61p"]
+
+[sub_resource type="Resource" id="Resource_dygis"]
+script = ExtResource("1_v88fg")
+value = 5.0
+metadata/_custom_type_script = "uid://busitjk6o6iyp"
+
+[sub_resource type="Resource" id="Resource_e4wcl"]
+script = ExtResource("2_v88fg")
+battler_resolver = ExtResource("1_3givk")
+amount_resolver = SubResource("Resource_dygis")
+metadata/_custom_type_script = "uid://b1xmqjb4fy506"
+
+[sub_resource type="Resource" id="Resource_47a5m"]
+script = ExtResource("3_qc61p")
+requirement = SubResource("Resource_e4wcl")
 
 [resource]
 script = ExtResource("1_tq3c8")
 id = 4
 name = "GameBoy"
 item_class = 1
-mana_cost = 5
+battle_effect = SubResource("Resource_47a5m")
 description = "GameBoy makes the enemy skip their next turn."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

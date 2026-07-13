@@ -25,3 +25,9 @@ func take_damage(damage_resolver: NumberResolver) -> int:
 
 func is_dead() -> bool:
 	return health and health.is_empty()
+
+func has_mana(_amount_resolver: NumberResolver) -> bool:
+	return false
+
+func consume_mana(_amount_resolver: NumberResolver) -> void:
+	pass

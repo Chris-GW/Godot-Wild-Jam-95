@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PointPool" format=3 uid="uid://bnyuexbqwm7t1"]
+
+[ext_resource type="Script" uid="uid://bthc8bd30xgms" path="res://resources/point_pools/point_pool.gd" id="1_l6k0f"]
+
+[resource]
+script = ExtResource("1_l6k0f")
+metadata/_custom_type_script = "uid://bthc8bd30xgms"
