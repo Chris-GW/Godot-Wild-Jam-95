@@ -5,16 +5,21 @@
 [ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="3_fntje"]
 [ext_resource type="PackedScene" uid="uid://b3pbwgsdixq5d" path="res://scenes/text_panel/text_panel.tscn" id="4_sebxe"]
 [ext_resource type="PackedScene" uid="uid://dmodhnp83rnpu" path="res://scenes/battle_choice_panel/battle_choice_panel.tscn" id="5_73y0x"]
+[ext_resource type="PackedScene" uid="uid://c5yj5uh1dmj7n" path="res://scenes/battler_panel/battler_panel.tscn" id="5_ngntt"]
+[ext_resource type="Resource" uid="uid://bih35cd7l8jeh" path="res://resources/enemies/enemy_cassette.tres" id="5_setet"]
+[ext_resource type="Resource" uid="uid://7ovbx0fxfxcs" path="res://resources/players/player_default.tres" id="6_k1ugx"]
 
 [node name="BattleUI" type="CanvasLayer" unique_id=28089230]
 layer = 2
 script = ExtResource("1_pyo4n")
 
-[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel")]
+[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "enemy_battler_panel", "player_battler_panel")]
 unique_name_in_owner = true
 script = ExtResource("2_uvu3y")
 base_control = NodePath("../MarginContainer")
-text_panel = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/BattleTextPanel")
+text_panel = NodePath("../MarginContainer/VBoxContainer/HBoxContainer1/BattleTextPanel")
+enemy_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerPanel")
+player_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerPanel")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030879351]
 anchors_preset = 15
@@ -28,16 +33,36 @@ theme = ExtResource("3_fntje")
 layout_mode = 2
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=42230600]
+[node name="BattlerPanels" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=241857522]
 layout_mode = 2
 
-[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1533686706 instance=ExtResource("4_sebxe")]
+[node name="EnemyBattlerPanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1963463311 instance=ExtResource("5_ngntt")]
+layout_mode = 2
+battler = ExtResource("5_setet")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=675683077]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayerBattlerPanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1035145192 instance=ExtResource("5_ngntt")]
+layout_mode = 2
+battler = ExtResource("6_k1ugx")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1804118892]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=42230600]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer/HBoxContainer1" unique_id=1533686706 instance=ExtResource("4_sebxe")]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=395812162]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer1" unique_id=395812162]
 custom_minimum_size = Vector2(184, 118)
 layout_mode = 2
 theme_override_constants/margin_left = 0
@@ -45,5 +70,5 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="BattleChoicePanel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1460189462 instance=ExtResource("5_73y0x")]
+[node name="BattleChoicePanel" parent="MarginContainer/VBoxContainer/HBoxContainer1/MarginContainer" unique_id=1460189462 instance=ExtResource("5_73y0x")]
 layout_mode = 2

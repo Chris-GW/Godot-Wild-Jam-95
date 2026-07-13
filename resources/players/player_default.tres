@@ -11,6 +11,6 @@ metadata/_custom_type_script = "uid://cnh0siqkiyn04"
 [resource]
 script = ExtResource("1_mksa4")
 mana_pool = ExtResource("2_i5qs4")
-name = "Player"
+name = "Nathan"
 health = SubResource("Resource_a4gvy")
 metadata/_custom_type_script = "uid://b0i0herqdpy1l"
