@@ -14,16 +14,19 @@ var selected_index := -1:
 @onready
 var appearance: InventoryUIAppearance = %Appearance
 
+@onready
+var list_menu_interaction: ListMenuInteraction = %ListMenuInteraction
+
 var _state_factory := InventoryUIStateFactory.new()
 var _current_state: InventoryUIState = null
-
-var _selected_index_tracker := IndexTracker.new(0, "InventorySelectedIndex")
 
 func _ready() -> void:
 	_refresh()
 
 	if Engine.is_editor_hint():
 		return
+
+	list_menu_interaction.set_tracker_name("InventorySelectedIndex")
 
 	switch_state(InventoryUI.State.HIDDEN)
 
@@ -37,7 +40,7 @@ func switch_state(state: InventoryUI.State, state_data := InventoryUIStateData.n
 		self,
 		state_data,
 		appearance,
-		_selected_index_tracker)
+		list_menu_interaction)
 
 	_current_state.state_transition_requested.connect(switch_state)
 	_current_state.name = "InventoryUIStateMachine: %s" % str(state)

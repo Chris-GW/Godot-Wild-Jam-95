@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bwmxcuxr1dqjm"]
+
+[ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="1_bdnf8"]
+[ext_resource type="Script" uid="uid://cdg1qbcxms6ri" path="res://scenes/battle_choice_row/battle_choice_row.gd" id="2_1da74"]
+[ext_resource type="Script" uid="uid://bbthxqjymphip" path="res://scenes/battle_choice_row/battle_choice_row_appearance.gd" id="3_qohxv"]
+[ext_resource type="Texture2D" uid="uid://gluj1nrsmhft" path="res://assets/sprites/pointer.png" id="6_7qsj1"]
+
+[node name="BattleChoiceRow" type="HBoxContainer" unique_id=1758540430]
+custom_minimum_size = Vector2(160, 0)
+offset_right = 61.0
+offset_bottom = 18.0
+size_flags_vertical = 0
+theme = ExtResource("1_bdnf8")
+script = ExtResource("2_1da74")
+selected = true
+
+[node name="Appearance" type="Node" parent="." unique_id=1187820190 node_paths=PackedStringArray("label", "pointer")]
+unique_name_in_owner = true
+script = ExtResource("3_qohxv")
+label = NodePath("../Label")
+pointer = NodePath("../CenterContainer/Pointer")
+
+[node name="Label" type="Label" parent="." unique_id=273070477]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<choice>"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1928483684]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="Pointer" type="TextureRect" parent="CenterContainer" unique_id=964731286]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_7qsj1")

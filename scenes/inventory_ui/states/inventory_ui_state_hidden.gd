@@ -10,6 +10,10 @@ func _enter_tree() -> void:
 		GameEvents.inventory_changed,
 		_on_inventory_changed)
 
+	SignalHelper.persist(
+		GameEvents.loadout_changed,
+		_on_loadout_changed)
+
 	GameEvents.emit_inventory_hidden()
 
 func _process(_delta: float) -> void:
@@ -21,6 +25,9 @@ func _process(_delta: float) -> void:
 		transition_state(InventoryUI.State.PAUSED)
 
 func _on_inventory_changed(items: Array[Item]) -> void:
-	_selected_index_tracker.set_maximum(items.size() - 1)
+	_list_menu_interaction.set_maximum(items.size() - 1)
 
-	_appearance.set_items(items, _selected_index_tracker.current())
+	_appearance.set_items(items, _list_menu_interaction.current())
+
+func _on_loadout_changed(items: Array[Item]) -> void:
+	_appearance.set_loadout_items(items)

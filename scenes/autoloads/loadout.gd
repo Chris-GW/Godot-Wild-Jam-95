@@ -2,7 +2,21 @@ extends Node
 
 const ITEM_LIMIT := 4
 
-var _equipped_items: Array[Item] = []
+var _equipped_items: Array[Item] = [
+	preload("res://resources/items/item_cassette.tres"),
+	preload("res://resources/items/item_vinyllp.tres"),
+	preload("res://resources/items/item_dialpadphone.tres"),
+	preload("res://resources/items/item_crttv.tres"),
+]
+
+func _ready() -> void:
+	SignalHelper.once_next_frame(_emit_changed)
+
+func _emit_changed() -> void:
+	GameEvents.emit_loadout_changed(_equipped_items)
+
+func get_items() -> Array[Item]:
+	return _equipped_items
 
 func get_item(index: int) -> Item:
 	if index < 0 or index >= _equipped_items.size():
@@ -21,7 +35,7 @@ func equip(item: Item) -> void:
 
 			CustomLogger.info("Removed %s from loadout" % removed_item.name)
 
-		GameEvents.emit_loadout_changed(_equipped_items)
+		_emit_changed()
 	else:
 		CustomLogger.info("Already have %s in loadout!" % item.name)
 

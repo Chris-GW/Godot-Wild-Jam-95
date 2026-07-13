@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cbcuel7n88qed" path="res://scenes/battle_ui/battle_ui_appearance.gd" id="2_uvu3y"]
 [ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="3_fntje"]
 [ext_resource type="PackedScene" uid="uid://b3pbwgsdixq5d" path="res://scenes/text_panel/text_panel.tscn" id="4_sebxe"]
+[ext_resource type="PackedScene" uid="uid://dmodhnp83rnpu" path="res://scenes/battle_choice_panel/battle_choice_panel.tscn" id="5_73y0x"]
 
 [node name="BattleUI" type="CanvasLayer" unique_id=28089230]
 layer = 2
@@ -13,7 +14,7 @@ script = ExtResource("1_pyo4n")
 unique_name_in_owner = true
 script = ExtResource("2_uvu3y")
 base_control = NodePath("../MarginContainer")
-text_panel = NodePath("../MarginContainer/VBoxContainer/BattleTextPanel")
+text_panel = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/BattleTextPanel")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030879351]
 anchors_preset = 15
@@ -25,12 +26,24 @@ theme = ExtResource("3_fntje")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=630176860]
 layout_mode = 2
+alignment = 2
 
-[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1949512353]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=42230600]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer" unique_id=1533686706 instance=ExtResource("4_sebxe")]
+[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1533686706 instance=ExtResource("4_sebxe")]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-text = "<text>"
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=395812162]
+custom_minimum_size = Vector2(184, 118)
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="BattleChoicePanel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1460189462 instance=ExtResource("5_73y0x")]
+layout_mode = 2

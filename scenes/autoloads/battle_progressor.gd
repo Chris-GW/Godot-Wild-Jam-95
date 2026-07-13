@@ -8,11 +8,6 @@ const END_WAIT_DURATION := 2.0
 @export
 var battle: Battle
 
-func _process(_delta: float) -> void:
-	for i in 4:
-		if Input.is_action_just_pressed("player_attack_%d" % i):
-			GameEvents.emit_player_attack_chosen(i)
-
 func start() -> void:
 	if battle and battle.try_start():
 		SignalHelper.persist(battle.event_occurred, _send_battle_text)
@@ -32,7 +27,7 @@ func _wait_for_player_choice() -> void:
 		GameEvents.player_attack_chosen,
 		_on_player_attack_chosen)
 
-	_send_battle_text("Waiting for player choice... (1/2/3/4)")
+	GameEvents.emit_player_attack_requested()
 
 func _on_player_attack_chosen(index: int) -> void:
 	battle.do_player_turn(index)

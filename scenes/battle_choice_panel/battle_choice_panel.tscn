@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dmodhnp83rnpu"]
+
+[ext_resource type="PackedScene" uid="uid://bwmxcuxr1dqjm" path="res://scenes/battle_choice_row/battle_choice_row.tscn" id="1_4hheg"]
+[ext_resource type="Script" uid="uid://slqlshvl44v2" path="res://scripts/list_menu_interaction.gd" id="1_jloyf"]
+[ext_resource type="Script" uid="uid://cfdum1iyyeftu" path="res://scenes/battle_choice_panel/battle_choice_panel.gd" id="1_x60a5"]
+[ext_resource type="Script" uid="uid://b1svgh5c4aic3" path="res://scenes/battle_choice_panel/battle_choice_panel_appearance.gd" id="2_peolw"]
+[ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="5_peolw"]
+[ext_resource type="Resource" uid="uid://b6cdkptolh2ni" path="res://resources/items/item_cassette.tres" id="6_4n4sy"]
+[ext_resource type="Resource" uid="uid://bvd55q5ctxygr" path="res://resources/items/item_dialpadphone.tres" id="7_q5n3c"]
+[ext_resource type="Resource" uid="uid://c0p7luy0dj6ob" path="res://resources/items/item_crttv.tres" id="8_7cyf0"]
+
+[node name="BattleChoicePanel" type="PanelContainer" unique_id=1460189462]
+script = ExtResource("1_x60a5")
+
+[node name="Appearance" type="Node" parent="." unique_id=561488372 node_paths=PackedStringArray("base_control", "empty_label", "choose_action_label", "rows_parent")]
+unique_name_in_owner = true
+script = ExtResource("2_peolw")
+base_control = NodePath("..")
+empty_label = NodePath("../MarginContainer/VBoxContainer/EmptyLabel")
+choose_action_label = NodePath("../MarginContainer/VBoxContainer/ChooseActionLabel")
+rows_parent = NodePath("../MarginContainer/VBoxContainer/Rows")
+
+[node name="ListMenuInteraction" type="Node" parent="." unique_id=685960415]
+unique_name_in_owner = true
+script = ExtResource("1_jloyf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=409115711]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=193251642]
+layout_mode = 2
+
+[node name="EmptyLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1549723290]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+text = "You have no attacks!"
+
+[node name="ChooseActionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=218118691]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Choose an action:"
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1574704261]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BattleChoiceRow0" parent="MarginContainer/VBoxContainer/Rows" unique_id=1758540430 instance=ExtResource("1_4hheg")]
+layout_mode = 2
+item = ExtResource("5_peolw")
+
+[node name="BattleChoiceRow1" parent="MarginContainer/VBoxContainer/Rows" unique_id=1996523631 instance=ExtResource("1_4hheg")]
+layout_mode = 2
+item = ExtResource("6_4n4sy")
+selected = false
+
+[node name="BattleChoiceRow2" parent="MarginContainer/VBoxContainer/Rows" unique_id=232509510 instance=ExtResource("1_4hheg")]
+layout_mode = 2
+item = ExtResource("7_q5n3c")
+selected = false
+
+[node name="BattleChoiceRow3" parent="MarginContainer/VBoxContainer/Rows" unique_id=111398414 instance=ExtResource("1_4hheg")]
+layout_mode = 2
+item = ExtResource("8_7cyf0")
+selected = false

@@ -38,6 +38,9 @@ func first() -> int:
 func is_last() -> bool:
 	return _current == _maximum
 
+func set_name(name: String) -> void:
+	_name = name
+
 func set_maximum(maximum: int) -> void:
 	_maximum = maximum
 

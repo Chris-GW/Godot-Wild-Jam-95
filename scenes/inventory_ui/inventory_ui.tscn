@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="2_fi5bj"]
 [ext_resource type="Script" uid="uid://bsdtg2mnv6n18" path="res://scenes/inventory_ui/inventory_ui_appearance.gd" id="2_t5bre"]
 [ext_resource type="PackedScene" uid="uid://t3d4fsyv7dna" path="res://scenes/item_description_panel/item_description_panel.tscn" id="3_bpkym"]
+[ext_resource type="Script" uid="uid://slqlshvl44v2" path="res://scripts/list_menu_interaction.gd" id="3_v2la8"]
 [ext_resource type="PackedScene" uid="uid://b2b214wxjm7nk" path="res://scenes/inventory_item_row/inventory_item_row.tscn" id="3_w4fn2"]
 [ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="4_yvfb2"]
 [ext_resource type="Resource" uid="uid://dedm6iyra2m5" path="res://resources/items/item_vinyllp.tres" id="5_i6gqg"]
@@ -26,6 +27,10 @@ base_control = NodePath("../MarginContainer")
 empty_label = NodePath("../MarginContainer/VBoxContainer/Inventory/MarginContainer/EmptyLabel")
 rows_parent = NodePath("../MarginContainer/VBoxContainer/Inventory/MarginContainer/Rows")
 description_panel = NodePath("../MarginContainer/VBoxContainer/ItemDescriptionPanel")
+
+[node name="ListMenuInteraction" type="Node" parent="." unique_id=1566601225]
+unique_name_in_owner = true
+script = ExtResource("3_v2la8")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=168200865]
 anchors_preset = 15

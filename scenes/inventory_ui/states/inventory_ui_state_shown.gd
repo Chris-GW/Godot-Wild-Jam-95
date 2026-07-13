@@ -14,6 +14,10 @@ func _enter_tree() -> void:
 		GameEvents.loadout_changed,
 		_on_loadout_changed)
 
+	SignalHelper.persist(
+		_list_menu_interaction.index_changed,
+		_on_index_changed)
+
 	GameEvents.emit_inventory_shown()
 
 func _process(_delta: float) -> void:
@@ -21,20 +25,17 @@ func _process(_delta: float) -> void:
 		transition_state(InventoryUI.State.HIDDEN)
 
 	if Input.is_action_just_pressed("toggle_equip"):
-		Loadout.equip(Inventory.get_item(_selected_index_tracker.current()))
+		Loadout.equip(Inventory.get_item(_list_menu_interaction.current()))
 
-	if Input.is_action_just_pressed("move_up"):
-		var new_index := _selected_index_tracker.previous()
-		_appearance.set_selected_index(new_index)
-
-	if Input.is_action_just_pressed("move_down"):
-		var new_index := _selected_index_tracker.next()
-		_appearance.set_selected_index(new_index)
+	_list_menu_interaction.check()
 
 func _on_inventory_changed(items: Array[Item]) -> void:
-	_selected_index_tracker.set_maximum(items.size() - 1)
+	_list_menu_interaction.set_maximum(items.size() - 1)
 
-	_appearance.set_items(items, _selected_index_tracker.current())
+	_appearance.set_items(items, _list_menu_interaction.current())
 
 func _on_loadout_changed(items: Array[Item]) -> void:
 	_appearance.set_loadout_items(items)
+
+func _on_index_changed(index: int) -> void:
+	_appearance.set_selected_index(index)

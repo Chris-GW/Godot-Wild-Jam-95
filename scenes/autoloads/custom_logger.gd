@@ -3,7 +3,7 @@ extends Node
 
 enum Level { FATAL, ERROR, WARNING, INFO, DEBUG }
 
-const MIN_LEVEL := Level.INFO
+const MIN_LEVEL := Level.DEBUG
 
 var _prefixes := {
 	Level.FATAL: "FTL",
