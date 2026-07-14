@@ -33,3 +33,6 @@ func _was_valid(attempt: EffectAttempt) -> bool:
 
 func get_effect() -> BattleEffect:
 	return _effect
+
+func has_damage() -> bool:
+	return _effect and _effect.has_damage()

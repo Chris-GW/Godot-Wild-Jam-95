@@ -11,3 +11,6 @@ func can_apply(_battle: Battle) -> bool:
 
 func can_repeat() -> bool:
 	return false
+
+func has_damage() -> bool:
+	return false

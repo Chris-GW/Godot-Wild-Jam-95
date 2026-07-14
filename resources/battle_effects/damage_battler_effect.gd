@@ -34,3 +34,6 @@ func can_apply(_battle: Battle) -> bool:
 
 func can_repeat() -> bool:
 	return true
+
+func has_damage() -> bool:
+	return true
