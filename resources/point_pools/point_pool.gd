@@ -35,5 +35,16 @@ func consume(amount_resolver: NumberResolver) -> int:
 
 	return old_points - current_points
 
+func reset_fully() -> int:
+	var old_points := current_points
+
+	current_points = max_points
+
+	if current_points != old_points:
+		CustomLogger.info("Points %d -> %d" % [old_points, current_points])
+		current_points_changed.emit(current_points, old_points)
+
+	return current_points - old_points
+
 func is_empty() -> bool:
 	return current_points <= 0

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dedm6iyra2m5"]
 
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_e5nfw"]
-[ext_resource type="Resource" uid="uid://30dafp3abbpp" path="res://resources/battler_resolvers/battler_resolver_enemy.tres" id="1_k14bc"]
+[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_k14bc"]
 [ext_resource type="Resource" uid="uid://b802g76yl270d" path="res://resources/damage_resolvers/damage_resolver_vinyllp.tres" id="2_io1t0"]
 [ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_tqucd"]
 

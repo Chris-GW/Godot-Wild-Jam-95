@@ -8,6 +8,8 @@ func _enter_tree() -> void:
 
 	var items := Loadout.get_items()
 
+	# TODO: set the current index to 0 when a new battle starts
+
 	_appearance.set_choices(items)
 	_list_menu_interaction.set_maximum(items.size() - 1)
 

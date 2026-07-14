@@ -4,7 +4,7 @@ const ITEM_LIMIT := 4
 
 var _equipped_items: Array[Item] = [
 	preload("res://resources/items/item_cassette.tres"),
-	preload("res://resources/items/item_dialpadphone.tres"),
+	preload("res://resources/items/item_fax.tres"),
 	preload("res://resources/items/item_gameboy.tres"),
 	preload("res://resources/items/item_mp3.tres"),
 ]

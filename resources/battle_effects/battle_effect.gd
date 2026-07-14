@@ -14,3 +14,6 @@ func can_repeat() -> bool:
 
 func has_damage() -> bool:
 	return false
+
+func has_healing() -> bool:
+	return false

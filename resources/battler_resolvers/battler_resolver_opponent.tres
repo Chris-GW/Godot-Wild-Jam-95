@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="OpponentBattlerResolver" format=3 uid="uid://hsuyu0a7r4nw"]
+
+[ext_resource type="Script" uid="uid://p37xsnyhx4l5" path="res://resources/battlers/opponent_battler_resolver.gd" id="1_i6cm1"]
+
+[resource]
+script = ExtResource("1_i6cm1")
+metadata/_custom_type_script = "uid://p37xsnyhx4l5"

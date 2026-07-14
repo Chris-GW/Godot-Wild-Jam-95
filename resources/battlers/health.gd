@@ -32,5 +32,22 @@ func take_damage(damage_resolver: NumberResolver) -> int:
 
 	return old_health - current_health
 
+func heal(healing_resolver: NumberResolver) -> int:
+	var old_health := current_health
+
+	current_health += int(healing_resolver.resolve())
+
+	if current_health != old_health:
+		CustomLogger.info("Health %d -> %d" % [old_health, current_health])
+		current_health_changed.emit(current_health, old_health)
+
+	return current_health - old_health
+
+func heal_fully() -> int:
+	var healing_resolver := ConstantNumberResolver.new()
+	healing_resolver.value = max_health - current_health
+
+	return heal(healing_resolver)
+
 func is_empty() -> bool:
 	return current_health <= 0

@@ -10,6 +10,7 @@ var player: PlayerBattler
 var _player_effect_history: Array[EffectAttempt] = []
 var _enemy_effect_history: Array[EffectAttempt] = []
 
+var _is_enemy_turn := false
 var _enemy_skips := 0
 var _enemy_damage_misses := 0
 
@@ -28,8 +29,17 @@ func try_start() -> bool:
 		ended.emit(null)
 		return false
 
+	enemy.heal_fully()
+
+	player.heal_fully()
+	player.reset_mana()
+
 	_player_effect_history.clear()
 	_enemy_effect_history.clear()
+
+	_is_enemy_turn = false
+	_enemy_skips = 0
+	_enemy_damage_misses = 0
 
 	return true
 
@@ -48,6 +58,8 @@ func check_ended() -> bool:
 	return false
 
 func do_player_turn(index: int) -> void:
+	_is_enemy_turn = false
+
 	var event_texts: Array[String] = []
 
 	var item := Loadout.get_item(index)
@@ -69,6 +81,8 @@ func do_player_turn(index: int) -> void:
 	CustomLogger.debug("Player effect history: %d effect(s)" % _player_effect_history.size())
 
 func do_enemy_turn() -> void:
+	_is_enemy_turn = true
+
 	var event_texts: Array[String] = []
 
 	if _enemy_skips > 0:
@@ -105,3 +119,6 @@ func add_enemy_damage_miss() -> void:
 
 func get_last_attempt() -> EffectAttempt:
 	return _player_effect_history.back() if _player_effect_history.size() > 0 else null
+
+func is_enemy_turn() -> bool:
+	return _is_enemy_turn

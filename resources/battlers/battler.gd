@@ -25,6 +25,20 @@ func take_damage(damage_resolver: NumberResolver) -> int:
 
 	return 0
 
+func heal(healing_resolver: NumberResolver) -> int:
+	if health:
+		var amount_healed := health.heal(healing_resolver)
+		return amount_healed
+
+	return 0
+
+func heal_fully() -> int:
+	if health:
+		var amount_healed := health.heal_fully()
+		return amount_healed
+
+	return 0
+
 func is_dead() -> bool:
 	return health and health.is_empty()
 

@@ -14,9 +14,14 @@ var _item_pool: Array[Item] = [
 
 var _items: Array[Item] = [
 	preload("res://resources/items/item_cassette.tres"),
-	preload("res://resources/items/item_dialpadphone.tres"),
+	preload("res://resources/items/item_cdrom.tres"),
+	preload("res://resources/items/item_vinyllp.tres"),
 	preload("res://resources/items/item_gameboy.tres"),
+	preload("res://resources/items/item_dialpadphone.tres"),
+	preload("res://resources/items/item_vhs.tres"),
 	preload("res://resources/items/item_mp3.tres"),
+	preload("res://resources/items/item_fax.tres"),
+	preload("res://resources/items/item_crttv.tres"),
 ]
 
 func _ready() -> void:

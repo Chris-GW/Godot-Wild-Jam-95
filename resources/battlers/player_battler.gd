@@ -23,3 +23,7 @@ func has_mana(amount_resolver: NumberResolver) -> bool:
 func consume_mana(amount_resolver: NumberResolver) -> void:
 	if mana_pool:
 		mana_pool.consume(amount_resolver)
+
+func reset_mana() -> void:
+	if mana_pool:
+		mana_pool.reset_fully()

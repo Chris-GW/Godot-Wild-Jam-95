@@ -1,38 +1,44 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvd55q5ctxygr"]
 
-[ext_resource type="Script" uid="uid://db1e6d5etagxc" path="res://resources/battle_effects/repeat_last_damage_effect.gd" id="1_nt02u"]
+[ext_resource type="Resource" uid="uid://con5l1tl0epxi" path="res://resources/battler_resolvers/battler_resolver_user.tres" id="1_iqdhk"]
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_odh78"]
 [ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/number_resolvers/constant_number_resolver.gd" id="2_bvcq7"]
-[ext_resource type="Resource" uid="uid://drq1x1exhr20c" path="res://resources/battler_resolvers/battler_resolver_player.tres" id="2_u0j78"]
+[ext_resource type="Script" uid="uid://c5jc42ne4hnh2" path="res://resources/number_resolvers/max_health_fraction_resolver.gd" id="2_t4h1e"]
 [ext_resource type="Script" uid="uid://b1xmqjb4fy506" path="res://resources/battle_effects/minimum_mana_requirement.gd" id="3_bvcq7"]
+[ext_resource type="Script" uid="uid://ct6glo301k5vr" path="res://resources/battle_effects/heal_battler_effect.gd" id="3_iqdhk"]
 [ext_resource type="Script" uid="uid://de8ghpes5wg8y" path="res://resources/battle_effects/effect_with_requirement.gd" id="4_t4h1e"]
 
-[sub_resource type="Resource" id="Resource_odh78"]
-script = ExtResource("1_nt02u")
-repeat_count = 2
-metadata/_custom_type_script = "uid://db1e6d5etagxc"
+[sub_resource type="Resource" id="Resource_i5qs4"]
+script = ExtResource("2_t4h1e")
+battler_resolver = ExtResource("1_iqdhk")
+
+[sub_resource type="Resource" id="Resource_y65wl"]
+script = ExtResource("3_iqdhk")
+battler_resolver = ExtResource("1_iqdhk")
+healing_resolver = SubResource("Resource_i5qs4")
+metadata/_custom_type_script = "uid://ct6glo301k5vr"
 
 [sub_resource type="Resource" id="Resource_rg6vw"]
 script = ExtResource("2_bvcq7")
-value = 8.0
+value = 15.0
 metadata/_custom_type_script = "uid://busitjk6o6iyp"
 
 [sub_resource type="Resource" id="Resource_wk35n"]
 script = ExtResource("3_bvcq7")
-battler_resolver = ExtResource("2_u0j78")
+battler_resolver = ExtResource("1_iqdhk")
 amount_resolver = SubResource("Resource_rg6vw")
 metadata/_custom_type_script = "uid://b1xmqjb4fy506"
 
 [sub_resource type="Resource" id="Resource_xrawa"]
 script = ExtResource("4_t4h1e")
 requirement = SubResource("Resource_wk35n")
-effect = SubResource("Resource_odh78")
+effect = SubResource("Resource_y65wl")
 
 [resource]
 script = ExtResource("1_odh78")
-id = 5
+id = 8
 name = "Dial-Pad Phone"
 item_class = 1
 battle_effect = SubResource("Resource_xrawa")
-description = "Dial-Pad Phone repeats last turn's damaging attack, twice. Costs 8 mana to use."
+description = "Dial-Pad Phone heals the user by 50% of their max HP. Costs 15MP."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"
