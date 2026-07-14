@@ -11,7 +11,7 @@ func _enter_tree() -> void:
 	_appearance.set_choices(items)
 	_list_menu_interaction.set_maximum(items.size() - 1)
 
-	_appearance.set_selected_index(_list_menu_interaction.current())
+	_on_index_changed(_list_menu_interaction.current())
 
 	SignalHelper.once(
 		GameEvents.player_attack_chosen,
@@ -30,7 +30,9 @@ func _process(_delta: float) -> void:
 	_list_menu_interaction.check()
 
 func _on_player_attack_chosen(_index: int) -> void:
-		transition_state(BattleChoicePanel.State.HIDDEN)
+	transition_state(BattleChoicePanel.State.HIDDEN)
 
 func _on_index_changed(index: int) -> void:
 	_appearance.set_selected_index(index)
+
+	GameEvents.emit_player_attack_considered(index)

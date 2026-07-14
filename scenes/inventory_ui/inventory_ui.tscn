@@ -109,3 +109,4 @@ size_flags_vertical = 3
 [node name="ItemDescriptionPanel" parent="MarginContainer/VBoxContainer" unique_id=1449413544 instance=ExtResource("3_bpkym")]
 layout_mode = 2
 item = ExtResource("4_yvfb2")
+show_equip_hint = true

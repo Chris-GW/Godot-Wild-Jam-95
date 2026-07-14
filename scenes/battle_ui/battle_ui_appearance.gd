@@ -9,6 +9,9 @@ var base_control: Control
 var text_panel: TextPanel
 
 @export
+var item_description_panel: ItemDescriptionPanel
+
+@export
 var enemy_battler_panel: BattlerPanel
 
 @export
@@ -21,17 +24,32 @@ func for_shown() -> void:
 	if player_battler_panel:
 		player_battler_panel.hide()
 
+	if item_description_panel:
+		item_description_panel.hide()
+
 func for_hidden() -> void:
 	if base_control:
 		base_control.hide()
 
-func show_player_panel() -> void:
+func for_player_attack_requested() -> void:
 	if player_battler_panel:
+		# TODO: only do this the first time in each battle
 		player_battler_panel.show()
+
+	if item_description_panel:
+		item_description_panel.show()
+
+func for_player_attack_chosen() -> void:
+	if item_description_panel:
+		item_description_panel.hide()
 
 func set_enemy(enemy: EnemyBattler) -> void:
 	if enemy_battler_panel:
 		enemy_battler_panel.battler = enemy
+
+func set_attack_considered(index: int) -> void:
+	if item_description_panel:
+		item_description_panel.item = Loadout.get_item(index)
 
 func clear_battle_text() -> void:
 	if text_panel:

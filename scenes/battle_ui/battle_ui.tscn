@@ -8,16 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://c5yj5uh1dmj7n" path="res://scenes/battler_panel/battler_panel.tscn" id="5_ngntt"]
 [ext_resource type="Resource" uid="uid://bih35cd7l8jeh" path="res://resources/enemies/enemy_cassette.tres" id="5_setet"]
 [ext_resource type="Resource" uid="uid://7ovbx0fxfxcs" path="res://resources/players/player_default.tres" id="6_k1ugx"]
+[ext_resource type="PackedScene" uid="uid://t3d4fsyv7dna" path="res://scenes/item_description_panel/item_description_panel.tscn" id="8_ewcbu"]
+[ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="9_yoesv"]
 
 [node name="BattleUI" type="CanvasLayer" unique_id=28089230]
 layer = 2
 script = ExtResource("1_pyo4n")
 
-[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "enemy_battler_panel", "player_battler_panel")]
+[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "item_description_panel", "enemy_battler_panel", "player_battler_panel")]
 unique_name_in_owner = true
 script = ExtResource("2_uvu3y")
 base_control = NodePath("../MarginContainer")
-text_panel = NodePath("../MarginContainer/VBoxContainer/HBoxContainer1/BattleTextPanel")
+text_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/BattleTextPanel")
+item_description_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/VBoxContainer/ItemDescriptionPanel")
 enemy_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerPanel")
 player_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerPanel")
 
@@ -52,17 +55,29 @@ battler = ExtResource("6_k1ugx")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=42230600]
+[node name="BattlePanels" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=42230600]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer/HBoxContainer1" unique_id=1533686706 instance=ExtResource("4_sebxe")]
+[node name="BattleTextPanel" parent="MarginContainer/VBoxContainer/BattlePanels" unique_id=1533686706 instance=ExtResource("4_sebxe")]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer1" unique_id=395812162]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/BattlePanels" unique_id=260268714]
+custom_minimum_size = Vector2(184, 118)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
+
+[node name="ItemDescriptionPanel" parent="MarginContainer/VBoxContainer/BattlePanels/VBoxContainer" unique_id=1449413544 instance=ExtResource("8_ewcbu")]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+item = ExtResource("9_yoesv")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/BattlePanels/VBoxContainer" unique_id=395812162]
 custom_minimum_size = Vector2(184, 118)
 layout_mode = 2
 theme_override_constants/margin_left = 0
@@ -70,5 +85,5 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="BattleChoicePanel" parent="MarginContainer/VBoxContainer/HBoxContainer1/MarginContainer" unique_id=1460189462 instance=ExtResource("5_73y0x")]
+[node name="BattleChoicePanel" parent="MarginContainer/VBoxContainer/BattlePanels/VBoxContainer/MarginContainer" unique_id=1460189462 instance=ExtResource("5_73y0x")]
 layout_mode = 2
