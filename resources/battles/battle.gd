@@ -10,6 +10,8 @@ var player: PlayerBattler
 var _player_effect_history: Array[EffectAttempt] = []
 var _enemy_effect_history: Array[EffectAttempt] = []
 
+var _enemy_skips := 0
+
 signal event_occurred(text: String)
 signal events_occurred(texts: Array[String], battler: Battler)
 signal ended(winner: Battler)
@@ -67,20 +69,29 @@ func do_player_turn(index: int) -> void:
 
 func do_enemy_turn() -> void:
 	var event_texts: Array[String] = []
-	var battle_effect := enemy.battle_effect
 
-	if battle_effect:
-		var attempt := battle_effect.apply(self)
-		_enemy_effect_history.append(attempt)
-
-		event_texts.append("Enemy %s attacked!" % enemy.name)
-		event_texts.append_array(attempt.attempt_texts)
-	else:
+	if _enemy_skips > 0:
 		event_texts.append("Enemy %s skipped their turn." % enemy.name)
+		_enemy_skips -= 1
+	else:
+		var battle_effect := enemy.battle_effect
+		if battle_effect:
+			var attempt := battle_effect.apply(self)
+			_enemy_effect_history.append(attempt)
+
+			event_texts.append("Enemy %s attacked!" % enemy.name)
+			event_texts.append_array(attempt.attempt_texts)
+		else:
+			event_texts.append("Enemy %s had no attack!" % enemy.name)
 
 	events_occurred.emit(event_texts, enemy)
 
 	CustomLogger.debug("Enemy effect history: %d effect(s)" % _enemy_effect_history.size())
+
+func add_enemy_skip() -> void:
+	_enemy_skips += 1
+
+	CustomLogger.debug("Added enemy skip, total skips: %d" % _enemy_skips)
 
 func get_last_attempt() -> EffectAttempt:
 	return _player_effect_history.back() if _player_effect_history.size() > 0 else null

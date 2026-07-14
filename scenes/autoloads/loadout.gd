@@ -6,7 +6,7 @@ var _equipped_items: Array[Item] = [
 	preload("res://resources/items/item_cassette.tres"),
 	preload("res://resources/items/item_vinyllp.tres"),
 	preload("res://resources/items/item_dialpadphone.tres"),
-	preload("res://resources/items/item_crttv.tres"),
+	preload("res://resources/items/item_gameboy.tres"),
 ]
 
 func _ready() -> void:

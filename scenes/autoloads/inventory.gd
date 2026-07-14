@@ -1,9 +1,11 @@
 extends Node
 
 var _item_pool: Array[Item] = [
+	preload("res://resources/items/item_cassette.tres"),
 	preload("res://resources/items/item_cdrom.tres"),
 	preload("res://resources/items/item_vinyllp.tres"),
 	preload("res://resources/items/item_gameboy.tres"),
+	preload("res://resources/items/item_dialpadphone.tres"),
 	preload("res://resources/items/item_vhs.tres"),
 	preload("res://resources/items/item_mp3.tres"),
 	preload("res://resources/items/item_fax.tres"),
@@ -14,7 +16,7 @@ var _items: Array[Item] = [
 	preload("res://resources/items/item_cassette.tres"),
 	preload("res://resources/items/item_vinyllp.tres"),
 	preload("res://resources/items/item_dialpadphone.tres"),
-	preload("res://resources/items/item_crttv.tres"),
+	preload("res://resources/items/item_gameboy.tres"),
 ]
 
 func _ready() -> void:
