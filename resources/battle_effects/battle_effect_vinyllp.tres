@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DamageBattlerEffect" format=3 uid="uid://ginfd01uqics"]
+
+[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_dkimu"]
+[ext_resource type="Resource" uid="uid://b802g76yl270d" path="res://resources/damage_resolvers/damage_resolver_vinyllp.tres" id="2_ea1dk"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_uexmb"]
+
+[resource]
+script = ExtResource("3_uexmb")
+battler_resolver = ExtResource("1_dkimu")
+damage_resolver = ExtResource("2_ea1dk")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"

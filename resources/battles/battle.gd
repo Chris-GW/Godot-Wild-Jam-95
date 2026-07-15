@@ -64,7 +64,7 @@ func do_player_turn(index: int) -> void:
 
 	var item := Loadout.get_item(index)
 	if item:
-		var battle_effect := item.battle_effect
+		var battle_effect := item.battle_effect.resolve_effect()
 		if battle_effect:
 			var attempt := battle_effect.apply(self)
 			_player_effect_history.append(attempt)
@@ -89,7 +89,7 @@ func do_enemy_turn() -> void:
 		event_texts.append("Enemy %s skipped their turn." % enemy.name)
 		_enemy_skips -= 1
 	else:
-		var battle_effect := enemy.battle_effect
+		var battle_effect := enemy.battle_effect.resolve_effect()
 		if battle_effect:
 			if battle_effect.has_damage() and _enemy_damage_misses > 0:
 				event_texts.append("Enemy %s attacked but missed!" % enemy.name)

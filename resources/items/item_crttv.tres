@@ -1,41 +1,13 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://c0p7luy0dj6ob"]
 
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_htj0w"]
-[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_mwl8b"]
-[ext_resource type="Resource" uid="uid://be1dt33fnkmnn" path="res://resources/damage_resolvers/damage_resolver_crttv.tres" id="2_1p4rw"]
-[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_6be0h"]
-[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/number_resolvers/constant_number_resolver.gd" id="4_mwl8b"]
-[ext_resource type="Script" uid="uid://b1xmqjb4fy506" path="res://resources/battle_effects/minimum_mana_requirement.gd" id="5_mwl8b"]
-[ext_resource type="Resource" uid="uid://con5l1tl0epxi" path="res://resources/battler_resolvers/battler_resolver_user.tres" id="5_rg6vw"]
-[ext_resource type="Script" uid="uid://de8ghpes5wg8y" path="res://resources/battle_effects/effect_with_requirement.gd" id="6_rg6vw"]
-
-[sub_resource type="Resource" id="Resource_273ll"]
-script = ExtResource("3_6be0h")
-battler_resolver = ExtResource("1_mwl8b")
-damage_resolver = ExtResource("2_1p4rw")
-metadata/_custom_type_script = "uid://bomv8itaerdgs"
-
-[sub_resource type="Resource" id="Resource_mwl8b"]
-script = ExtResource("4_mwl8b")
-value = 6.0
-metadata/_custom_type_script = "uid://busitjk6o6iyp"
-
-[sub_resource type="Resource" id="Resource_bvcq7"]
-script = ExtResource("5_mwl8b")
-battler_resolver = ExtResource("5_rg6vw")
-amount_resolver = SubResource("Resource_mwl8b")
-metadata/_custom_type_script = "uid://b1xmqjb4fy506"
-
-[sub_resource type="Resource" id="Resource_u0j78"]
-script = ExtResource("6_rg6vw")
-requirement = SubResource("Resource_bvcq7")
-effect = SubResource("Resource_273ll")
+[ext_resource type="Resource" uid="uid://boogfknsiuske" path="res://resources/battle_effects/battle_effect_crttv.tres" id="1_mqdxx"]
 
 [resource]
 script = ExtResource("1_htj0w")
 id = 5
 name = "CRT Television"
 item_class = 1
-battle_effect = SubResource("Resource_u0j78")
+battle_effect = ExtResource("1_mqdxx")
 description = "CRT Television cuts the enemy's current HP in half. Costs 6MP."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

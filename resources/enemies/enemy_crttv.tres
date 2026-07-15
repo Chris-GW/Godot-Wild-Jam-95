@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyBattler" format=3 uid="uid://b48p05mlrf3fm"]
+
+[ext_resource type="Resource" uid="uid://boogfknsiuske" path="res://resources/battle_effects/battle_effect_crttv.tres" id="1_hnb6c"]
+[ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/battlers/enemy_battler.gd" id="1_onoge"]
+[ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="2_3rh4t"]
+
+[sub_resource type="Resource" id="Resource_ugblw"]
+script = ExtResource("2_3rh4t")
+max_health = 45
+current_health = 45
+metadata/_custom_type_script = "uid://cnh0siqkiyn04"
+
+[resource]
+script = ExtResource("1_onoge")
+id = 5
+description = "CRT Television"
+battle_effect = ExtResource("1_hnb6c")
+name = "CRT Television"
+health = SubResource("Resource_ugblw")
+metadata/_custom_type_script = "uid://b848up37pxci7"

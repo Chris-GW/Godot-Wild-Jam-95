@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyBattler" format=3 uid="uid://gjet5xawj4um"]
+
+[ext_resource type="Resource" uid="uid://cemsq2grvvgxd" path="res://resources/effect_patterns/effect_pattern_vinyllp.tres" id="1_4rxe8"]
+[ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/battlers/enemy_battler.gd" id="1_ukr64"]
+[ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="2_i366y"]
+
+[sub_resource type="Resource" id="Resource_7om7l"]
+script = ExtResource("2_i366y")
+max_health = 35
+current_health = 35
+metadata/_custom_type_script = "uid://cnh0siqkiyn04"
+
+[resource]
+script = ExtResource("1_ukr64")
+id = 3
+description = "Vinyl LP"
+battle_effect = ExtResource("1_4rxe8")
+name = "Vinyl LP"
+health = SubResource("Resource_7om7l")
+metadata/_custom_type_script = "uid://b848up37pxci7"

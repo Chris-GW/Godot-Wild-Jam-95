@@ -1,16 +1,8 @@
 [gd_resource type="Resource" script_class="EnemyBattler" format=3 uid="uid://bih35cd7l8jeh"]
 
 [ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="1_6oxj6"]
+[ext_resource type="Resource" uid="uid://clwqkyrwn47ti" path="res://resources/effect_patterns/effect_pattern_cassette.tres" id="1_8cmg1"]
 [ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/battlers/enemy_battler.gd" id="1_amjb6"]
-[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_wg084"]
-[ext_resource type="Resource" uid="uid://cfimjybywurv8" path="res://resources/damage_resolvers/damage_resolver_cassette.tres" id="2_wg084"]
-[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_2n6vg"]
-
-[sub_resource type="Resource" id="Resource_foj5g"]
-script = ExtResource("3_2n6vg")
-battler_resolver = ExtResource("1_wg084")
-damage_resolver = ExtResource("2_wg084")
-metadata/_custom_type_script = "uid://bomv8itaerdgs"
 
 [sub_resource type="Resource" id="Resource_7om7l"]
 script = ExtResource("1_6oxj6")
@@ -22,6 +14,6 @@ metadata/_custom_type_script = "uid://cnh0siqkiyn04"
 script = ExtResource("1_amjb6")
 id = 0
 description = "Cassette Tape"
-battle_effect = SubResource("Resource_foj5g")
+battle_effect = ExtResource("1_8cmg1")
 name = "Cassette Tape"
 health = SubResource("Resource_7om7l")

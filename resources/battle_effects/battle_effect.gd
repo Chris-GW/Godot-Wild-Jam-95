@@ -3,6 +3,9 @@
 class_name BattleEffect
 extends Resource
 
+func resolve_effect() -> BattleEffect:
+	return self
+
 func apply(_battle: Battle) -> EffectAttempt:
 	return null
 

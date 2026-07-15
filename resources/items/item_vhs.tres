@@ -1,20 +1,12 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bqv07iriv6clw"]
 
-[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_3o88e"]
 [ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_hlwfo"]
-[ext_resource type="Resource" uid="uid://begn42cisdolp" path="res://resources/damage_resolvers/damage_resolver_vhs.tres" id="2_ex1ko"]
-[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_tlfnp"]
-
-[sub_resource type="Resource" id="Resource_ojg35"]
-script = ExtResource("3_tlfnp")
-battler_resolver = ExtResource("1_3o88e")
-damage_resolver = ExtResource("2_ex1ko")
-metadata/_custom_type_script = "uid://bomv8itaerdgs"
+[ext_resource type="Resource" uid="uid://c0d1xhea3hpmc" path="res://resources/battle_effects/battle_effect_vhs.tres" id="1_uimtw"]
 
 [resource]
 script = ExtResource("1_hlwfo")
 id = 2
 name = "VHS Tape"
-battle_effect = SubResource("Resource_ojg35")
+battle_effect = ExtResource("1_uimtw")
 description = "VHS Tape hits the enemy for 8 damage."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

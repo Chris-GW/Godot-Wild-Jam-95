@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyBattler" format=3 uid="uid://cq2qlwc3vwxdt"]
+
+[ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/battlers/enemy_battler.gd" id="1_epija"]
+[ext_resource type="Resource" uid="uid://j6dqimwyff4g" path="res://resources/battle_effects/battle_effect_gameboy.tres" id="1_lh48k"]
+[ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="2_o8jqm"]
+
+[sub_resource type="Resource" id="Resource_188og"]
+script = ExtResource("2_o8jqm")
+max_health = 40
+current_health = 40
+metadata/_custom_type_script = "uid://cnh0siqkiyn04"
+
+[resource]
+script = ExtResource("1_epija")
+id = 4
+description = "GameBoy"
+battle_effect = ExtResource("1_lh48k")
+name = "GameBoy"
+health = SubResource("Resource_188og")
+metadata/_custom_type_script = "uid://b848up37pxci7"

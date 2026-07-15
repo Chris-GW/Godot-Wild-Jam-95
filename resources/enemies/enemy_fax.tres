@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyBattler" format=3 uid="uid://cth1wo7s1wp43"]
+
+[ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/battlers/enemy_battler.gd" id="1_7hrau"]
+[ext_resource type="Resource" uid="uid://bam47u1bnn4b0" path="res://resources/battle_effects/battle_effect_fax.tres" id="1_vte2t"]
+[ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="2_gdkp7"]
+
+[sub_resource type="Resource" id="Resource_j6irh"]
+script = ExtResource("2_gdkp7")
+max_health = 55
+current_health = 55
+metadata/_custom_type_script = "uid://cnh0siqkiyn04"
+
+[resource]
+script = ExtResource("1_7hrau")
+id = 7
+description = "Fax Machine"
+battle_effect = ExtResource("1_vte2t")
+name = "Fax Machine"
+health = SubResource("Resource_j6irh")
+metadata/_custom_type_script = "uid://b848up37pxci7"

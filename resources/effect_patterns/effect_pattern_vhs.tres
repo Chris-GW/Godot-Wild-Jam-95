@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeightedBattleEffectSet" format=3 uid="uid://bqigris7as6vh"]
+
+[ext_resource type="Script" uid="uid://kjbs2nifgqex" path="res://resources/battle_effects/battle_effect.gd" id="1_kivey"]
+[ext_resource type="Resource" uid="uid://c0d1xhea3hpmc" path="res://resources/battle_effects/battle_effect_vhs.tres" id="2_wcd34"]
+[ext_resource type="Resource" uid="uid://c3kd5w33jyycx" path="res://resources/battle_effects/battle_effect_vhs_special.tres" id="3_wcd34"]
+[ext_resource type="Script" uid="uid://dwqcchgmkvbs5" path="res://resources/battle_effects/weighted_battle_effect_set.gd" id="3_x3cah"]
+
+[resource]
+script = ExtResource("3_x3cah")
+effects = Array[ExtResource("1_kivey")]([ExtResource("2_wcd34"), ExtResource("3_wcd34")])
+weights = [4.0, 1.0]
+metadata/_custom_type_script = "uid://dwqcchgmkvbs5"
