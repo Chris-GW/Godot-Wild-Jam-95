@@ -21,8 +21,6 @@ func _compute_attempt_texts() -> Array[String]:
 		event_texts.append("Tried to repeat the last effect %d time(s) but it didn't work!")
 		return event_texts
 
-	event_texts.append("Repeated the last effect %d time(s):" % successful_attempts.size())
-
 	for i in successful_attempts.size():
 		event_texts.append_array(successful_attempts[i].attempt_texts)
 

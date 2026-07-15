@@ -69,10 +69,10 @@ func do_player_turn(index: int) -> void:
 			var attempt := battle_effect.apply(self)
 			_player_effect_history.append(attempt)
 
-			event_texts.append("Player %s attacked using %s!" % [player.name, item.name])
+			event_texts.append("Player %s used %s!" % [player.name, item.name])
 			event_texts.append_array(attempt.attempt_texts)
 		else:
-			event_texts.append("Player %s skipped their turn." % player.name)
+			event_texts.append("Player %s did not move!" % player.name)
 	else:
 		event_texts.append("No item at index %d" % index)
 
@@ -101,7 +101,7 @@ func do_enemy_turn() -> void:
 				event_texts.append("Enemy %s attacked!" % enemy.name)
 				event_texts.append_array(attempt.attempt_texts)
 		else:
-			event_texts.append("Enemy %s had no attack!" % enemy.name)
+			event_texts.append("Enemy %s did not move!" % enemy.name)
 
 	events_occurred.emit(event_texts, enemy)
 
