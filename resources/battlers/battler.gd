@@ -10,6 +10,13 @@ var name := "<battler>":
 		emit_changed()
 
 @export
+var sprite: Texture2D:
+	set(value):
+		sprite = value
+
+		emit_changed()
+
+@export
 var health: Health:
 	set(value):
 		health = value

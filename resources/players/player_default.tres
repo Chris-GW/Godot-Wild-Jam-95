@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="1_frk7d"]
 [ext_resource type="Script" uid="uid://b0i0herqdpy1l" path="res://resources/battlers/player_battler.gd" id="1_mksa4"]
 [ext_resource type="Resource" uid="uid://bnyuexbqwm7t1" path="res://resources/point_pools/mana_pool_player.tres" id="2_i5qs4"]
+[ext_resource type="Texture2D" uid="uid://mi6ghuoxdls6" path="res://assets/third_party/world_tilesets_remastered/player-static.png" id="4_xrawa"]
 
 [sub_resource type="Resource" id="Resource_a4gvy"]
 script = ExtResource("1_frk7d")
@@ -12,5 +13,6 @@ metadata/_custom_type_script = "uid://cnh0siqkiyn04"
 script = ExtResource("1_mksa4")
 mana_pool = ExtResource("2_i5qs4")
 name = "Nathan"
+sprite = ExtResource("4_xrawa")
 health = SubResource("Resource_a4gvy")
 metadata/_custom_type_script = "uid://b0i0herqdpy1l"

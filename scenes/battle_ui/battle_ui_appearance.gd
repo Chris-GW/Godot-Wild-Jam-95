@@ -15,7 +15,13 @@ var item_description_panel: ItemDescriptionPanel
 var enemy_battler_panel: BattlerPanel
 
 @export
+var enemy_battler_sprite_panel: BattlerSpritePanel
+
+@export
 var player_battler_panel: BattlerPanel
+
+@export
+var player_battler_sprite_panel: BattlerSpritePanel
 
 func for_shown() -> void:
 	if base_control:
@@ -23,6 +29,9 @@ func for_shown() -> void:
 
 	if player_battler_panel:
 		player_battler_panel.hide()
+
+	if player_battler_sprite_panel:
+		player_battler_sprite_panel.hide()
 
 	if item_description_panel:
 		item_description_panel.hide()
@@ -36,6 +45,10 @@ func for_player_attack_requested() -> void:
 		# TODO: only do this the first time in each battle
 		player_battler_panel.show()
 
+	if player_battler_sprite_panel:
+		# TODO: only do this the first time in each battle
+		player_battler_sprite_panel.show()
+
 	if item_description_panel:
 		item_description_panel.show()
 
@@ -46,6 +59,9 @@ func for_player_attack_chosen() -> void:
 func set_enemy(enemy: EnemyBattler) -> void:
 	if enemy_battler_panel:
 		enemy_battler_panel.battler = enemy
+
+	if enemy_battler_sprite_panel:
+		enemy_battler_sprite_panel.battler = enemy
 
 func set_attack_considered(index: int) -> void:
 	if item_description_panel:

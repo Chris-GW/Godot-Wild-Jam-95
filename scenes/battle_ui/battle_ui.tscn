@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b3pbwgsdixq5d" path="res://scenes/text_panel/text_panel.tscn" id="4_sebxe"]
 [ext_resource type="PackedScene" uid="uid://dmodhnp83rnpu" path="res://scenes/battle_choice_panel/battle_choice_panel.tscn" id="5_73y0x"]
 [ext_resource type="PackedScene" uid="uid://c5yj5uh1dmj7n" path="res://scenes/battler_panel/battler_panel.tscn" id="5_ngntt"]
-[ext_resource type="Resource" uid="uid://bih35cd7l8jeh" path="res://resources/enemies/enemy_cassette.tres" id="5_setet"]
+[ext_resource type="Resource" uid="uid://b48p05mlrf3fm" path="res://resources/enemies/enemy_crttv.tres" id="5_yoesv"]
 [ext_resource type="Resource" uid="uid://7ovbx0fxfxcs" path="res://resources/players/player_default.tres" id="6_k1ugx"]
+[ext_resource type="PackedScene" uid="uid://ccd3jmsiwmndr" path="res://scenes/battler_sprite_panel/battler_sprite_panel.tscn" id="6_yoesv"]
 [ext_resource type="PackedScene" uid="uid://t3d4fsyv7dna" path="res://scenes/item_description_panel/item_description_panel.tscn" id="8_ewcbu"]
 [ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="9_yoesv"]
 
@@ -15,14 +16,16 @@
 layer = 2
 script = ExtResource("1_pyo4n")
 
-[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "item_description_panel", "enemy_battler_panel", "player_battler_panel")]
+[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "item_description_panel", "enemy_battler_panel", "enemy_battler_sprite_panel", "player_battler_panel", "player_battler_sprite_panel")]
 unique_name_in_owner = true
 script = ExtResource("2_uvu3y")
 base_control = NodePath("../MarginContainer")
 text_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/BattleTextPanel")
 item_description_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/VBoxContainer/ItemDescriptionPanel")
 enemy_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerPanel")
+enemy_battler_sprite_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerSpritePanel")
 player_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerPanel")
+player_battler_sprite_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerSpritePanel")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030879351]
 anchors_preset = 15
@@ -41,11 +44,18 @@ layout_mode = 2
 
 [node name="EnemyBattlerPanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1963463311 instance=ExtResource("5_ngntt")]
 layout_mode = 2
-battler = ExtResource("5_setet")
+battler = ExtResource("5_yoesv")
+
+[node name="EnemyBattlerSpritePanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1538847208 instance=ExtResource("6_yoesv")]
+layout_mode = 2
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=675683077]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="PlayerBattlerSpritePanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1476247509 instance=ExtResource("6_yoesv")]
+layout_mode = 2
+battler = ExtResource("6_k1ugx")
 
 [node name="PlayerBattlerPanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1035145192 instance=ExtResource("5_ngntt")]
 layout_mode = 2

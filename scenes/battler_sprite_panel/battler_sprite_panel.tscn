@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ccd3jmsiwmndr"]
+
+[ext_resource type="Theme" uid="uid://c1cvsxlq00rqd" path="res://themes/ui_theme.tres" id="1_kj6mx"]
+[ext_resource type="Script" uid="uid://bc1v08lh25fbc" path="res://scenes/battler_sprite_panel/battler_sprite_panel.gd" id="2_m2ssp"]
+[ext_resource type="Resource" uid="uid://b48p05mlrf3fm" path="res://resources/enemies/enemy_crttv.tres" id="3_1k8rb"]
+[ext_resource type="Texture2D" uid="uid://cvm1u3i26klwo" path="res://assets/third_party/gb_studio_vhs_video_game_rental_store/VHS Rental GB Studio Game PNG/CRT VHS-transparent.png" id="4_wuuyh"]
+
+[node name="BattlerSpritePanel" type="PanelContainer" unique_id=1538847208]
+custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_kj6mx")
+script = ExtResource("2_m2ssp")
+battler = ExtResource("3_1k8rb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1207266700]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_wuuyh")
+stretch_mode = 5
