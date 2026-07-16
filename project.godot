@@ -31,6 +31,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 [dialogue_manager]
 
 runtime/balloon_path="uid://bk8d6x26ydwv3"
+runtime/state_autoload_shortcuts=["PlayerManager"]
 
 [display]
 
@@ -139,15 +140,21 @@ choose_player_attack={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialoge/player_wakeup.dialogue", "res://resources/dialoge/first_console_interaction.dialogue", "res://resources/dialoge/example.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialoge/player_wakeup.dialogue", "res://resources/dialoge/first_console_interaction.dialogue", "res://resources/dialoge/example.dialogue", "res://resources/dialoge/prologue.dialogue")
 
 [layer_names]
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
 
 [physics]
 

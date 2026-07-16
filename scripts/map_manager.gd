@@ -11,6 +11,8 @@ func _ready() -> void:
 	GameEvents.map_transition_requested.connect(_on_map_transition_requested)
 	player.reparent(current_map.y_sort)
 	player.global_position = current_map.player_spawn.global_position
+	DialogueManager.get_current_scene = func():
+		return current_map
 
 
 func transition_map_to(map: BaseMap, enter_node_name: String) -> void:

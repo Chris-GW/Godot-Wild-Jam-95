@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbwrhmiwvp7p3"]
+
+[ext_resource type="Script" uid="uid://bomf0gont47vv" path="res://scenes/maps/visible_sale_notifier.gd" id="1_uehmn"]
+[ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_p8eyo"]
+
+[node name="VisibleSaleNotifier" type="VisibleOnScreenNotifier2D" unique_id=1464701159]
+rect = Rect2(-16, -16, 32, 32)
+script = ExtResource("1_uehmn")
+dialogue_resource = ExtResource("2_p8eyo")
+start_from_title = "find_garage_sale"

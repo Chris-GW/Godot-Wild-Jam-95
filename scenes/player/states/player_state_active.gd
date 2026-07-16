@@ -25,7 +25,6 @@ func _to_paused() -> void:
 
 func _physics_process(delta: float) -> void:
 	_update_movement_velocity(delta)
-
 	_player.update_animation()
 	_player.move_and_slide()
 
@@ -37,3 +36,11 @@ func _update_movement_velocity(delta: float) -> void:
 
 func _play_step_sfx() -> void:
 	_player.step_sfx_player.play()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if (event.is_action_pressed("interact") and _can_interact()):
+		_player._interactables.front().interact()
+
+func _can_interact() -> bool:
+	return not _player._interactables.is_empty()

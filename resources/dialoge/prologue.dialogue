@@ -1,0 +1,76 @@
+~ wakeup
+Nathan: Saturday morning, finally... But for some reason, I don't feel particularly excited about it.
+Nathan: I should check who is online.
+=> END
+
+~ interact_pc
+if prologue_has_game:
+	Nathan: Time to load it in.
+	$>> start_world_transformation()
+	Nathan: Woah, what is happening-
+	Nathan: aaaaaaaaaaaaaaa
+	=> END
+
+if prologue_pc_interaction_count <= 0
+	Nathan: I have absolutely no games left to play, and we only have {{3 - prologue_pc_interaction_count}} people online for MECCHA CHAMELEON.
+else
+	Nathan: Now we only have {{3 -prologue_pc_interaction_count}} people online for MECCHA CHAMELEON.
+Nathan: Maybe I should touch some grass for once... if I can even muster the courage to walk out of this door
+$> increase_prologue_pc_interaction_count()
+=> END
+
+
+~ find_garage_sale
+Nathan: Oh, a garage sale. Haven't been to one in a lifetime.
+Nathan: Didn't know they still existed...
+=> END
+
+~ interact_with_game_on_sale
+if prologue_has_game:
+	Nathan: There's nothing else interesting there.
+	=> END
+Nathan: NO WAY! They actually have a copy of Meme Man: Riddle of the Rocks 1967!
+Nathan: This is a real rare find. I should absolutely get this before anyone else does...
+Nathan: How much for this one?
+Garage Owner: This one. I can't remember ever playing this game.
+Garage Owner: I guess you can have it for 10 €
+- buy it
+	Nathan: That is a steal, I take it 10 €
+	Garage Owner: Thanks, I hope you will have fun with it.
+- negotiate
+	Nathan: For 5 € I will buy it.
+	Garage Owner: Fine, but I won't take it back.
+- bluff
+	Nathan: Does this old game even run?
+	Garage Owner: I.. I don't know. You can have it for free.
+$> prologue_has_game = true
+Nathan receives Meme Man!
+Nathan: I can't wait to play at my home pc.
+=> END
+
+~ reach_new_world
+Nathan: Whe- where am I...
+Nathan: Wait... when am I!?
+Nathan: Is that a radio on the table? Maybe it could help me understand.
+=> END
+
+~ radio_interaction
+Radio on the table: We have received breaking news of the collapse of the Soviet Union...
+Nathan: Wait... was that not a long time ago??
+=> END
+
+~ crt_tv_encounter
+Nathan: A fat-ass televis-
+CRT TV: Silence, zoomer.
+Nathan: ... did you just talk to me just now?
+CRT TV: I indeed did do that just now. And please keep your fatphobic remarks for your millenium.
+Nathan: ...
+CRT TV: I despise children of your era, all fond of thin flatscreen televisions, with flashy colors and silk-smooth animations. Unacceptable! It says a lot about your beauty standards.
+Nathan: ...
+CRT TV: Just think about it: who made video gaming popular? 
+CRT TV: WHO has entranced a generation with our staple aesthetic, limited yet beautiful color palette, all while manifesting aura like no other simply by taking so much space in your rooms?
+CRT TV: YES! IT IS NONE OTHER THAN YOURS TRULY!
+CRT TV: We will not tolerate your lack of respect.
+CRT TV: YOU SHALL BE DISCIPLINED!
+# enter battle
+=> END
