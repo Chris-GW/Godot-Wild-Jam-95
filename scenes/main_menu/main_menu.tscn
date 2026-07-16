@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d0m5iwcwjpurf"]
+
+[ext_resource type="Script" uid="uid://bw1ysyd6sxgcg" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+
+[node name="MainMenu" type="PanelContainer" unique_id=779116692]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsom3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1180470250]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=746113072]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1911048541]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "\"Discontinued\""
+horizontal_alignment = 1
+
+[node name="StartLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=747119406]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Press Space to start"
+horizontal_alignment = 1
+
+[node name="CreditsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1878732805]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Press Shift for credits (TODO)"
+horizontal_alignment = 1
