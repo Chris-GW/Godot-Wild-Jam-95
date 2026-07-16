@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d0pawe6ij8txt" path="res://scripts/map_manager.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dewwe832lpv1t" path="res://scenes/inventory_ui/inventory_ui.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://c5v1cyk8xkowq" path="res://scenes/player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b04nnqh1q5gno" path="res://scenes/maps/player_house.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ba4v4shxk5egu" path="res://scenes/battle_ui/battle_ui.tscn" id="5_lquwl"]
 
@@ -12,13 +11,6 @@
 script = ExtResource("1_h2yge")
 
 [node name="CurrentMap" parent="MapManager" unique_id=632494233 instance=ExtResource("2_lquwl")]
-
-[node name="Player" parent="MapManager" unique_id=1594590048 instance=ExtResource("2_1bvp3")]
-unique_name_in_owner = true
-
-[node name="WorldCamera2D" type="Camera2D" parent="MapManager/Player" unique_id=1604401945]
-unique_name_in_owner = true
-zoom = Vector2(2, 2)
 
 [node name="InventoryUI" parent="." unique_id=1225508954 instance=ExtResource("2_0xm2m")]
 

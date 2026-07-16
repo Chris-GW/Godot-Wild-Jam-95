@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://7wactad5ebn0"]
 
 [ext_resource type="Script" uid="uid://n7lenag8qodl" path="res://scenes/interactable/interactable.gd" id="1_g88tj"]
+[ext_resource type="Texture2D" uid="uid://dmd8sd6nprd31" path="res://assets/third_party/world_tilesets_remastered/characters.png" id="2_4b5tc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yc7q4"]
 font_size = 12
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45588"]
+atlas = ExtResource("2_4b5tc")
+region = Rect2(128, 80, 16, 16)
 
 [node name="Interactable" type="Area2D" unique_id=1094113024]
 collision_layer = 0
@@ -29,6 +34,9 @@ text = "[E] to interact"
 label_settings = SubResource("LabelSettings_yc7q4")
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="InteractionIndicator" type="Sprite2D" parent="." unique_id=1650588540]
+texture = SubResource("AtlasTexture_45588")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

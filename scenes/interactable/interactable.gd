@@ -3,6 +3,7 @@ class_name Interactable
 extends Area2D
 
 @onready var action_label: Label = $ActionLabel
+@onready var interaction_indicator: Sprite2D = $InteractionIndicator
 
 @export var action_name: String = "[E] to interact": 
 	set = set_action_name
@@ -18,6 +19,7 @@ func _ready() -> void:
 
 func interact() -> void:
 	if action.is_valid():
+		interaction_indicator.hide()
 		action.call()
 
 

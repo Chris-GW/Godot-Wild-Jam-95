@@ -180,7 +180,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_eur1h"]
 radius = 4.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1594590048]
+[node name="Player" type="CharacterBody2D" unique_id=1594590048 groups=["player"]]
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_dovo2")

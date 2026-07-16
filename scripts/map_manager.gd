@@ -2,30 +2,22 @@ class_name WorldMapManager
 extends Node2D
 
 @onready var current_map: BaseMap = $CurrentMap
-@onready var player: Player = %Player
-@onready var world_camera_2d: Camera2D = %WorldCamera2D
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN # hide mouse
 	GameEvents.map_transition_requested.connect(_on_map_transition_requested)
-	player.reparent(current_map.y_sort)
-	player.global_position = current_map.player_spawn.global_position
 	DialogueManager.get_current_scene = func():
 		return current_map
 
 
-func transition_map_to(map: BaseMap, enter_node_name: String) -> void:
-	player.get_parent().remove_child(player)
+func transition_map_to(map: BaseMap, enter_node_name: String = "") -> void:
 	remove_child(current_map)
 	current_map.queue_free()
-	
 	current_map = map
 	add_child(map)
-	map.y_sort.add_child(player)
-	var enter_node = current_map.get_node(enter_node_name)
-	player.velocity = Vector2.ZERO
-	player.global_position = enter_node.global_position
+	if not enter_node_name.is_empty():
+		map.set_enter_node(enter_node_name)
 
 
 func _on_map_transition_requested(map_scene_path: String, enter_node_name: String) -> void:

@@ -6,6 +6,11 @@ var prologue_has_game := false
 var prologue_pc_interaction_count := 0
 
 
+func _ready() -> void:
+	if OS.is_debug_build():
+		prologue_wakeup = false
+		prologue_has_game = true
+
 func get_current() -> PlayerBattler:
 	return _player
 

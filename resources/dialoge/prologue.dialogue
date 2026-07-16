@@ -8,7 +8,7 @@ if prologue_has_game:
 	Nathan: Time to load it in.
 	$>> start_world_transformation()
 	Nathan: Woah, what is happening-
-	Nathan: aaaaaaaaaaaaaaa
+	Nathan: aaaaaaaaaaaaaaa [font=res://assets/fonts/NotoSans.ttf]V̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗sfV̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗efV̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗
 	=> END
 
 if prologue_pc_interaction_count <= 0
@@ -33,9 +33,9 @@ Nathan: NO WAY! They actually have a copy of Meme Man: Riddle of the Rocks 1967!
 Nathan: This is a real rare find. I should absolutely get this before anyone else does...
 Nathan: How much for this one?
 Garage Owner: This one. I can't remember ever playing this game.
-Garage Owner: I guess you can have it for 10 €
+Garage Owner: I guess you can have it for 10 $
 - buy it
-	Nathan: That is a steal, I take it 10 €
+	Nathan: That is a steal, I take it 10 $
 	Garage Owner: Thanks, I hope you will have fun with it.
 - negotiate
 	Nathan: For 5 € I will buy it.

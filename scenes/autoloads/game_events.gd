@@ -29,7 +29,7 @@ func emit_inventory_changed(items: Array[Item]) -> void:
 func emit_loadout_changed(items: Array[Item]) -> void:
 	loadout_changed.emit(items)
 
-func emit_map_transition_requested(map_scene_path: String, enter_node_name: String) -> void:
+func emit_map_transition_requested(map_scene_path: String, enter_node_name: String = "") -> void:
 	map_transition_requested.emit(map_scene_path, enter_node_name)
 
 func emit_battle_started() -> void:

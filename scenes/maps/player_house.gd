@@ -20,7 +20,7 @@ func start_world_transformation() -> void:
 	await DialogueManager.dialogue_ended
 	tween.kill()
 	self.modulate = Color.WHITE
-	GameEvents.emit_map_transition_requested("res://scenes/maps/map_02.tscn", "%PlayerSpawn")
+	GameEvents.emit_map_transition_requested("res://scenes/maps/new_player_home.tscn")
 
 func animate_random_map_colors() -> void:
 	create_tween().tween_property(self, "modulate", Color(randf(), randf(), randf()), 1.0)
