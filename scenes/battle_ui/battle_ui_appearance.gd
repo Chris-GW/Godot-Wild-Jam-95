@@ -18,6 +18,9 @@ var enemy_battler_panel: BattlerPanel
 var enemy_battler_sprite_panel: BattlerSpritePanel
 
 @export
+var enemy_intent_panel: EnemyIntentPanel
+
+@export
 var player_battler_panel: BattlerPanel
 
 @export
@@ -26,6 +29,9 @@ var player_battler_sprite_panel: BattlerSpritePanel
 func for_shown() -> void:
 	if base_control:
 		base_control.show()
+
+	if enemy_intent_panel:
+		enemy_intent_panel.hide()
 
 	if player_battler_panel:
 		player_battler_panel.hide()
@@ -40,7 +46,15 @@ func for_hidden() -> void:
 	if base_control:
 		base_control.hide()
 
+func set_enemy_effect(effect: BattleEffect) -> void:
+	if enemy_intent_panel:
+		enemy_intent_panel.effect = effect
+
 func for_player_attack_requested() -> void:
+	if enemy_intent_panel:
+		# TODO: only do this the first time in each battle
+		enemy_intent_panel.show()
+
 	if player_battler_panel:
 		# TODO: only do this the first time in each battle
 		player_battler_panel.show()

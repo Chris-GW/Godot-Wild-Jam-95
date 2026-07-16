@@ -23,6 +23,8 @@ func _send_start_text() -> void:
 	_send_battle_text("Battle vs %s started!" % battle.enemy.name)
 
 func _wait_for_player_choice() -> void:
+	battle.resolve_enemy_attack()
+
 	SignalHelper.once(
 		GameEvents.player_attack_chosen,
 		_on_player_attack_chosen)

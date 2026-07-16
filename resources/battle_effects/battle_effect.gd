@@ -1,5 +1,6 @@
 ## Class, to be extended, for applying an effect to a battle.
 ## E.g. damage the enemy, make the enemy skip their next turn, etc.
+@tool
 class_name BattleEffect
 extends Resource
 

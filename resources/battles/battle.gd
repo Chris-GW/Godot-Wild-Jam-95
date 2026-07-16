@@ -11,6 +11,7 @@ var _player_effect_history: Array[EffectAttempt] = []
 var _enemy_effect_history: Array[EffectAttempt] = []
 
 var _is_enemy_turn := false
+var _next_enemy_effect: BattleEffect = null
 var _enemy_skips := 0
 var _enemy_damage_misses := 0
 
@@ -38,6 +39,7 @@ func try_start() -> bool:
 	_enemy_effect_history.clear()
 
 	_is_enemy_turn = false
+	_next_enemy_effect = null
 	_enemy_skips = 0
 	_enemy_damage_misses = 0
 
@@ -56,6 +58,10 @@ func check_ended() -> bool:
 		return true
 
 	return false
+
+func resolve_enemy_attack() -> void:
+	_next_enemy_effect = enemy.battle_effect.resolve_effect()
+	GameEvents.emit_enemy_effect_resolved(_next_enemy_effect)
 
 func do_player_turn(index: int) -> void:
 	_is_enemy_turn = false
@@ -89,7 +95,7 @@ func do_enemy_turn() -> void:
 		event_texts.append("Enemy %s skipped their turn." % enemy.name)
 		_enemy_skips -= 1
 	else:
-		var battle_effect := enemy.battle_effect.resolve_effect()
+		var battle_effect := _next_enemy_effect
 		if battle_effect:
 			if battle_effect.has_damage() and _enemy_damage_misses > 0:
 				event_texts.append("Enemy %s attacked but missed!" % enemy.name)

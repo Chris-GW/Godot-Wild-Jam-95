@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6jv5au6iwcqv"]
+
+[ext_resource type="Texture2D" uid="uid://b4m3tofi106j7" path="res://assets/third_party/SGQ_ui_v1_0_0/SGQ_ui/game_ui/magic.png" id="1_begfp"]
+[ext_resource type="Script" uid="uid://br354ghlqka51" path="res://scenes/enemy_intent_panel/enemy_intent_panel.gd" id="1_unq4b"]
+[ext_resource type="Texture2D" uid="uid://b4id4hxs3i0y2" path="res://assets/third_party/SGQ_ui_v1_0_0/SGQ_ui/game_ui/sword.png" id="2_02p7t"]
+
+[node name="EnemyIntentPanel" type="PanelContainer" unique_id=2062689156]
+custom_minimum_size = Vector2(32, 32)
+size_flags_vertical = 0
+script = ExtResource("1_unq4b")
+
+[node name="AttackIcon" type="TextureRect" parent="." unique_id=1511454667]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("2_02p7t")
+
+[node name="MagicIcon" type="TextureRect" parent="." unique_id=1347510786]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("1_begfp")
