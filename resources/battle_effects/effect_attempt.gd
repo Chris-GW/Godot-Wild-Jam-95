@@ -16,3 +16,9 @@ func get_effect() -> BattleEffect:
 
 func can_repeat() -> bool:
 	return _effect and _effect.can_repeat()
+
+func has_queue() -> bool:
+	return false
+
+func get_queue() -> Array[BattleEffect]:
+	return []

@@ -15,7 +15,10 @@ var _next_enemy_effect: BattleEffect = null
 var _enemy_skips := 0
 var _enemy_damage_misses := 0
 
+var _enemy_queued_effects: Array[BattleEffect] = []
+
 signal event_occurred(text: String)
+signal events_occurred_enemy_first_phase(texts: Array[String], battler: Battler)
 signal events_occurred(texts: Array[String], battler: Battler)
 signal ended(winner: Battler)
 
@@ -86,9 +89,33 @@ func do_player_turn(index: int) -> void:
 
 	CustomLogger.debug("Player effect history: %d effect(s)" % _player_effect_history.size())
 
-func do_enemy_turn() -> void:
+func do_enemy_first_phase() -> void:
 	_is_enemy_turn = true
 
+	var first_phase_event_texts := _process_enemy_first_phase()
+	events_occurred_enemy_first_phase.emit(first_phase_event_texts, enemy)
+
+func _process_enemy_first_phase() -> Array[String]:
+	var event_texts: Array[String] = []
+
+	if not _enemy_queued_effects.is_empty():
+		event_texts.append("Before enemy %s attacks..." % enemy.name)
+
+	while not _enemy_queued_effects.is_empty():
+		var effect: BattleEffect = _enemy_queued_effects.pop_front()
+		var attempt := effect.apply(self)
+
+		event_texts.append_array(attempt.attempt_texts)
+
+	return event_texts
+
+func do_enemy_main_phase() -> void:
+	var main_phase_event_texts := _process_enemy_main_phase()
+	events_occurred.emit(main_phase_event_texts, enemy)
+
+	CustomLogger.debug("Enemy effect history: %d effect(s)" % _enemy_effect_history.size())
+
+func _process_enemy_main_phase() -> Array[String]:
 	var event_texts: Array[String] = []
 
 	if _enemy_skips > 0:
@@ -104,14 +131,15 @@ func do_enemy_turn() -> void:
 				var attempt := battle_effect.apply(self)
 				_enemy_effect_history.append(attempt)
 
+				if attempt.has_queue():
+					_enemy_queued_effects.append_array(attempt.get_queue())
+
 				event_texts.append("Enemy %s attacked!" % enemy.name)
 				event_texts.append_array(attempt.attempt_texts)
 		else:
 			event_texts.append("Enemy %s did not move!" % enemy.name)
 
-	events_occurred.emit(event_texts, enemy)
-
-	CustomLogger.debug("Enemy effect history: %d effect(s)" % _enemy_effect_history.size())
+	return event_texts
 
 func add_enemy_skip() -> void:
 	_enemy_skips += 1

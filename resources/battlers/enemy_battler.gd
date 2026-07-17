@@ -22,3 +22,6 @@ var battle_effect: BattleEffect:
 		battle_effect = value
 
 		emit_changed()
+
+func has_mana(_amount_resolver: NumberResolver) -> bool:
+	return true

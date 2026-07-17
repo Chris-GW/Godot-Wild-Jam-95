@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="EffectWithQueue" format=3 uid="uid://c2fi7d88bkfaw"]
+
+[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_fqr3s"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_vlnny"]
+[ext_resource type="Script" uid="uid://kjbs2nifgqex" path="res://resources/battle_effects/battle_effect.gd" id="4_m3she"]
+[ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/number_resolvers/constant_number_resolver.gd" id="4_yypnt"]
+[ext_resource type="Script" uid="uid://dhyaqrp6g8eau" path="res://resources/battle_effects/effect_with_queue.gd" id="5_kjx2q"]
+
+[sub_resource type="Resource" id="Resource_rgrb0"]
+script = ExtResource("4_yypnt")
+value = 6.0
+metadata/_custom_type_script = "uid://busitjk6o6iyp"
+
+[sub_resource type="Resource" id="Resource_knyg8"]
+script = ExtResource("3_vlnny")
+battler_resolver = ExtResource("1_fqr3s")
+damage_resolver = SubResource("Resource_rgrb0")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
+
+[sub_resource type="Resource" id="Resource_dj1qx"]
+script = ExtResource("4_yypnt")
+value = 10.0
+metadata/_custom_type_script = "uid://busitjk6o6iyp"
+
+[sub_resource type="Resource" id="Resource_gwetk"]
+script = ExtResource("3_vlnny")
+battler_resolver = ExtResource("1_fqr3s")
+damage_resolver = SubResource("Resource_dj1qx")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
+
+[resource]
+script = ExtResource("5_kjx2q")
+queued_effects = Array[ExtResource("4_m3she")]([SubResource("Resource_gwetk")])
+effect = SubResource("Resource_knyg8")
+metadata/_custom_type_script = "uid://dhyaqrp6g8eau"
