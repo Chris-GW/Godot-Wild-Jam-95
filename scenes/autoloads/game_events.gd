@@ -1,7 +1,6 @@
 extends Node
 
 signal game_started
-signal credits_screen_requested
 
 signal inventory_shown
 signal inventory_hidden
@@ -22,9 +21,6 @@ signal player_attack_chosen(index: int)
 
 func emit_game_started() -> void:
 	game_started.emit()
-
-func emit_credits_screen_requested() -> void:
-	credits_screen_requested.emit()
 
 func emit_inventory_shown() -> void:
 	inventory_shown.emit()

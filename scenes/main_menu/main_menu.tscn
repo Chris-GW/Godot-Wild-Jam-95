@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0m5iwcwjpurf"]
 
 [ext_resource type="Script" uid="uid://bw1ysyd6sxgcg" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="PackedScene" uid="uid://brjoky8yq3juq" path="res://scenes/credits_screen/credits_screen.tscn" id="2_0ebjn"]
 
 [node name="MainMenu" type="PanelContainer" unique_id=779116692]
 anchors_preset = 15
@@ -31,6 +32,12 @@ horizontal_alignment = 1
 
 [node name="CreditsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1878732805]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Press Shift for credits (TODO)"
+theme_override_font_sizes/font_size = 24
+text = "Press Shift for credits"
 horizontal_alignment = 1
+
+[node name="CreditsCanvas" type="CanvasLayer" parent="." unique_id=215613482]
+
+[node name="CreditsScreen" parent="CreditsCanvas" unique_id=903362344 instance=ExtResource("2_0ebjn")]
+unique_name_in_owner = true
+visible = false

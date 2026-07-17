@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://brjoky8yq3juq"]
+
+[ext_resource type="Script" uid="uid://cos3anwcxgc8u" path="res://scenes/credits_screen/credits_screen.gd" id="1_cq7cq"]
+[ext_resource type="Script" uid="uid://c58mjgohmvpwo" path="res://scenes/credits_screen/credits_screen_appearance.gd" id="2_o77a0"]
+
+[node name="CreditsScreen" type="PanelContainer" unique_id=779116692]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cq7cq")
+
+[node name="Appearance" type="Node" parent="." unique_id=1008121386 node_paths=PackedStringArray("base_control", "tab_container", "scroll_container")]
+unique_name_in_owner = true
+script = ExtResource("2_o77a0")
+base_control = NodePath("..")
+tab_container = NodePath("../MarginContainer/VBoxContainer/TabContainer")
+scroll_container = NodePath("../MarginContainer/VBoxContainer/TabContainer/Assets/ScrollContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1180470250]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=746113072]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1911048541]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="TabControlsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1898879724]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Press A/D to switch tabs, press W/S to scroll"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer" unique_id=1018430707]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Team" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1433140840]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Team" unique_id=747119406]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+text = "ChrisGW - programmer (overworld, player, enemies)
+phrasmotica - programmer (battles, inventory, UIs)
+roba - writer"
+autowrap_mode = 2
+
+[node name="Engine" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=933070265]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Engine" unique_id=818977592]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+text = "Godot v4.7"
+autowrap_mode = 2
+
+[node name="Addons" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=799308416]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Addons" unique_id=663045639]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+text = "Dialogue Manager - Nathan Hoad
+https://github.com/nathanhoad/godot_dialogue_manager/blob/main/LICENSE
+
+YARD - Elliot Fontaine
+https://github.com/elliotfontaine/yard-godot/blob/main/LICENSE"
+autowrap_mode = 2
+
+[node name="Assets" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=768122956]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Assets" unique_id=348283809]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Assets/ScrollContainer" unique_id=1451840980]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "\"GB Studio Indoors\" - The Pixel Nook
+https://the-pixel-nook.itch.io/gb-studio-indoors (CC BY 4.0)
+
+\"GB studio overworld tiles +\" - The Pixel Nook
+https://the-pixel-nook.itch.io/gb-studio-overworld-tiles-plus (CC BY 4.0)
+
+\"GB Studio Overworld Tileset\" - The Pixel Nook
+https://the-pixel-nook.itch.io/gb-studio-overworld-rpg-tiles (CC BY 4.0)
+
+\"GB Studio - VHS & Video Game Rental Store Assets\" - Len
+https://lendotexe.itch.io/gb-studio-vhs-videogamerental-store-assets
+
+\"Super Gameboy Quest - UI pack\" - Toadzilla
+https://toadzillart.itch.io/ui-pack
+
+\"World tilesets remastered\" - MonkeyImage
+https://monkeyimage.itch.io/world-tilesets-remastered"
+autowrap_mode = 2
+
+[node name="BackToMenuLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1878732805]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Press Shift for main menu"
+horizontal_alignment = 1
