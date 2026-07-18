@@ -25,7 +25,7 @@ func _enter_tree() -> void:
 
 	SignalHelper.once(
 		GameEvents.battle_ended,
-		transition_state.bind(BattleUI.State.HIDDEN))
+		_on_battle_ended)
 
 	SignalHelper.persist(
 		GameEvents.battle_text_created,
@@ -42,6 +42,9 @@ func _on_player_attack_considered(index: int) -> void:
 
 func _on_player_attack_chosen(_index: int) -> void:
 	_appearance.for_player_attack_chosen()
+
+func _on_battle_ended(_is_won: bool) -> void:
+	transition_state(BattleUI.State.HIDDEN)
 
 func _on_battle_text_created(text: String) -> void:
 	_appearance.add_battle_text(text)

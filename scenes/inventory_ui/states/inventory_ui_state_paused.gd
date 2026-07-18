@@ -8,4 +8,7 @@ func _enter_tree() -> void:
 
 	SignalHelper.persist(
 		GameEvents.battle_ended,
-		transition_state.bind(InventoryUI.State.HIDDEN))
+		_on_battle_ended)
+
+func _on_battle_ended(_is_won: bool) -> void:
+	transition_state(InventoryUI.State.HIDDEN)

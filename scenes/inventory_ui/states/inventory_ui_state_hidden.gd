@@ -14,15 +14,15 @@ func _enter_tree() -> void:
 		GameEvents.loadout_changed,
 		_on_loadout_changed)
 
+	SignalHelper.persist(
+		GameEvents.battle_started,
+		_on_battle_started)
+
 	GameEvents.emit_inventory_hidden()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
 		transition_state(InventoryUI.State.SHOWN)
-
-	if Input.is_action_just_pressed("start_example_battle"):
-		BattleManager.start_example_battle()
-		transition_state(InventoryUI.State.PAUSED)
 
 func _on_inventory_changed(items: Array[Item]) -> void:
 	_list_menu_interaction.set_maximum(items.size() - 1)
@@ -31,3 +31,6 @@ func _on_inventory_changed(items: Array[Item]) -> void:
 
 func _on_loadout_changed(items: Array[Item]) -> void:
 	_appearance.set_loadout_items(items)
+
+func _on_battle_started() -> void:
+	transition_state(InventoryUI.State.PAUSED)

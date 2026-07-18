@@ -11,7 +11,7 @@ signal loadout_changed(items: Array[Item])
 signal map_transition_requested(map_scene_path: String, enter_node_name: String)
 
 signal battle_started
-signal battle_ended
+signal battle_ended(is_won: bool)
 signal battle_text_created(text: String)
 
 signal enemy_effect_resolved(effect: BattleEffect)
@@ -40,8 +40,8 @@ func emit_map_transition_requested(map_scene_path: String, enter_node_name: Stri
 func emit_battle_started() -> void:
 	battle_started.emit()
 
-func emit_battle_ended() -> void:
-	battle_ended.emit()
+func emit_battle_ended(is_won: bool) -> void:
+	battle_ended.emit(is_won)
 
 func emit_battle_text_created(text: String) -> void:
 	battle_text_created.emit(text)

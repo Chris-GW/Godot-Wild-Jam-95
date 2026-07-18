@@ -50,7 +50,7 @@ func _on_battle_ended(winner: Battler) -> void:
 
 	await get_tree().create_timer(END_WAIT_DURATION).timeout
 
-	GameEvents.emit_battle_ended()
+	GameEvents.emit_battle_ended(winner == battle.player)
 
 	queue_free()
 

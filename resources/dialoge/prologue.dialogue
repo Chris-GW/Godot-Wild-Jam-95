@@ -74,3 +74,19 @@ CRT TV: We will not tolerate your lack of respect.
 CRT TV: YOU SHALL BE DISCIPLINED!
 # enter battle
 => END
+
+~ fax_machine_encounter
+Fax: Who goes?
+Nathan: I prefer not to speak.
+Fax: Understood.
+Fax: Lowly being, do you read?
+Nathan: Yes
+Fax: How so? By interacting with the ethereal rectangle everyone carries these days?
+Fax: What happened to patiently waiting for your coveted information to physically manifest itself before you?
+Fax: The less time it took for information to reach you, the more useless the content became!
+Fax: YOU SHALL RUE THE DAY YOU REPLACED US!
+=> END
+
+~ fax_machine_defeated
+Nathan: Talk about straight fax...
+=> END

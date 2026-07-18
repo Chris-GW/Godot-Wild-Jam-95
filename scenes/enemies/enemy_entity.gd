@@ -1,8 +1,12 @@
+class_name EnemyEntity
 extends Area2D
 
 @onready var navigation_timer: Timer = $NavigationTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var navigation_agent: NavigationAgent2D = $Sprite2D/NavigationAgent2D
+
+@export
+var encounter: Encounter
 
 @export var move_speed: float
 @export var catch_distance: float
@@ -22,7 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	navigation_timer.start()
 	_on_navigation_timer_timeout()
 	set_monitoring.call_deferred(false)
-	
+
 	var tween := create_tween()
 	tween.set_loops()
 	tween.tween_property(sprite_2d, "self_modulate", Color.RED, 0.3)
@@ -49,8 +53,10 @@ func _start_battle() -> void:
 	_player = null
 	DialogueManager.show_dialogue_balloon(dialogue_resource, start_from_title)
 	await DialogueManager.dialogue_ended
-	BattleManager.start_example_battle()
 
+	if encounter:
+		SignalHelper.once(encounter.enemy_defeated, queue_free)
+		BattleManager.start_encounter(encounter)
 
 func _navigate_process(delta: float) -> void:
 	if navigation_agent.is_navigation_finished():

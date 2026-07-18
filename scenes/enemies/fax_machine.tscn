@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://6r8xr0buw6v"]
+[gd_scene format=3 uid="uid://b0jqoa43076ts"]
 
-[ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="1_7vnmr"]
-[ext_resource type="Script" uid="uid://bhksmn6lpkaik" path="res://scenes/enemies/enemy_entity.gd" id="1_h1nkt"]
-[ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_e6o5o"]
-[ext_resource type="Resource" uid="uid://b4dcdx6aikmcb" path="res://resources/encounters/encounter_crttv.tres" id="2_h8dqh"]
+[ext_resource type="Script" uid="uid://bhksmn6lpkaik" path="res://scenes/enemies/enemy_entity.gd" id="1_m1a0y"]
+[ext_resource type="Resource" uid="uid://btpphrw3nsm7u" path="res://resources/encounters/encounter_fax_machine.tres" id="2_m1a0y"]
+[ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="3_xqkcs"]
+[ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="4_tf4p7"]
 
-[node name="CrtTv" type="Area2D" unique_id=492013941]
+[node name="FaxMachine" type="Area2D" unique_id=492013941]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_h1nkt")
-encounter = ExtResource("2_h8dqh")
+script = ExtResource("1_m1a0y")
+encounter = ExtResource("2_m1a0y")
 move_speed = 50.0
 catch_distance = 14.0
-dialogue_resource = ExtResource("2_e6o5o")
-start_from_title = "crt_tv_encounter"
+dialogue_resource = ExtResource("3_xqkcs")
+start_from_title = "fax_machine_encounter"
 
 [node name="NavigationTimer" type="Timer" parent="." unique_id=395461080]
 wait_time = 0.2
@@ -21,10 +21,10 @@ wait_time = 0.2
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009006313]
 z_index = 1
 position = Vector2(0, -1)
-texture = ExtResource("1_7vnmr")
+texture = ExtResource("4_tf4p7")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(16, 32, 16, 16)
+region_rect = Rect2(0, 32, 16, 16)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Sprite2D" unique_id=328010939]
 path_desired_distance = 6.0
