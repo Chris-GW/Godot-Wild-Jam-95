@@ -1,29 +1,14 @@
 extends Node
 
-var _item_pool: Array[Item] = [
-	preload("res://resources/items/item_cassette.tres"),
-	preload("res://resources/items/item_cdrom.tres"),
-	preload("res://resources/items/item_vinyllp.tres"),
-	preload("res://resources/items/item_gameboy.tres"),
-	preload("res://resources/items/item_dialpadphone.tres"),
-	preload("res://resources/items/item_vhs.tres"),
-	preload("res://resources/items/item_mp3.tres"),
-	preload("res://resources/items/item_fax.tres"),
-	preload("res://resources/items/item_crttv.tres"),
-]
-
 var _items: Array[Item] = [
-	preload("res://resources/items/item_vinyllp.tres"),
-	preload("res://resources/items/item_instakill.tres"),
+	preload("res://resources/items/item_startingmoney.tres"),
 ]
 
 func _ready() -> void:
-	SignalHelper.once_next_frame(emit_changed)
-
-func _process(_delta: float) -> void:
 	if OS.has_feature("editor_runtime"):
-		if Input.is_action_just_pressed("debug_add_random_item"):
-			_add_random()
+		_items.push_front(preload("res://resources/items/item_instakill.tres"))
+
+	SignalHelper.once_next_frame(emit_changed)
 
 func emit_changed() -> void:
 	GameEvents.emit_inventory_changed(_items)
@@ -41,7 +26,3 @@ func add(item: Item) -> void:
 		CustomLogger.info("Added %s to inventory" % item.name)
 
 		emit_changed()
-
-func _add_random() -> void:
-	var item: Item = _item_pool.pick_random()
-	add(item)

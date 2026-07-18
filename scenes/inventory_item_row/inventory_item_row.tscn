@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://bf56dli4665y3" path="res://scenes/inventory_item_row/inventory_item_row.gd" id="2_t77pt"]
 [ext_resource type="Script" uid="uid://b1cei7qj4r35g" path="res://scenes/inventory_item_row/inventory_item_row_appearance.gd" id="3_lxtix"]
 [ext_resource type="Texture2D" uid="uid://gluj1nrsmhft" path="res://assets/sprites/pointer.png" id="4_fgsfn"]
-[ext_resource type="Texture2D" uid="uid://d3on1l1y6iu8" path="res://assets/sprites/equippable.png" id="4_s65v4"]
-[ext_resource type="Texture2D" uid="uid://b6ahcnxr6odv1" path="res://assets/sprites/equipped.png" id="5_b88xo"]
 
 [node name="InventoryItemRow" type="HBoxContainer" unique_id=1758540430]
 custom_minimum_size = Vector2(160, 0)
@@ -15,12 +13,10 @@ size_flags_vertical = 0
 theme = ExtResource("1_46otn")
 script = ExtResource("2_t77pt")
 
-[node name="Appearance" type="Node" parent="." unique_id=1187820190 node_paths=PackedStringArray("label", "equippable", "equipped", "pointer")]
+[node name="Appearance" type="Node" parent="." unique_id=1187820190 node_paths=PackedStringArray("label", "pointer")]
 unique_name_in_owner = true
 script = ExtResource("3_lxtix")
 label = NodePath("../Label")
-equippable = NodePath("../Equippable")
-equipped = NodePath("../Equipped")
 pointer = NodePath("../CenterContainer/Pointer")
 
 [node name="Label" type="Label" parent="." unique_id=273070477]
@@ -28,23 +24,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "<item>"
 
-[node name="Equippable" type="TextureRect" parent="." unique_id=200200866]
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("4_s65v4")
-
-[node name="Equipped" type="TextureRect" parent="." unique_id=1538661221]
-visible = false
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("5_b88xo")
-
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1928483684]
 custom_minimum_size = Vector2(12, 0)
 layout_mode = 2
 
 [node name="Pointer" type="TextureRect" parent="CenterContainer" unique_id=964731286]
-visible = false
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_fgsfn")

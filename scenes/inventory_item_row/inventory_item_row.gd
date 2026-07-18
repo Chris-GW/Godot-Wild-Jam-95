@@ -58,14 +58,6 @@ func _refresh() -> void:
 			else:
 				appearance.for_idle()
 
-func show_equipped() -> void:
-	if appearance:
-		appearance.show_equipped()
-
-func show_equippable() -> void:
-	if appearance:
-		appearance.show_equippable()
-
 func to_selected() -> void:
 	if Engine.is_editor_hint():
 		if appearance:

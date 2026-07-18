@@ -1,13 +1,16 @@
 extends Node
 
-const ITEM_LIMIT := 4
-
-var _equipped_items: Array[Item] = [
-	preload("res://resources/items/item_instakill.tres"),
-]
+var _equipped_items: Array[Item] = []
 
 func _ready() -> void:
+	SignalHelper.persist(
+		GameEvents.inventory_changed,
+		_on_inventory_changed)
+
 	SignalHelper.once_next_frame(emit_changed)
+
+func _on_inventory_changed(items: Array[Item]) -> void:
+	_equipped_items = items
 
 func emit_changed() -> void:
 	GameEvents.emit_loadout_changed(_equipped_items)
@@ -20,24 +23,6 @@ func get_item(index: int) -> Item:
 		return null
 
 	return _equipped_items[index]
-
-func equip(item: Item) -> bool:
-	if not _equipped_items.has(item):
-		_equipped_items.append(item)
-
-		CustomLogger.info("Added %s to loadout" % item.name)
-
-		if _equipped_items.size() > ITEM_LIMIT:
-			var removed_item: Item = _equipped_items.pop_front()
-
-			CustomLogger.info("Removed %s from loadout" % removed_item.name)
-
-		emit_changed()
-
-		return true
-
-	CustomLogger.info("Already have %s in loadout!" % item.name)
-	return false
 
 func is_equipped(item: Item) -> bool:
 	return _equipped_items.has(item)

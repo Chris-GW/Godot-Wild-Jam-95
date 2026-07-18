@@ -11,10 +11,6 @@ func _enter_tree() -> void:
 		_on_inventory_changed)
 
 	SignalHelper.persist(
-		GameEvents.loadout_changed,
-		_on_loadout_changed)
-
-	SignalHelper.persist(
 		GameEvents.battle_started,
 		_on_battle_started)
 
@@ -28,9 +24,6 @@ func _on_inventory_changed(items: Array[Item]) -> void:
 	_list_menu_interaction.set_maximum(items.size() - 1)
 
 	_appearance.set_items(items, _list_menu_interaction.current())
-
-func _on_loadout_changed(items: Array[Item]) -> void:
-	_appearance.set_loadout_items(items)
 
 func _on_battle_started() -> void:
 	transition_state(InventoryUI.State.PAUSED)

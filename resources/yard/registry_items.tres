@@ -22,6 +22,7 @@ _uids_to_string_ids = Dictionary[StringName, StringName]({
 &"uid://bvt0pkqo1gbir": &"item_fax",
 &"uid://c0p7luy0dj6ob": &"item_crttv",
 &"uid://c3wgi805suh0t": &"item_instakill",
+&"uid://cscntcvcx1fm6": &"items_startingmoney",
 &"uid://cvpi21c0p54r5": &"item_cdrom",
 &"uid://dedm6iyra2m5": &"item_vinyllp"
 })
@@ -35,5 +36,6 @@ _string_ids_to_uids = Dictionary[StringName, StringName]({
 &"item_instakill": &"uid://c3wgi805suh0t",
 &"item_mp3": &"uid://bsvdnmij7ywsm",
 &"item_vhs": &"uid://bqv07iriv6clw",
-&"item_vinyllp": &"uid://dedm6iyra2m5"
+&"item_vinyllp": &"uid://dedm6iyra2m5",
+&"items_startingmoney": &"uid://cscntcvcx1fm6"
 })
