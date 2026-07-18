@@ -2,11 +2,13 @@
 
 [ext_resource type="Resource" uid="uid://cth1wo7s1wp43" path="res://resources/enemies/enemy_fax.tres" id="1_c2tfm"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_sk442"]
+[ext_resource type="Resource" uid="uid://bvt0pkqo1gbir" path="res://resources/items/item_fax.tres" id="3_66h04"]
 [ext_resource type="Script" uid="uid://qnbiwj0vitic" path="res://resources/encounters/encounter.gd" id="3_p5rnk"]
 
 [resource]
 script = ExtResource("3_p5rnk")
 enemy = ExtResource("1_c2tfm")
+reward = ExtResource("3_66h04")
 enemy_defeated_dialogue = ExtResource("2_sk442")
 start_from_title = "fax_machine_defeated"
 metadata/_custom_type_script = "uid://qnbiwj0vitic"

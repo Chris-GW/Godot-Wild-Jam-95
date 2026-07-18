@@ -5,6 +5,9 @@ extends Resource
 var enemy: EnemyBattler
 
 @export
+var reward: Item
+
+@export
 var enemy_defeated_dialogue: DialogueResource
 
 @export
@@ -20,6 +23,11 @@ func finish(is_won: bool) -> void:
 				start_from_title)
 
 			await DialogueManager.dialogue_ended
+
+		if reward:
+			Inventory.add(reward)
+
+			GameEvents.emit_reward_gained(reward)
 
 		enemy_defeated.emit()
 
