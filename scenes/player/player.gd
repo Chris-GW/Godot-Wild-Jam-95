@@ -33,6 +33,7 @@ func switch_state(state: Player.State, state_data := PlayerStateData.new()) -> v
 	_current_state.state_transition_requested.connect(switch_state)
 	_current_state.name = "PlayerStateMachine: %s" % str(state)
 	
+	assert(_current_state != null)
 	call_deferred("add_child", _current_state)
 
 

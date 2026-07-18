@@ -15,6 +15,7 @@ func transition_map_to(map: BaseMap, enter_node_name: String = "") -> void:
 	remove_child(current_map)
 	current_map.queue_free()
 	current_map = map
+	assert(map != null)
 	add_child(map)
 	if not enter_node_name.is_empty():
 		map.set_enter_node(enter_node_name)

@@ -38,6 +38,7 @@ func switch_state(state: BattleChoicePanel.State, state_data := BattleChoicePane
 	_current_state.state_transition_requested.connect(switch_state)
 	_current_state.name = "BattleChoicePanelStateMachine: %s" % str(state)
 
+	assert(_current_state != null)
 	call_deferred("add_child", _current_state)
 
 func _refresh() -> void:

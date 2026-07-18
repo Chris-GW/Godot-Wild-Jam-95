@@ -26,6 +26,7 @@ func switch_state(state: CreditsScreen.State, state_data := CreditsScreenStateDa
 	_current_state.state_transition_requested.connect(switch_state)
 	_current_state.name = "CreditsScreenStateMachine: %s" % str(state)
 
+	assert(_current_state != null)
 	call_deferred("add_child", _current_state)
 
 func is_shown() -> bool:

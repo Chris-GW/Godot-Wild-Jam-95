@@ -45,6 +45,7 @@ func switch_state(state: InventoryUI.State, state_data := InventoryUIStateData.n
 	_current_state.state_transition_requested.connect(switch_state)
 	_current_state.name = "InventoryUIStateMachine: %s" % str(state)
 
+	assert(_current_state != null)
 	call_deferred("add_child", _current_state)
 
 func _refresh() -> void:

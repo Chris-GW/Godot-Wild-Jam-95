@@ -31,7 +31,8 @@ func switch_state(state: BattleUI.State, state_data := BattleUIStateData.new()) 
 
 	_current_state.state_transition_requested.connect(switch_state)
 	_current_state.name = "BattleUIStateMachine: %s" % str(state)
-
+	
+	assert(_current_state != null)
 	call_deferred("add_child", _current_state)
 
 func _refresh() -> void:

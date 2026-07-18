@@ -59,6 +59,7 @@ func _ensure_enough_labels(line_count: int) -> void:
 		var new_label := LABEL_SCENE.instantiate()
 		new_label.name = "Label%d" % labels_container.get_child_count()
 
+		assert(new_label != null)
 		labels_container.add_child(new_label)
 		new_label.owner = labels_container
 

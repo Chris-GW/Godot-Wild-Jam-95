@@ -29,6 +29,7 @@ func start_encounter(encounter: Encounter) -> void:
 
 	_battle_progressor = BattleProgressor.new()
 	_battle_progressor.battle = battle
+	assert(_battle_progressor != null)
 	add_child(_battle_progressor)
 
 	_battle_progressor.start()

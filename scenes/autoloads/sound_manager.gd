@@ -9,7 +9,7 @@ var _audio_player: AudioStreamPlayer = null
 
 func _ready() -> void:
 	_audio_player = AudioStreamPlayer.new()
-	add_child(_audio_player)
+	add_child.call_deferred(_audio_player)
 
 func play_game_start() -> void:
 	if _audio_player:

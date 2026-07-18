@@ -81,6 +81,7 @@ func _ready() -> void:
 		responses_menu.next_action = next_action
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
+	assert(mutation_cooldown != null)
 	add_child(mutation_cooldown)
 
 	if auto_start:
