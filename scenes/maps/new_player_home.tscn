@@ -3,17 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://qaf18d07q5b8" path="res://scenes/maps/base_map.tscn" id="1_fsvch"]
 [ext_resource type="PackedScene" uid="uid://7wactad5ebn0" path="res://scenes/interactable/interactable.tscn" id="2_lhw4d"]
 [ext_resource type="Texture2D" uid="uid://dgwrxr4otdxeh" path="res://assets/third_party/jfeEwm.png" id="2_m1w2a"]
+[ext_resource type="Script" uid="uid://c5bjm07nhf6lu" path="res://scenes/maps/new_player_home.gd" id="2_tppg1"]
 [ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="3_evko1"]
 [ext_resource type="Script" uid="uid://57u8g6le44ho" path="res://scenes/interactable/interactable_dialogue.gd" id="3_tt7ak"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="4_ndwvj"]
 [ext_resource type="PackedScene" uid="uid://6r8xr0buw6v" path="res://scenes/enemies/crt_tv.tscn" id="6_ndwvj"]
 [ext_resource type="Script" uid="uid://b46llxbxp2101" path="res://scenes/interactable/interactable_map_transition.gd" id="7_uta3m"]
+[ext_resource type="PackedScene" uid="uid://kx7r3skufaq4" path="res://scenes/enemies/dial_pad_phone.tscn" id="8_stcad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8pvw"]
 radius = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uta3m"]
 size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgrle"]
+size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75m4g"]
 radius = 14.0
@@ -28,7 +33,9 @@ source_geometry_group_name = &"navigation_collisions"
 cell_size = 16.0
 agent_radius = 5.0
 
-[node name="NewPlayerHome" unique_id=632494233 instance=ExtResource("1_fsvch")]
+[node name="NewPlayerHome" unique_id=632494233 node_paths=PackedStringArray("enemy_sequence") instance=ExtResource("1_fsvch")]
+script = ExtResource("2_tppg1")
+enemy_sequence = [NodePath("YSort/CrtTv"), NodePath("YSort/DialPadPhone")]
 
 [node name="WaterSprite2D" parent="Parallax2D" parent_id_path=PackedInt32Array(1195434414) index="0" unique_id=128025881]
 visible = false
@@ -73,12 +80,22 @@ shape = SubResource("CircleShape2D_u8pvw")
 debug_color = Color(0.6684895, 0.504956, 0.21288642, 0.41960785)
 
 [node name="CrtTv" parent="YSort" parent_id_path=PackedInt32Array(1352064636) index="4" unique_id=492013941 instance=ExtResource("6_ndwvj")]
+unique_name_in_owner = true
 position = Vector2(344, 132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CrtTv" index="1" unique_id=40763231]
 position = Vector2(-16, -36)
 shape = SubResource("RectangleShape2D_uta3m")
-debug_color = Color(0.87097377, 0.30885124, 0.43573985, 0.41960785)
+debug_color = Color(0.87058824, 0.30980393, 0.43529412, 0.41960785)
+
+[node name="DialPadPhone" parent="YSort" parent_id_path=PackedInt32Array(1352064636) index="5" unique_id=1552667751 instance=ExtResource("8_stcad")]
+unique_name_in_owner = true
+position = Vector2(344, 112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/DialPadPhone" index="2" unique_id=1241341797]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_pgrle")
+debug_color = Color(0.87058824, 0.30980393, 0.43529412, 0.41960785)
 
 [node name="ExitPlayerHomeRight" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=795016624 instance=ExtResource("2_lhw4d")]
 unique_name_in_owner = true

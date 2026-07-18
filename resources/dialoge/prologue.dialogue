@@ -90,3 +90,23 @@ Fax: YOU SHALL RUE THE DAY YOU REPLACED US!
 ~ fax_machine_defeated
 Nathan: Talk about straight fax...
 => END
+
+~ dial_pad_phone_encounter
+Nathan: Oh, a Dial Pad Telephone! I haven't used my phone since Discord.
+Dial-Pad Telephone: What cord? I have a cord! You know, my iconic spiral cord...
+Nathan: Iconic? I'm sorry, but that doesn't ring a bell.
+Dial-Pad Telephone: Well if you want to hear a bell ring... you can ring mine...
+Nathan: Let us end this discussion here.
+Dial-Pad Telephone: Wait! Would you not like to dial a number, for nostalgia's sake?
+
+- Dial 6-7
+	Dial-Pad Telephone: *ringing*
+	- Pick up
+		Voice from telephone: Six Seveennnnn...
+		=> END
+	- Do not pick up
+		=> END
+- Dial 9-1-1
+	=> END
+- Dial 9-5
+	=> END

@@ -18,6 +18,7 @@ var encounter: Encounter
 
 var _player: Player = null
 
+signal defeated
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
@@ -55,7 +56,7 @@ func _start_battle() -> void:
 	await DialogueManager.dialogue_ended
 
 	if encounter:
-		SignalHelper.once(encounter.enemy_defeated, queue_free)
+		SignalHelper.once(encounter.enemy_defeated, _on_encounter_enemy_defeated)
 		BattleManager.start_encounter(encounter)
 
 func _navigate_process(delta: float) -> void:
@@ -70,3 +71,8 @@ func _navigate_process(delta: float) -> void:
 func _on_navigation_timer_timeout() -> void:
 	if is_instance_valid(_player):
 		navigation_agent.target_position = _player.global_position
+
+func _on_encounter_enemy_defeated() -> void:
+	defeated.emit()
+
+	queue_free()

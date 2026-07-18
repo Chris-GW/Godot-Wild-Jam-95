@@ -29,6 +29,7 @@ PlayerManager="*uid://wy214jdh4vgm"
 DialogueManager="*uid://c3rodes2l3gxb"
 SceneSwitcher="*uid://b8xd55tbw76d4"
 SoundManager="*uid://b7khk0p0f50bt"
+EncounterProgress="*uid://bmsopyf2jtdt6"
 
 [dialogue_manager]
 
