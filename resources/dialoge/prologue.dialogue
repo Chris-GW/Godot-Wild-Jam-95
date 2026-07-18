@@ -133,7 +133,7 @@ Nathan: A message...
 # for cave map with mp3_player encounter
 ~ spot_mp3_cave
 ???: The V̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗ is a puzzling land...
-P: Where is that coming from? Is it from that cave over there?
+Nathan: Where is that coming from? Is it from that cave over there?
 => END
 
 ~ enter_mp3_cave

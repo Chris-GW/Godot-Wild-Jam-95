@@ -9,10 +9,13 @@ extends BaseMap
 @onready
 var mp3_player_boo_area: Area2D = %Mp3PlayerBooArea
 
+
 func _ready() -> void:
+	super._ready()
 	SignalHelper.once(
 		mp3_player_boo_area.body_entered,
 		_on_mp3_player_boo_area_body_entered)
+
 
 func _on_mp3_player_boo_area_body_entered(body: Node2D) -> void:
 	if body is Player:

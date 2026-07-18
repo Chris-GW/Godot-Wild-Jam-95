@@ -64,6 +64,7 @@ folder_colors={
 
 player=""
 navigation_collisions=""
+interactable=""
 
 [gui]
 

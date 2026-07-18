@@ -28,6 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 	navigation_timer.start()
 	_on_navigation_timer_timeout()
 	set_monitoring.call_deferred(false)
+	GameEvents.emit_enemy_chasing(self)
 
 	var tween := create_tween()
 	tween.set_loops()
@@ -76,5 +77,5 @@ func _on_navigation_timer_timeout() -> void:
 
 func _on_encounter_enemy_defeated() -> void:
 	defeated.emit()
-
+	EncounterProgress.complete(encounter)
 	queue_free()

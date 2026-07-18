@@ -1,37 +1,30 @@
 extends BaseMap
 
-@export
-var enemy_sequence: Array[EnemyEntity] = []
+@onready var exit_player_home: Interactable = %ExitPlayerHome
+@onready var crt_tv: EnemyEntity = %CrtTv
+@onready var dial_pad_phone: EnemyEntity = %DialPadPhone
+
+@export var mp3_player_encounter: Encounter
+
 
 func _ready() -> void:
-	enemy_sequence = enemy_sequence.filter(
-		func(e: EnemyEntity) -> bool:
-			return not EncounterProgress.is_complete(e.encounter)
-	)
+	super._ready()
+	
+	var complete_crt_tv := EncounterProgress.is_complete(crt_tv.encounter)
+	var complete_dial_pad_phone := EncounterProgress.is_complete(dial_pad_phone.encounter)
+	var complete_mp3_player_encounter := EncounterProgress.is_complete(mp3_player_encounter)
+	
+	if complete_crt_tv:
+		crt_tv.queue_free()
+	else:
+		_enable_enemy(crt_tv)
+	
+	if complete_dial_pad_phone:
+		dial_pad_phone.queue_free()
+	elif complete_mp3_player_encounter:
+		_enable_enemy(dial_pad_phone)
 
-	for i in enemy_sequence.size():
-		if i == 0:
-			_enable_enemy(enemy_sequence[i])
-		else:
-			_disable_enemy(enemy_sequence[i])
 
 func _enable_enemy(enemy: EnemyEntity) -> void:
 	enemy.monitoring = true
-
-	SignalHelper.once(
-		enemy.defeated,
-		_on_enemy_defeated.bind(enemy))
-
-func _disable_enemy(enemy: EnemyEntity) -> void:
-	enemy.monitoring = false
-
-func _on_enemy_defeated(enemy: EnemyEntity) -> void:
-	EncounterProgress.complete(enemy.encounter)
-
-	enemy_sequence.erase(enemy)
-
-	if not enemy_sequence.is_empty():
-		var next_enemy: EnemyEntity = enemy_sequence.front()
-		CustomLogger.debug("Next enemy is %s" % enemy.encounter.enemy.name)
-
-		_enable_enemy(next_enemy)
+	CustomLogger.info("Enable encounter with enemy %s" % enemy.name)
