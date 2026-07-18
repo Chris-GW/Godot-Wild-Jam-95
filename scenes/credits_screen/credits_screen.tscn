@@ -52,7 +52,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 16
 text = "ChrisGW - programmer (overworld, player, enemies)
 phrasmotica - programmer (battles, inventory, UIs)
-roba - writer"
+roba - writer, sound designer, composer"
 autowrap_mode = 2
 
 [node name="Engine" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=933070265]
