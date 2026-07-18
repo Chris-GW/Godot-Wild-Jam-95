@@ -9,15 +9,15 @@ func _enter_tree() -> void:
 		_to_active)
 
 	SignalHelper.once(
-		GameEvents.battle_ended,
-		_on_battle_ended)
+		GameEvents.encounter_ended,
+		_on_encounter_ended)
 
 	var dialogue_manager := Engine.get_singleton("DialogueManager") as DialogueManager
 	SignalHelper.once(
 		dialogue_manager.dialogue_ended,
 		func(_args): _to_active())
 
-func _on_battle_ended(_is_won: bool) -> void:
+func _on_encounter_ended() -> void:
 	_to_active()
 
 func _to_active() -> void:

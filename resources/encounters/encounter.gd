@@ -14,9 +14,13 @@ signal enemy_defeated
 
 func finish(is_won: bool) -> void:
 	if is_won:
-		enemy_defeated.emit()
-
 		if enemy_defeated_dialogue:
 			DialogueManager.show_dialogue_balloon(
 				enemy_defeated_dialogue,
 				start_from_title)
+
+			await DialogueManager.dialogue_ended
+
+		enemy_defeated.emit()
+
+	GameEvents.emit_encounter_ended()

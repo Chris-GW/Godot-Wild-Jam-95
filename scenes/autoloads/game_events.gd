@@ -19,6 +19,8 @@ signal player_attack_requested
 signal player_attack_considered(index: int)
 signal player_attack_chosen(index: int)
 
+signal encounter_ended
+
 func emit_game_started() -> void:
 	game_started.emit()
 
@@ -57,3 +59,6 @@ func emit_player_attack_considered(index: int) -> void:
 
 func emit_player_attack_chosen(index: int) -> void:
 	player_attack_chosen.emit(index)
+
+func emit_encounter_ended() -> void:
+	encounter_ended.emit()

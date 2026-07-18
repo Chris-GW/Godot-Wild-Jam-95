@@ -7,8 +7,8 @@ func _enter_tree() -> void:
 	_appearance.for_paused()
 
 	SignalHelper.persist(
-		GameEvents.battle_ended,
-		_on_battle_ended)
+		GameEvents.encounter_ended,
+		_on_encounter_ended)
 
-func _on_battle_ended(_is_won: bool) -> void:
+func _on_encounter_ended() -> void:
 	transition_state(InventoryUI.State.HIDDEN)
