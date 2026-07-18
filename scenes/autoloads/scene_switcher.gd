@@ -8,4 +8,6 @@ func _ready() -> void:
 		_on_game_started)
 
 func _on_game_started() -> void:
+	SoundManager.play_game_start()
+
 	get_tree().change_scene_to_packed(SCENE_GAME)
