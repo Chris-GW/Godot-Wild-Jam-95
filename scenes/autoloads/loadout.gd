@@ -3,7 +3,6 @@ extends Node
 const ITEM_LIMIT := 4
 
 var _equipped_items: Array[Item] = [
-	preload("res://resources/items/item_instakill.tres"),
 ]
 
 func _ready() -> void:
@@ -21,7 +20,7 @@ func get_item(index: int) -> Item:
 
 	return _equipped_items[index]
 
-func equip(item: Item) -> void:
+func equip(item: Item) -> bool:
 	if not _equipped_items.has(item):
 		_equipped_items.append(item)
 
@@ -33,8 +32,11 @@ func equip(item: Item) -> void:
 			CustomLogger.info("Removed %s from loadout" % removed_item.name)
 
 		emit_changed()
-	else:
-		CustomLogger.info("Already have %s in loadout!" % item.name)
+
+		return true
+
+	CustomLogger.info("Already have %s in loadout!" % item.name)
+	return false
 
 func is_equipped(item: Item) -> bool:
 	return _equipped_items.has(item)

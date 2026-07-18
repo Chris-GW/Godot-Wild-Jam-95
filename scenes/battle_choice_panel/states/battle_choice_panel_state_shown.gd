@@ -13,7 +13,7 @@ func _enter_tree() -> void:
 	_appearance.set_choices(items)
 	_list_menu_interaction.set_maximum(items.size() - 1)
 
-	_on_index_changed(_list_menu_interaction.current())
+	_on_index_changed(_list_menu_interaction.current(), false)
 
 	SignalHelper.once(
 		GameEvents.player_attack_chosen,
@@ -27,6 +27,8 @@ func _enter_tree() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("choose_player_attack"):
+		SoundManager.play_menu_select()
+
 		GameEvents.emit_player_attack_chosen(_list_menu_interaction.current())
 
 	_list_menu_interaction.check()
@@ -34,7 +36,10 @@ func _process(_delta: float) -> void:
 func _on_player_attack_chosen(_index: int) -> void:
 	transition_state(BattleChoicePanel.State.HIDDEN)
 
-func _on_index_changed(index: int) -> void:
+func _on_index_changed(index: int, play_sound := true) -> void:
 	_appearance.set_selected_index(index)
+
+	if play_sound:
+		SoundManager.play_menu_up_down()
 
 	GameEvents.emit_player_attack_considered(index)

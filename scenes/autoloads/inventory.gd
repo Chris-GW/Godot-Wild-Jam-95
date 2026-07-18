@@ -13,6 +13,7 @@ var _item_pool: Array[Item] = [
 ]
 
 var _items: Array[Item] = [
+	preload("res://resources/items/item_vinyllp.tres"),
 	preload("res://resources/items/item_instakill.tres"),
 ]
 
