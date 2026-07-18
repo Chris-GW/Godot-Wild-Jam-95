@@ -42,7 +42,7 @@ func emit_map_transition_requested(map_scene_path: String, enter_node_name: Stri
 	map_transition_requested.emit(map_scene_path, enter_node_name)
 
 func emit_enemy_chasing(enemy_entity: EnemyEntity) -> void:
-	enemy_chasing.emit()
+	enemy_chasing.emit(enemy_entity)
 
 func emit_battle_started() -> void:
 	battle_started.emit()
