@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c3wgi805suh0t"]
+
+[ext_resource type="Script" uid="uid://cbfayiutuavjm" path="res://resources/items/item.gd" id="1_jujy3"]
+[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_x0qy0"]
+[ext_resource type="Script" uid="uid://vp61h3km15yk" path="res://resources/number_resolvers/current_health_fraction_resolver.gd" id="2_0jb7k"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="3_488pc"]
+
+[sub_resource type="Resource" id="Resource_0yvth"]
+script = ExtResource("2_0jb7k")
+battler_resolver = ExtResource("1_x0qy0")
+factor = 1.0
+metadata/_custom_type_script = "uid://vp61h3km15yk"
+
+[sub_resource type="Resource" id="Resource_ot71w"]
+script = ExtResource("3_488pc")
+battler_resolver = ExtResource("1_x0qy0")
+damage_resolver = SubResource("Resource_0yvth")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
+
+[resource]
+script = ExtResource("1_jujy3")
+id = 9
+name = "Insta-Kill"
+battle_effect = SubResource("Resource_ot71w")
+description = "Instantly kills the opponent."
+metadata/_custom_type_script = "uid://cbfayiutuavjm"
