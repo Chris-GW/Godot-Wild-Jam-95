@@ -9,5 +9,5 @@ id = 6
 name = "MP3 Player"
 item_class = 1
 battle_effect = ExtResource("1_bitvc")
-description = "MP3 Player heals the user by 10HP. Costs 8MP."
+description = "MP3 Player hits the opponent for 10HP."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

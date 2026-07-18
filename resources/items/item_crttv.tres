@@ -9,5 +9,5 @@ id = 5
 name = "CRT Television"
 item_class = 1
 battle_effect = ExtResource("1_mqdxx")
-description = "CRT Television cuts the enemy's current HP in half. Costs 6MP."
+description = "CRT Television cuts the enemy's current HP in half."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

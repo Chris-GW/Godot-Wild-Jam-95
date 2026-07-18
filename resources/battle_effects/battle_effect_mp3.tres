@@ -1,34 +1,16 @@
-[gd_resource type="Resource" script_class="EffectWithRequirement" format=3 uid="uid://cfdabhltodxut"]
+[gd_resource type="Resource" script_class="DamageBattlerEffect" format=3 uid="uid://cfdabhltodxut"]
 
-[ext_resource type="Resource" uid="uid://con5l1tl0epxi" path="res://resources/battler_resolvers/battler_resolver_user.tres" id="1_w5ffj"]
+[ext_resource type="Resource" uid="uid://hsuyu0a7r4nw" path="res://resources/battler_resolvers/battler_resolver_opponent.tres" id="1_cxc4c"]
+[ext_resource type="Script" uid="uid://bomv8itaerdgs" path="res://resources/battle_effects/damage_battler_effect.gd" id="1_r0p88"]
 [ext_resource type="Script" uid="uid://busitjk6o6iyp" path="res://resources/number_resolvers/constant_number_resolver.gd" id="2_r0p88"]
-[ext_resource type="Script" uid="uid://ct6glo301k5vr" path="res://resources/battle_effects/heal_battler_effect.gd" id="3_twaer"]
-[ext_resource type="Script" uid="uid://b1xmqjb4fy506" path="res://resources/battle_effects/minimum_mana_requirement.gd" id="4_jwfkd"]
-[ext_resource type="Script" uid="uid://de8ghpes5wg8y" path="res://resources/battle_effects/effect_with_requirement.gd" id="5_58gi3"]
 
-[sub_resource type="Resource" id="Resource_yh0pq"]
+[sub_resource type="Resource" id="Resource_hpyjv"]
 script = ExtResource("2_r0p88")
 value = 10.0
 metadata/_custom_type_script = "uid://busitjk6o6iyp"
 
-[sub_resource type="Resource" id="Resource_y65wl"]
-script = ExtResource("3_twaer")
-battler_resolver = ExtResource("1_w5ffj")
-healing_resolver = SubResource("Resource_yh0pq")
-metadata/_custom_type_script = "uid://ct6glo301k5vr"
-
-[sub_resource type="Resource" id="Resource_t4h1e"]
-script = ExtResource("2_r0p88")
-value = 8.0
-metadata/_custom_type_script = "uid://busitjk6o6iyp"
-
-[sub_resource type="Resource" id="Resource_h4kny"]
-script = ExtResource("4_jwfkd")
-battler_resolver = ExtResource("1_w5ffj")
-amount_resolver = SubResource("Resource_t4h1e")
-metadata/_custom_type_script = "uid://b1xmqjb4fy506"
-
 [resource]
-script = ExtResource("5_58gi3")
-requirement = SubResource("Resource_h4kny")
-effect = SubResource("Resource_y65wl")
+script = ExtResource("1_r0p88")
+battler_resolver = ExtResource("1_cxc4c")
+damage_resolver = SubResource("Resource_hpyjv")
+metadata/_custom_type_script = "uid://bomv8itaerdgs"
