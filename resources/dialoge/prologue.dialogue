@@ -75,6 +75,11 @@ CRT TV: YOU SHALL BE DISCIPLINED!
 # enter battle
 => END
 
+~ crt_tv_defeated
+Nathan: HAHA! Be banished to the V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠!
+CRT TV: not... the... V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠...
+=> END
+
 ~ fax_machine_encounter
 Fax: Who goes?
 Nathan: I prefer not to speak.

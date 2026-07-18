@@ -1,9 +1,12 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://b4dcdx6aikmcb"]
 
 [ext_resource type="Resource" uid="uid://b48p05mlrf3fm" path="res://resources/enemies/enemy_crttv.tres" id="1_p45gn"]
+[ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_d5tbh"]
 [ext_resource type="Script" uid="uid://qnbiwj0vitic" path="res://resources/encounters/encounter.gd" id="2_q1r4h"]
 
 [resource]
 script = ExtResource("2_q1r4h")
 enemy = ExtResource("1_p45gn")
+enemy_defeated_dialogue = ExtResource("2_d5tbh")
+start_from_title = "crt_tv_defeated"
 metadata/_custom_type_script = "uid://qnbiwj0vitic"
