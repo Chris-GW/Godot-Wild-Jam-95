@@ -8,7 +8,7 @@ if prologue_has_game:
 	Nathan: Time to load it in.
 	$>> start_world_transformation()
 	Nathan: Woah, what is happening-
-	Nathan: aaaaaaaaaaaaaaa [font=res://assets/fonts/NotoSans.ttf]V̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗sfV̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗efV̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗
+	Nathan: aaaaaaaaaaaaaaa
 	=> END
 
 if prologue_pc_interaction_count <= 0
