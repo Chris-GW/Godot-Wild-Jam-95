@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b6s755x3ajnxw"]
 
 [ext_resource type="Script" uid="uid://d0pawe6ij8txt" path="res://scripts/map_manager.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://1ymi7ipnb458" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dewwe832lpv1t" path="res://scenes/inventory_ui/inventory_ui.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b04nnqh1q5gno" path="res://scenes/maps/player_house.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ba4v4shxk5egu" path="res://scenes/battle_ui/battle_ui.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=963142286]
+script = ExtResource("1_lquwl")
 
 [node name="MapManager" type="Node2D" parent="." unique_id=234274128]
 script = ExtResource("1_h2yge")

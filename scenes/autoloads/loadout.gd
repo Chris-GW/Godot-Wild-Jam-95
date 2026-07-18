@@ -7,9 +7,9 @@ var _equipped_items: Array[Item] = [
 ]
 
 func _ready() -> void:
-	SignalHelper.once_next_frame(_emit_changed)
+	SignalHelper.once_next_frame(emit_changed)
 
-func _emit_changed() -> void:
+func emit_changed() -> void:
 	GameEvents.emit_loadout_changed(_equipped_items)
 
 func get_items() -> Array[Item]:
@@ -32,7 +32,7 @@ func equip(item: Item) -> void:
 
 			CustomLogger.info("Removed %s from loadout" % removed_item.name)
 
-		_emit_changed()
+		emit_changed()
 	else:
 		CustomLogger.info("Already have %s in loadout!" % item.name)
 

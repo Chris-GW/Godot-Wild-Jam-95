@@ -17,14 +17,14 @@ var _items: Array[Item] = [
 ]
 
 func _ready() -> void:
-	SignalHelper.once_next_frame(_emit_changed)
+	SignalHelper.once_next_frame(emit_changed)
 
 func _process(_delta: float) -> void:
 	if OS.has_feature("editor_runtime"):
 		if Input.is_action_just_pressed("debug_add_random_item"):
 			_add_random()
 
-func _emit_changed() -> void:
+func emit_changed() -> void:
 	GameEvents.emit_inventory_changed(_items)
 
 func get_item(index: int) -> Item:
@@ -39,7 +39,7 @@ func add(item: Item) -> void:
 
 		CustomLogger.info("Added %s to inventory" % item.name)
 
-		_emit_changed()
+		emit_changed()
 
 func _add_random() -> void:
 	var item: Item = _item_pool.pick_random()
