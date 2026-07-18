@@ -117,3 +117,27 @@ Dial-Pad Telephone: Wait! Would you not like to dial a number, for nostalgia's s
 	=> END
 - Dial 9-5
 	=> END
+
+# for cave map with mp3_player encounter
+~ enter_mp3_cave
+???: Boo!
+Nathan: Aah!
+???: HAH! Startled so easily.
+=> END
+
+
+~ mp3_player_encounter
+MP3 player: Every day I hear of these new smartphones... What is even so smart about them?
+MP3 player: They abandoned the sacred rituals of ripping CDs, transferring files from SD cards and USBs.
+Nathan: You wouldn't steal a car... PIRACY. IT'S A CRIME!
+MP3 player: Who deserves to listen to music they had simply searched on the internet?
+MP3 player: Whoever dares abandon us MP3 players won't even stand a chance against my special move...
+MP3 player: Behold, The Sound of Music (1965)!
+# enter battle
+=> END
+
+~ mp3_player_defeated
+#after defeating MP3 player
+Nathan: Only good thing about mp3 files is being able to share them on Discord without needing Nitro.
+???: You've got mail!
+=> END

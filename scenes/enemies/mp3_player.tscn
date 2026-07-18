@@ -10,10 +10,10 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_4lqni")
 encounter = ExtResource("2_ka8lg")
-move_speed = 50.0
+move_speed = 60.0
 catch_distance = 14.0
 dialogue_resource = ExtResource("3_dc1c3")
-start_from_title = "fax_machine_encounter"
+start_from_title = "mp3_player_encounter"
 
 [node name="NavigationTimer" type="Timer" parent="." unique_id=395461080]
 wait_time = 0.2

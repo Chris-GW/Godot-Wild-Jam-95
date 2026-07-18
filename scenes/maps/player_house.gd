@@ -1,5 +1,7 @@
 extends BaseMap
 
+@export_file("*.tscn") var new_world_scene: String
+
 
 func _ready() -> void:
 	super._ready()
@@ -20,7 +22,7 @@ func start_world_transformation() -> void:
 	await DialogueManager.dialogue_ended
 	tween.kill()
 	self.modulate = Color.WHITE
-	GameEvents.emit_map_transition_requested("res://scenes/maps/new_player_home.tscn")
+	GameEvents.emit_map_transition_requested(new_world_scene)
 
 func animate_random_map_colors() -> void:
 	create_tween().tween_property(self, "modulate", Color(randf(), randf(), randf()), 1.0)

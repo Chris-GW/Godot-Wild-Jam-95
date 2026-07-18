@@ -9,6 +9,7 @@ extends Area2D
 var encounter: Encounter
 
 @export var move_speed: float
+@export var move_speed_increase := 2.0
 @export var catch_distance: float
 
 ## The dialogue resource
@@ -41,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	if _is_near_player():
 		_start_battle()
 	else:
+		move_speed += move_speed_increase * delta
 		_navigate_process(delta)
 
 
