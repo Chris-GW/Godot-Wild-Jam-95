@@ -80,6 +80,10 @@ Nathan: HAHA! Be banished to the V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌
 CRT TV: not... the... V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠...
 => END
 
+~ spot_fax_office
+Nathan: Maybe someone in that office building can help me.
+=> END
+
 ~ fax_machine_encounter
 Nathan: Progress report?
 Fax: Printing successful.
@@ -119,6 +123,11 @@ Dial-Pad Telephone: Wait! Would you not like to dial a number, for nostalgia's s
 	=> END
 
 # for cave map with mp3_player encounter
+~ spot_mp3_cave
+???: The V̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗ is a puzzling land...
+P: Where is that coming from? Is it from that cave over there?
+=> END
+
 ~ enter_mp3_cave
 ???: Boo!
 Nathan: Aah!
