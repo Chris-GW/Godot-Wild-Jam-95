@@ -9,8 +9,6 @@
 [ext_resource type="Resource" uid="uid://b48p05mlrf3fm" path="res://resources/enemies/enemy_crttv.tres" id="5_yoesv"]
 [ext_resource type="Resource" uid="uid://7ovbx0fxfxcs" path="res://resources/players/player_default.tres" id="6_k1ugx"]
 [ext_resource type="PackedScene" uid="uid://ccd3jmsiwmndr" path="res://scenes/battler_sprite_panel/battler_sprite_panel.tscn" id="6_yoesv"]
-[ext_resource type="PackedScene" uid="uid://6jv5au6iwcqv" path="res://scenes/enemy_intent_panel/enemy_intent_panel.tscn" id="7_qsky5"]
-[ext_resource type="Resource" uid="uid://boogfknsiuske" path="res://resources/battle_effects/battle_effect_crttv.tres" id="8_6u71g"]
 [ext_resource type="PackedScene" uid="uid://t3d4fsyv7dna" path="res://scenes/item_description_panel/item_description_panel.tscn" id="8_ewcbu"]
 [ext_resource type="Resource" uid="uid://cvpi21c0p54r5" path="res://resources/items/item_cdrom.tres" id="9_yoesv"]
 
@@ -26,7 +24,7 @@ text_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/BattleTextP
 item_description_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/VBoxContainer/ItemDescriptionPanel")
 enemy_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerPanel")
 enemy_battler_sprite_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerSpritePanel")
-enemy_intent_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyIntentPanel")
+enemy_intent_panel = NodePath("")
 player_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerPanel")
 player_battler_sprite_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerSpritePanel")
 
@@ -51,10 +49,6 @@ battler = ExtResource("5_yoesv")
 
 [node name="EnemyBattlerSpritePanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=1538847208 instance=ExtResource("6_yoesv")]
 layout_mode = 2
-
-[node name="EnemyIntentPanel" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=2062689156 instance=ExtResource("7_qsky5")]
-layout_mode = 2
-effect = ExtResource("8_6u71g")
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/BattlerPanels" unique_id=675683077]
 layout_mode = 2

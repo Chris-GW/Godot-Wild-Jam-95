@@ -8,10 +8,6 @@ func _enter_tree() -> void:
 	_appearance.set_enemy(BattleManager.get_current().enemy)
 
 	SignalHelper.persist(
-		GameEvents.enemy_effect_resolved,
-		_on_enemy_effect_resolved)
-
-	SignalHelper.persist(
 		GameEvents.player_attack_requested,
 		_on_player_attack_requested)
 
@@ -30,9 +26,6 @@ func _enter_tree() -> void:
 	SignalHelper.persist(
 		GameEvents.battle_text_created,
 		_on_battle_text_created)
-
-func _on_enemy_effect_resolved(effect: BattleEffect) -> void:
-	_appearance.set_enemy_effect(effect)
 
 func _on_player_attack_requested() -> void:
 	_appearance.for_player_attack_requested()
