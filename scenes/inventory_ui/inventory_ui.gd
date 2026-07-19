@@ -21,9 +21,8 @@ var _state_factory := InventoryUIStateFactory.new()
 var _current_state: InventoryUIState = null
 
 func _ready() -> void:
-	_refresh()
-
 	if Engine.is_editor_hint():
+		_refresh()
 		return
 
 	list_menu_interaction.set_tracker_name("InventorySelectedIndex")
