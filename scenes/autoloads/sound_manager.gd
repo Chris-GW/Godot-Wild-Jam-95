@@ -3,17 +3,21 @@ extends Node
 const GAME_START := preload("res://assets/audio/sfx/menu-up-down.mp3")
 
 const MENU_UP_DOWN := preload("res://assets/audio/sfx/menu-up-down.mp3")
-const MENU_SELECT := preload("res://assets/audio/sfx/menu-select.mp3")
+const MENU_SELECT := preload("res://assets/audio/sfx/more clicky 2.wav")
 
 const INVENTORY_OPEN := preload("res://assets/audio/sfx/inventory open MASTER 2.wav")
 const INVENTORY_CLOSE := preload("res://assets/audio/sfx/inventory close MASTER 2.wav")
 
+const DOOR_SFX := preload("res://assets/audio/sfx/door exist.wav")
+
 var _audio_player: AudioStreamPlayer = null
+
 
 func _ready() -> void:
 	_audio_player = AudioStreamPlayer.new()
 	_audio_player.bus = "sfx"
 	add_child.call_deferred(_audio_player)
+
 
 func play_game_start() -> void:
 	if _audio_player:
@@ -38,4 +42,10 @@ func play_inventory_open() -> void:
 func play_inventory_close() -> void:
 	if _audio_player:
 		_audio_player.stream = INVENTORY_CLOSE
+		_audio_player.play()
+
+
+func play_door_sfx() -> void:
+	if _audio_player:
+		_audio_player.stream = DOOR_SFX
 		_audio_player.play()

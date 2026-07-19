@@ -112,6 +112,7 @@ position = Vector2(296, 112)
 script = ExtResource("7_uta3m")
 enter_scene = "uid://dgicwcsjnabar"
 enter_node_name = "%EnterPlayerHome"
+with_door_sound = true
 action_name = "[E] to exit"
 
 [node name="ActionLabel" parent="MapTransitionAreas/ExitPlayerHome" index="0" unique_id=867611635]

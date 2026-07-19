@@ -73,6 +73,7 @@ position = Vector2(0, 12)
 script = ExtResource("4_85y4l")
 enter_scene = "uid://btyvthmwfo23r"
 enter_node_name = "%ExitPlayerHome"
+with_door_sound = true
 action_name = "[E] to enter"
 
 [node name="ActionLabel" parent="MapTransitionAreas/BigApartment/EnterPlayerHome" index="0" unique_id=867611635]
@@ -116,6 +117,7 @@ position = Vector2(8, -60)
 script = ExtResource("4_85y4l")
 enter_scene = "uid://bhn8w7wsgfp5d"
 enter_node_name = "%ExitOffice"
+with_door_sound = true
 action_name = "[E] to enter"
 
 [node name="ActionLabel" parent="MapTransitionAreas/SmallApartment/EnterOffice" index="0" unique_id=867611635]
@@ -139,6 +141,7 @@ position = Vector2(1080, -204)
 script = ExtResource("4_85y4l")
 enter_scene = "uid://cynliqpulvsgy"
 enter_node_name = "%ExitCave"
+with_door_sound = false
 action_name = "[E] to enter"
 
 [node name="ActionLabel" parent="MapTransitionAreas/EnterCave" index="0" unique_id=867611635]

@@ -72,6 +72,7 @@ position = Vector2(152, 171)
 script = ExtResource("4_0e3rw")
 enter_scene = "uid://sj4f5q3rbbdc"
 enter_node_name = "%EnterPlayerHome"
+with_door_sound = true
 action_name = "[E] to exit"
 
 [node name="DoorSprite2D" type="Sprite2D" parent="MapTransitionAreas/ExitPlayerHome" index="0" unique_id=1094552051]
