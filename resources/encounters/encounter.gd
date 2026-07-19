@@ -33,5 +33,7 @@ func finish(is_won: bool) -> void:
 			GameEvents.emit_reward_gained(reward)
 
 		enemy_defeated.emit()
+	else:
+		GameEvents.emit_player_defeated()
 
 	GameEvents.emit_encounter_ended()

@@ -21,6 +21,7 @@ signal player_attack_considered(index: int)
 signal player_attack_chosen(index: int)
 
 signal reward_gained(item: Item)
+signal player_defeated
 signal encounter_ended
 
 func emit_game_started() -> void:
@@ -67,6 +68,9 @@ func emit_player_attack_chosen(index: int) -> void:
 
 func emit_reward_gained(item: Item) -> void:
 	reward_gained.emit(item)
+
+func emit_player_defeated() -> void:
+	player_defeated.emit()
 
 func emit_encounter_ended() -> void:
 	encounter_ended.emit()
