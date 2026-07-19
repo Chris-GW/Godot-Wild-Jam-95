@@ -73,7 +73,10 @@ func _navigate_process(delta: float) -> void:
 	var next_path_position := navigation_agent.get_next_path_position()
 	var weight := 1.0 - exp(-move_speed * delta)
 	sprite_2d.global_position = sprite_2d.global_position.move_toward(next_path_position, weight)
-	sprite_2d.look_at(next_path_position)
+	#sprite_2d.look_at(next_path_position) # lets just flip the sprite
+	var move_direction := sprite_2d.global_position.direction_to(next_path_position)
+	if abs(move_direction.x) > abs(move_direction.y):
+		sprite_2d.flip_h = move_direction.x < 0.0
 
 
 func _on_navigation_timer_timeout() -> void:
