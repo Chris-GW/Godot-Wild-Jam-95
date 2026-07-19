@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_hm13t"]
 [ext_resource type="Script" uid="uid://qnbiwj0vitic" path="res://resources/encounters/encounter.gd" id="2_yksa2"]
 [ext_resource type="Resource" uid="uid://bvd55q5ctxygr" path="res://resources/items/item_dialpadphone.tres" id="3_hm13t"]
+[ext_resource type="AudioStream" uid="uid://dwk4mqmffttst" path="res://assets/audio/music/callmemaybe unmixed yet mastered.wav" id="3_k8ih0"]
 [ext_resource type="Resource" uid="uid://b4dcdx6aikmcb" path="res://resources/encounters/encounter_crttv.tres" id="4_3awc6"]
 [ext_resource type="Resource" uid="uid://b287iker2yguc" path="res://resources/encounters/encounter_mp3_player.tres" id="5_k8ih0"]
 [ext_resource type="Resource" uid="uid://btpphrw3nsm7u" path="res://resources/encounters/encounter_fax_machine.tres" id="6_8kxmt"]
@@ -11,6 +12,7 @@
 [resource]
 script = ExtResource("2_yksa2")
 enemy = ExtResource("1_ta1ro")
+music = ExtResource("3_k8ih0")
 reward = ExtResource("3_hm13t")
 enemy_defeated_dialogue = ExtResource("2_hm13t")
 start_from_title = "dial_pad_phone_defeated"
