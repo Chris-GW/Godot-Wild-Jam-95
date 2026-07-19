@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_k8flx")
 id = 10
-name = "€20 cash"
+name = "$20 cash"
 battle_effect = ExtResource("1_gx5n3")
 description = "Some loose change you had lying around..."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"

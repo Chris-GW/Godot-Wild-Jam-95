@@ -31,14 +31,5 @@ debug_enabled = true
 debug_path_custom_color = Color(0.4710393, 0.7826157, 0.9631359, 1)
 debug_path_custom_point_size = 2.0
 
-[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=369046703]
-custom_minimum_size = Vector2(2, 2)
-custom_maximum_size = Vector2(2, 2)
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = 1.0
-color = Color(0.05000019, 0, 1, 1)
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="NavigationTimer" to="." method="_on_navigation_timer_timeout"]
