@@ -28,7 +28,6 @@ region_rect = Rect2(112, 72, 16, 8)
 path_desired_distance = 6.0
 target_desired_distance = 6.0
 path_max_distance = 32.0
-debug_enabled = true
 debug_path_custom_color = Color(0.4710393, 0.7826157, 0.9631359, 1)
 debug_path_custom_point_size = 2.0
 
