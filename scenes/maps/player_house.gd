@@ -43,4 +43,4 @@ func do_end_game() -> void:
 	var main_menu := "res://scenes/main_menu/main_menu.tscn"
 	var tween := create_tween()
 	tween.tween_property(self, "modulate", Color.BLACK, 4.0)
-	tween.tween_callback(get_tree().change_scene_to_file.bind(main_menu)).set_delay(2.0)
+	tween.tween_callback(get_tree().change_scene_to_file.bind(main_menu)).set_delay(1.5)

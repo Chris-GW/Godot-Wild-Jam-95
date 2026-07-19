@@ -4,11 +4,12 @@ extends BaseMap
 @onready var discord_notification_sfx: AudioStreamPlayer = $DiscordNotificationSfx
 @onready var crt_tv: EnemyEntity = %CrtTv
 @onready var dial_pad_phone: EnemyEntity = %DialPadPhone
+@onready var radio: Interactable = %Radio
 
 
 func _ready() -> void:
 	super._ready()
-
+	
 	_try_enable_enemy(crt_tv)
 	_try_enable_enemy(dial_pad_phone)
 
@@ -25,8 +26,3 @@ func _try_enable_enemy(enemy: EnemyEntity) -> void:
 
 func start_world_transformation() -> void:
 	world_teleporter.start_world_transformation()
-
-
-func play_discord_notification_sfx() -> void:
-	discord_notification_sfx.play()
-	await discord_notification_sfx.finished
