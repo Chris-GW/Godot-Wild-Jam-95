@@ -25,4 +25,5 @@ func _try_enable_enemy(enemy: EnemyEntity) -> void:
 
 
 func start_world_transformation() -> void:
+	PlayerManager.is_back_home = true
 	world_teleporter.start_world_transformation()
