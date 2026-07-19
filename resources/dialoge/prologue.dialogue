@@ -127,6 +127,7 @@ Nathan: This adventure sure has been a trip down memory lane.
 Nathan: I would be lying if I said that I hadn't enjoyed it!
 Nathan: Maybe I can even decorate my room with these relics.
 *(discord notification sound)*
+$>> start_world_transformation()
 Nathan: A message...
 => END
 

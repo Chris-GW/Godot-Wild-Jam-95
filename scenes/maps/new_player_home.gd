@@ -1,6 +1,9 @@
 extends BaseMap
 
 @onready
+var world_teleporter: WorldTeleporter = %WorldTeleporter
+
+@onready
 var crt_tv: EnemyEntity = %CrtTv
 
 @onready
@@ -20,3 +23,6 @@ func _try_enable_enemy(enemy: EnemyEntity) -> void:
 		CustomLogger.info("Enabled encounter with enemy %s" % enemy.name)
 	else:
 		CustomLogger.info("%s encounter is not yet available" % enemy.name)
+
+func start_world_transformation() -> void:
+	world_teleporter.start_world_transformation()

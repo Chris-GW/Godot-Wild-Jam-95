@@ -13,7 +13,6 @@ script = ExtResource("1_lquwl")
 script = ExtResource("1_h2yge")
 
 [node name="CurrentMap" parent="MapManager" unique_id=632494233 instance=ExtResource("2_lquwl")]
-new_world_scene = "uid://sj4f5q3rbbdc"
 
 [node name="InventoryUI" parent="." unique_id=1225508954 instance=ExtResource("2_0xm2m")]
 

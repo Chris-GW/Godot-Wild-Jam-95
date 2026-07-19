@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dgwrxr4otdxeh" path="res://assets/third_party/jfeEwm.png" id="2_m1w2a"]
 [ext_resource type="Script" uid="uid://c5bjm07nhf6lu" path="res://scenes/maps/new_player_home.gd" id="2_tppg1"]
 [ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="3_evko1"]
-[ext_resource type="Resource" uid="uid://b287iker2yguc" path="res://resources/encounters/encounter_mp3_player.tres" id="3_stcad"]
+[ext_resource type="PackedScene" uid="uid://c6t60smhdqerm" path="res://scenes/maps/world_teleporter.tscn" id="3_stcad"]
 [ext_resource type="Script" uid="uid://57u8g6le44ho" path="res://scenes/interactable/interactable_dialogue.gd" id="3_tt7ak"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="4_ndwvj"]
 [ext_resource type="PackedScene" uid="uid://6r8xr0buw6v" path="res://scenes/enemies/crt_tv.tscn" id="6_ndwvj"]
@@ -36,7 +36,11 @@ agent_radius = 5.0
 
 [node name="NewPlayerHome" unique_id=632494233 instance=ExtResource("1_fsvch")]
 script = ExtResource("2_tppg1")
-mp3_player_encounter = ExtResource("3_stcad")
+
+[node name="WorldTeleporter" parent="." index="0" unique_id=1168783106 node_paths=PackedStringArray("target") instance=ExtResource("3_stcad")]
+unique_name_in_owner = true
+target = NodePath("..")
+destination_scene = "uid://b04nnqh1q5gno"
 
 [node name="WaterSprite2D" parent="Parallax2D" parent_id_path=PackedInt32Array(1195434414) index="0" unique_id=128025881]
 visible = false
@@ -124,12 +128,12 @@ debug_color = Color(0.66643393, 0.50880927, 0.14793083, 0.41960785)
 [node name="InteractionIndicator" parent="MapTransitionAreas/ExitPlayerHome" index="2" unique_id=1650588540]
 visible = false
 
-[node name="JfeEwm" type="Sprite2D" parent="." index="3" unique_id=300865698]
+[node name="JfeEwm" type="Sprite2D" parent="." index="4" unique_id=300865698]
 position = Vector2(36, -372)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_m1w2a")
 
-[node name="NavigationRegion2D" parent="." index="4" unique_id=1752426520]
+[node name="NavigationRegion2D" parent="." index="5" unique_id=1752426520]
 navigation_polygon = SubResource("NavigationPolygon_ndwvj")
 metadata/_edit_lock_ = true
 

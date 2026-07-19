@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://qaf18d07q5b8" path="res://scenes/maps/base_map.tscn" id="1_wy7aw"]
 [ext_resource type="Script" uid="uid://dg7a658f2dpr7" path="res://scenes/maps/player_house.gd" id="2_s52iw"]
 [ext_resource type="PackedScene" uid="uid://7wactad5ebn0" path="res://scenes/interactable/interactable.tscn" id="3_pjn78"]
+[ext_resource type="PackedScene" uid="uid://c6t60smhdqerm" path="res://scenes/maps/world_teleporter.tscn" id="3_yfyrd"]
 [ext_resource type="Script" uid="uid://b46llxbxp2101" path="res://scenes/interactable/interactable_map_transition.gd" id="4_0e3rw"]
 [ext_resource type="Texture2D" uid="uid://c02ag1suew3vr" path="res://assets/third_party/world_tilesets_remastered/indoors.png" id="5_mgxl7"]
 [ext_resource type="Script" uid="uid://57u8g6le44ho" path="res://scenes/interactable/interactable_dialogue.gd" id="5_yc7q4"]
@@ -26,7 +27,11 @@ agent_radius = 5.0
 
 [node name="PlayerHouse" unique_id=632494233 instance=ExtResource("1_wy7aw")]
 script = ExtResource("2_s52iw")
-new_world_scene = "uid://btyvthmwfo23r"
+
+[node name="WorldTeleporter" parent="." index="0" unique_id=1168783106 node_paths=PackedStringArray("target") instance=ExtResource("3_yfyrd")]
+unique_name_in_owner = true
+target = NodePath("..")
+destination_scene = "res://scenes/maps/new_player_home.tscn"
 
 [node name="WaterSprite2D" parent="Parallax2D" parent_id_path=PackedInt32Array(1195434414) index="0" unique_id=128025881]
 visible = false
@@ -93,7 +98,7 @@ debug_color = Color(0.6755526, 0.505897, 0.06396656, 0.41960785)
 position = Vector2(8, 16)
 flip_h = true
 
-[node name="NavigationRegion2D" parent="." index="3" unique_id=1752426520]
+[node name="NavigationRegion2D" parent="." index="4" unique_id=1752426520]
 visible = false
 position = Vector2(116, 0)
 navigation_polygon = SubResource("NavigationPolygon_yc7q4")

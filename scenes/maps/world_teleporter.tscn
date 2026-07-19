@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6t60smhdqerm"]
+
+[ext_resource type="Script" uid="uid://cb57668x101ae" path="res://scenes/maps/world_teleporter.gd" id="1_ellh7"]
+
+[node name="WorldTeleporter" type="Node" unique_id=1168783106]
+script = ExtResource("1_ellh7")
