@@ -1,7 +1,6 @@
 extends BaseMap
 
 @onready var world_teleporter: WorldTeleporter = %WorldTeleporter
-@onready var discord_notification_sfx: AudioStreamPlayer = $DiscordNotificationSfx
 @onready var crt_tv: EnemyEntity = %CrtTv
 @onready var dial_pad_phone: EnemyEntity = %DialPadPhone
 @onready var radio: Interactable = %Radio
