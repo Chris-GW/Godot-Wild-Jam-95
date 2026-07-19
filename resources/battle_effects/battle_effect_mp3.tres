@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_hpyjv"]
 script = ExtResource("2_r0p88")
-value = 10.0
+value = 8.0
 metadata/_custom_type_script = "uid://busitjk6o6iyp"
 
 [resource]

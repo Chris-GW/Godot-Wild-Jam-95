@@ -9,5 +9,5 @@ id = 8
 name = "Dial-Pad Phone"
 item_class = 1
 battle_effect = ExtResource("1_nt02u")
-description = "Dial-Pad Phone has no effect."
+description = "Dial-Pad Phone deals damage to the opponent equal to half their current HP."
 metadata/_custom_type_script = "uid://cbfayiutuavjm"
