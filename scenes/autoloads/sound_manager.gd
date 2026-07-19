@@ -12,6 +12,7 @@ var _audio_player: AudioStreamPlayer = null
 
 func _ready() -> void:
 	_audio_player = AudioStreamPlayer.new()
+	_audio_player.bus = "sfx"
 	add_child.call_deferred(_audio_player)
 
 func play_game_start() -> void:
