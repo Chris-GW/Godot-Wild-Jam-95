@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bhksmn6lpkaik" path="res://scenes/enemies/enemy_entity.gd" id="1_c2k54"]
 [ext_resource type="Resource" uid="uid://cn5cx1r4ej4o7" path="res://resources/encounters/encounter_dial_pad_phone.tres" id="2_c2k54"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="3_4e1c6"]
-[ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="4_70k87"]
+[ext_resource type="Texture2D" uid="uid://ri448xmreq7x" path="res://assets/third_party/gb_studio_indoors/phone.png" id="4_c2k54"]
 
 [node name="DialPadPhone" type="Area2D" unique_id=492013941]
 collision_layer = 4
@@ -20,9 +20,7 @@ wait_time = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009006313]
 z_index = 1
-position = Vector2(0, -1)
-texture = ExtResource("4_70k87")
-region_enabled = true
+texture = ExtResource("4_c2k54")
 region_rect = Rect2(16, 112, 16, 16)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Sprite2D" unique_id=328010939]
@@ -37,8 +35,9 @@ debug_path_custom_point_size = 2.0
 custom_minimum_size = Vector2(2, 2)
 custom_maximum_size = Vector2(2, 2)
 offset_left = -1.0
-offset_right = 2.0
-offset_bottom = 3.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
 color = Color(0.05000019, 0, 1, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

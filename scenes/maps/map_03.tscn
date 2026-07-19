@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b46llxbxp2101" path="res://scenes/interactable/interactable_map_transition.gd" id="4_ac6vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgrle"]
-size = Vector2(16, 16)
+size = Vector2(16, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_53yo4"]
 radius = 18.0
@@ -39,10 +39,14 @@ tile_map_data = PackedByteArray("AAD5//v/AQAAAAIAAAD///v/AQAFAAUAAAD///z/AQACAAM
 position = Vector2(-88, 96)
 
 [node name="FaxMachine" parent="YSort" parent_id_path=PackedInt32Array(1352064636) index="3" unique_id=492013941 instance=ExtResource("2_cs2vg")]
-position = Vector2(120, -39)
+position = Vector2(120, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/FaxMachine" index="2" unique_id=306453092]
-position = Vector2(-48, 15)
+position = Vector2(-48, 0)
+shape = SubResource("RectangleShape2D_pgrle")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/FaxMachine" index="3" unique_id=765466592]
+position = Vector2(-48, 64)
 shape = SubResource("RectangleShape2D_pgrle")
 
 [node name="ExitOffice" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=1094113024 instance=ExtResource("3_a27p1")]

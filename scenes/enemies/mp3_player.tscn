@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bhksmn6lpkaik" path="res://scenes/enemies/enemy_entity.gd" id="1_4lqni"]
 [ext_resource type="Resource" uid="uid://btpphrw3nsm7u" path="res://resources/encounters/encounter_fax_machine.tres" id="2_ka8lg"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="3_dc1c3"]
-[ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="4_nxvea"]
+[ext_resource type="Texture2D" uid="uid://dd73f85a0mp3m" path="res://assets/third_party/gb_studio_indoors/mp3.png" id="4_4lqni"]
 
 [node name="Mp3Player" type="Area2D" unique_id=492013941]
 collision_layer = 4
@@ -21,9 +21,7 @@ wait_time = 0.2
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009006313]
 z_index = 1
 position = Vector2(0, -1)
-texture = ExtResource("4_nxvea")
-flip_h = true
-region_enabled = true
+texture = ExtResource("4_4lqni")
 region_rect = Rect2(112, 72, 16, 8)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Sprite2D" unique_id=328010939]

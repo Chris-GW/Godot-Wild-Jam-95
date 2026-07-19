@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://c2fi7d88bkfaw" path="res://resources/battle_effects/battle_effect_shockwave.tres" id="1_fa1aq"]
 [ext_resource type="Script" uid="uid://b848up37pxci7" path="res://resources/battlers/enemy_battler.gd" id="1_onoge"]
 [ext_resource type="Script" uid="uid://cnh0siqkiyn04" path="res://resources/battlers/health.gd" id="2_3rh4t"]
-[ext_resource type="Texture2D" uid="uid://cvm1u3i26klwo" path="res://assets/third_party/gb_studio_vhs_video_game_rental_store/VHS Rental GB Studio Game PNG/CRT VHS-transparent.png" id="4_fa1aq"]
+[ext_resource type="Texture2D" uid="uid://b18p0xfyx2mwr" path="res://assets/third_party/gb_studio_indoors/crt.png" id="4_fa1aq"]
 
 [sub_resource type="Resource" id="Resource_ugblw"]
 script = ExtResource("2_3rh4t")
