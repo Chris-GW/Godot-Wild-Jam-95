@@ -5,8 +5,8 @@ const GAME_START := preload("res://assets/audio/sfx/menu-up-down.mp3")
 const MENU_UP_DOWN := preload("res://assets/audio/sfx/menu-up-down.mp3")
 const MENU_SELECT := preload("res://assets/audio/sfx/menu-select.mp3")
 
-const INVENTORY_OPEN := preload("res://assets/audio/sfx/inventory open MASTER.wav")
-const INVENTORY_CLOSE := preload("res://assets/audio/sfx/inventory close MASTER.wav")
+const INVENTORY_OPEN := preload("res://assets/audio/sfx/inventory open MASTER 2.wav")
+const INVENTORY_CLOSE := preload("res://assets/audio/sfx/inventory close MASTER 2.wav")
 
 var _audio_player: AudioStreamPlayer = null
 
