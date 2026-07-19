@@ -1,15 +1,14 @@
 extends Node
 
 var _player: PlayerBattler = preload("res://resources/players/player_default.tres")
+
+
+# global vars for dialouge 
 var prologue_wakeup := true
 var prologue_has_game := false
 var prologue_pc_interaction_count := 0
+var is_back_home := false
 
-
-func _ready() -> void:
-	if OS.is_debug_build():
-		prologue_wakeup = false
-		prologue_has_game = true
 
 func get_current() -> PlayerBattler:
 	return _player

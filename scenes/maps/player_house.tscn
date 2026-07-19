@@ -5,9 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://7wactad5ebn0" path="res://scenes/interactable/interactable.tscn" id="3_pjn78"]
 [ext_resource type="PackedScene" uid="uid://c6t60smhdqerm" path="res://scenes/maps/world_teleporter.tscn" id="3_yfyrd"]
 [ext_resource type="Script" uid="uid://b46llxbxp2101" path="res://scenes/interactable/interactable_map_transition.gd" id="4_0e3rw"]
+[ext_resource type="AudioStream" uid="uid://dr7ud6k5krcxo" path="res://assets/audio/sfx/discord-notification.mp3" id="4_34y4p"]
+[ext_resource type="AudioStream" uid="uid://dghy2xn4i4wdc" path="res://assets/audio/sfx/Keyboard A.wav" id="5_374y7"]
 [ext_resource type="Texture2D" uid="uid://c02ag1suew3vr" path="res://assets/third_party/world_tilesets_remastered/indoors.png" id="5_mgxl7"]
 [ext_resource type="Script" uid="uid://57u8g6le44ho" path="res://scenes/interactable/interactable_dialogue.gd" id="5_yc7q4"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="6_mgxl7"]
+[ext_resource type="AudioStream" uid="uid://k21nf25ab0qh" path="res://assets/audio/sfx/Keyboard B.wav" id="6_te812"]
+[ext_resource type="AudioStream" uid="uid://bmm7n8cpulawg" path="res://assets/audio/sfx/Keyboard C.wav" id="7_enkok"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_80pi3"]
+streams_count = 3
+stream_0/stream = ExtResource("5_374y7")
+stream_1/stream = ExtResource("6_te812")
+stream_2/stream = ExtResource("7_enkok")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc7q4"]
 radius = 16.0
@@ -32,6 +42,14 @@ script = ExtResource("2_s52iw")
 unique_name_in_owner = true
 target = NodePath("..")
 destination_scene = "res://scenes/maps/new_player_home.tscn"
+
+[node name="DiscordNotificationSfx" type="AudioStreamPlayer" parent="." index="1" unique_id=768322618]
+stream = ExtResource("4_34y4p")
+bus = &"sfx"
+
+[node name="PcInteractionSfx" type="AudioStreamPlayer" parent="." index="2" unique_id=725585231]
+stream = SubResource("AudioStreamRandomizer_80pi3")
+bus = &"sfx"
 
 [node name="WaterSprite2D" parent="Parallax2D" parent_id_path=PackedInt32Array(1195434414) index="0" unique_id=128025881]
 visible = false
@@ -78,6 +96,7 @@ debug_color = Color(0.66643393, 0.50880927, 0.14793083, 0.41960785)
 visible = false
 
 [node name="PcInteractionArea2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="1" unique_id=1465784268 instance=ExtResource("3_pjn78")]
+unique_name_in_owner = true
 position = Vector2(312, 48)
 script = ExtResource("5_yc7q4")
 dialogue_resource = ExtResource("6_mgxl7")
@@ -98,7 +117,7 @@ debug_color = Color(0.6755526, 0.505897, 0.06396656, 0.41960785)
 position = Vector2(8, 16)
 flip_h = true
 
-[node name="NavigationRegion2D" parent="." index="4" unique_id=1752426520]
+[node name="NavigationRegion2D" parent="." index="6" unique_id=1752426520]
 visible = false
 position = Vector2(116, 0)
 navigation_polygon = SubResource("NavigationPolygon_yc7q4")

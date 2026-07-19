@@ -1,6 +1,11 @@
 extends Node
 
-var _completed_encounters: Array[Encounter] = []
+var _completed_encounters: Array[Encounter] = [
+	preload("res://resources/encounters/encounter_crttv.tres"),
+	preload("res://resources/encounters/encounter_mp3_player.tres"),
+	preload("res://resources/encounters/encounter_fax_machine.tres"),
+	#preload("res://resources/encounters/encounter_dial_pad_phone.tres"),
+]
 
 func complete(encounter: Encounter) -> void:
 	if not _completed_encounters.has(encounter):

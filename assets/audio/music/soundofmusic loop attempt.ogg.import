@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7o5pdfm4qfv"
+path="res://.godot/imported/soundofmusic loop attempt.ogg-77e08512ccd48e8f4dc4fa3da4770d0f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/soundofmusic loop attempt.ogg"
+dest_files=["res://.godot/imported/soundofmusic loop attempt.ogg-77e08512ccd48e8f4dc4fa3da4770d0f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

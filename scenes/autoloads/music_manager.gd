@@ -2,9 +2,12 @@ extends Node
 
 var _audio_player: AudioStreamPlayer = null
 
+
 func _ready() -> void:
 	_audio_player = AudioStreamPlayer.new()
+	_audio_player.bus = "music"
 	add_child.call_deferred(_audio_player)
+
 
 func play_encounter_music(stream: AudioStream) -> void:
 	if _audio_player:

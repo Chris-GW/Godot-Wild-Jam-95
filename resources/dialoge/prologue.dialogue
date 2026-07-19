@@ -1,16 +1,27 @@
+# Scene 1 - bedroom
 ~ wakeup
 Nathan: Saturday morning, finally... But for some reason, I don't feel particularly excited about it.
 Nathan: I should check who is online.
 => END
 
 ~ interact_pc
-if prologue_has_game:
-	Nathan: Time to load it in.
-	$>> start_world_transformation()
-	Nathan: Woah, what is happening-
-	Nathan: aaaaaaaaaaaaaaa
+if is_back_home:
+	$>> play_discord_notification_sfx()
+	Nathan: A discord message..[$> play_pc_keyboard_sfx()].
+	Phil: MECCHA CHAMELEON lobby up, you joining?
+	[speed=0.1]The End.
+	$>> do_end_game()
 	=> END
 
+elif prologue_has_game:
+	Nathan: Time to load it in.
+	Nathan loads the game on his console
+	$>> start_world_transformation()
+	Nathan: Woah, what is happening-
+	Nathan: [wave]aaaaaaaaaaaaaaa[/wave]
+	=> END
+
+$> play_pc_keyboard_sfx()
 if prologue_pc_interaction_count <= 0
 	Nathan: I have absolutely no games left to play, and we only have {{3 - prologue_pc_interaction_count}} people online for MECCHA CHAMELEON.
 else
@@ -19,7 +30,7 @@ Nathan: Maybe I should touch some grass for once... if I can even muster the cou
 $> increase_prologue_pc_interaction_count()
 => END
 
-
+# Scene 2 - neighborhood/garage
 ~ find_garage_sale
 Nathan: Oh, a garage sale. Haven't been to one in a lifetime.
 Nathan: Didn't know they still existed...
@@ -48,6 +59,7 @@ Nathan receives Meme Man!
 Nathan: I can't wait to play at my home pc.
 => END
 
+# Scene 5 - new world
 ~ reach_new_world
 Nathan: Whe- where am I...
 Nathan: Wait... when am I!?
@@ -85,9 +97,10 @@ Nathan: Maybe someone in that office building can help me.
 => END
 
 ~ fax_machine_encounter
+Fax: Printing message...
 Nathan: Progress report?
 Fax: Printing successful.
-Nathan: *Reading report...*
+Nathan reads the printed report
 Nathan: This is older code, I can't make anything of it.
 Fax: You! Higher mammal! CAN YOU READ?
 Nathan: No, my buddy Phil can read though.
@@ -159,3 +172,11 @@ MP3 player: Behold, The Sound of Music (1965)!
 Nathan: Only good thing about mp3 files is being able to share them on Discord without needing Nitro.
 ???: You've got mail!
 => END
+
+#END / Conclusion
+~ back_home_conclusion
+Nathan: This adventure sure has been a trip down memory lane.
+Nathan: I would be lying if I said that I hadn't enjoyed it!
+Nathan: Maybe I can even decorate my room with these relics.
+=> END
+
