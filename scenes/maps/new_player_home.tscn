@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://04juvkyasdti" path="res://assets/third_party/gb_studio_indoors/BitsAndBobs.png" id="3_evko1"]
 [ext_resource type="PackedScene" uid="uid://c6t60smhdqerm" path="res://scenes/maps/world_teleporter.tscn" id="3_stcad"]
 [ext_resource type="Script" uid="uid://57u8g6le44ho" path="res://scenes/interactable/interactable_dialogue.gd" id="3_tt7ak"]
+[ext_resource type="AudioStream" uid="uid://dr7ud6k5krcxo" path="res://assets/audio/sfx/discord-notification.mp3" id="4_b42x1"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="4_ndwvj"]
 [ext_resource type="PackedScene" uid="uid://6r8xr0buw6v" path="res://scenes/enemies/crt_tv.tscn" id="6_ndwvj"]
 [ext_resource type="Script" uid="uid://b46llxbxp2101" path="res://scenes/interactable/interactable_map_transition.gd" id="7_uta3m"]
@@ -41,6 +42,10 @@ script = ExtResource("2_tppg1")
 unique_name_in_owner = true
 target = NodePath("..")
 destination_scene = "uid://b04nnqh1q5gno"
+
+[node name="DiscordNotificationSfx" type="AudioStreamPlayer" parent="." index="1" unique_id=1438047738]
+stream = ExtResource("4_b42x1")
+bus = &"sfx"
 
 [node name="WaterSprite2D" parent="Parallax2D" parent_id_path=PackedInt32Array(1195434414) index="0" unique_id=128025881]
 visible = false
@@ -128,12 +133,12 @@ debug_color = Color(0.66643393, 0.50880927, 0.14793083, 0.41960785)
 [node name="InteractionIndicator" parent="MapTransitionAreas/ExitPlayerHome" index="2" unique_id=1650588540]
 visible = false
 
-[node name="JfeEwm" type="Sprite2D" parent="." index="4" unique_id=300865698]
+[node name="JfeEwm" type="Sprite2D" parent="." index="5" unique_id=300865698]
 position = Vector2(36, -372)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_m1w2a")
 
-[node name="NavigationRegion2D" parent="." index="5" unique_id=1752426520]
+[node name="NavigationRegion2D" parent="." index="6" unique_id=1752426520]
 navigation_polygon = SubResource("NavigationPolygon_ndwvj")
 metadata/_edit_lock_ = true
 
