@@ -32,12 +32,16 @@ func start_encounter(encounter: Encounter) -> void:
 	assert(_battle_progressor != null)
 	add_child(_battle_progressor)
 
+	if _current_encounter.music:
+		MusicManager.play_encounter_music(_current_encounter.music)
+
 	_battle_progressor.start()
 
 func _on_battle_ended(is_won: bool) -> void:
 	_battle_progressor = null
 
 	if _current_encounter:
+		MusicManager.stop_music()
 		_current_encounter.finish(is_won)
 
 	_current_encounter = null

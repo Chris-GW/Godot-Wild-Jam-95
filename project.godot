@@ -31,6 +31,7 @@ SceneSwitcher="*uid://b8xd55tbw76d4"
 SoundManager="*uid://b7khk0p0f50bt"
 EncounterProgress="*uid://bmsopyf2jtdt6"
 DialogueProgress="*uid://nqbhhjwyrfmx"
+MusicManager="*uid://cmbcat3m1jl88"
 
 [dialogue_manager]
 

@@ -5,6 +5,9 @@ extends Resource
 var enemy: EnemyBattler
 
 @export
+var music: AudioStream
+
+@export
 var reward: Item
 
 @export
