@@ -18,6 +18,8 @@ func _enter_tree() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
+		SoundManager.play_inventory_open()
+
 		transition_state(InventoryUI.State.SHOWN)
 
 func _on_inventory_changed(items: Array[Item]) -> void:
