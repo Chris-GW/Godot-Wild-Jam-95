@@ -9,12 +9,16 @@ func _ready() -> void:
 	add_child.call_deferred(_audio_player)
 
 
-func play_encounter_music(stream: AudioStream) -> void:
+func play_encounter_music(stream: AudioStream, music_fade_duration := 1.2) -> void:
 	if _audio_player:
 		_audio_player.stream = stream
+		_audio_player.volume_db = -60.0
+		
+		var tween = create_tween()
+		tween.tween_property(_audio_player, "volume_db", 0.0, music_fade_duration)
 		_audio_player.play()
 
-func stop_music(music_fade_duration := 1.5) -> void:
+func stop_music(music_fade_duration := 1.2) -> void:
 	if _audio_player and _audio_player.playing:
 		var tween = create_tween()
 		tween.tween_property(_audio_player, "volume_db", -60.0, music_fade_duration)

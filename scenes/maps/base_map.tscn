@@ -17,6 +17,7 @@ agent_radius = 4.0
 
 [node name="BaseMap" type="Node2D" unique_id=632494233]
 script = ExtResource("1_07hty")
+camera_smoothing = 14.0
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1195434414]
 visible = false
@@ -54,11 +55,11 @@ tile_set = ExtResource("2_a0qjo")
 [node name="Player" parent="YSort" unique_id=1594590048 instance=ExtResource("5_celki")]
 unique_name_in_owner = true
 
-[node name="WorldCamera2D" type="Camera2D" parent="YSort/Player" unique_id=1451149381]
-unique_name_in_owner = true
-zoom = Vector2(2, 2)
-
 [node name="MapTransitionAreas" type="Node2D" parent="." unique_id=1833662961]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1752426520]
 navigation_polygon = SubResource("NavigationPolygon_jydsb")
+
+[node name="WorldCamera2D" type="Camera2D" parent="." unique_id=1451149381]
+unique_name_in_owner = true
+zoom = Vector2(2, 2)
