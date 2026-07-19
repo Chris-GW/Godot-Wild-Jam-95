@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://cth1wo7s1wp43" path="res://resources/enemies/enemy_fax.tres" id="1_c2tfm"]
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_sk442"]
 [ext_resource type="Resource" uid="uid://bvt0pkqo1gbir" path="res://resources/items/item_fax.tres" id="3_66h04"]
-[ext_resource type="AudioStream" uid="uid://ctixj3lyv4w7e" path="res://assets/audio/music/moveitmoveit-loop.mp3" id="3_d8hxh"]
+[ext_resource type="AudioStream" uid="uid://bk7tqwv80rvfi" path="res://assets/audio/music/moveitmoveit MASTER 4.wav" id="3_d8hxh"]
 [ext_resource type="Script" uid="uid://qnbiwj0vitic" path="res://resources/encounters/encounter.gd" id="3_p5rnk"]
 [ext_resource type="Resource" uid="uid://b4dcdx6aikmcb" path="res://resources/encounters/encounter_crttv.tres" id="4_3pjbm"]
 
