@@ -88,8 +88,8 @@ CRT TV: YOU SHALL BE DISCIPLINED!
 => END
 
 ~ crt_tv_defeated
-Nathan: HAHA! Be banished to the V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠!
-CRT TV: not... the... V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠...
+Nathan: HAHA! Be banished to the [font=res://assets/fonts/NotoSans.ttf]V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠![/font]
+CRT TV: not... the... [font=res://assets/fonts/NotoSans.ttf]V̴̍͗̈́̒͑͐̚͜͝ơ̵̾͌͆̋̚͜͠͝i̶͌̈́̓͐̽͘͜d̸̛̄̍͒͗̇͜͠...[/font]
 => END
 
 ~ spot_fax_office
@@ -144,7 +144,7 @@ $>> start_world_transformation()
 
 # for cave map with mp3_player encounter
 ~ spot_mp3_cave
-???: The V̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗ is a puzzling land...
+???: The [font=res://assets/fonts/NotoSans.ttf]V̴̍͗̈́͝o̵̾͌͆̚i̶͌̈́̓͘d̸̄̍͒͗[/font] is a puzzling land...
 Nathan: Where is that coming from? Is it from that cave over there?
 => END
 
