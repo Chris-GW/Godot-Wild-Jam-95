@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dm6ghu1tsvl3r" path="res://assets/third_party/gb_studio_buildings/Sml_Appartment_Final.png" id="5_dixh4"]
 [ext_resource type="PackedScene" uid="uid://dbwrhmiwvp7p3" path="res://scenes/interactable/dialouge_on_visible_screen.tscn" id="6_85y4l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s515p"]
-size = Vector2(116, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eur1h"]
 size = Vector2(88, 148)
 
@@ -24,6 +21,9 @@ size = Vector2(4, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my53i"]
 size = Vector2(20, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s515p"]
+size = Vector2(116, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxbvx"]
 radius = 18.0
@@ -49,92 +49,91 @@ tile_map_data = PackedByteArray("AABFAAcAAgAPAA0AAABBAA8AAgAKAA0AAABBAAsAAgAKAA0
 [node name="Player" parent="YSort" parent_id_path=PackedInt32Array(1352064636) index="2" unique_id=1594590048]
 position = Vector2(512, 88)
 
-[node name="InvisibleWalls" type="StaticBody2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=2094373189]
+[node name="BigApartment" type="StaticBody2D" parent="YSort" parent_id_path=PackedInt32Array(1352064636) index="3" unique_id=1865883309]
+position = Vector2(576, 48)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/InvisibleWalls" index="0" unique_id=1794446665]
-position = Vector2(378, 224)
-shape = SubResource("RectangleShape2D_s515p")
-
-[node name="BigApartment" type="StaticBody2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="1" unique_id=1865883309]
-z_index = -1
-position = Vector2(576, 60)
-
-[node name="BigApartmentSprite2D" type="Sprite2D" parent="MapTransitionAreas/BigApartment" index="0" unique_id=1224917630]
-position = Vector2(-24, -68)
+[node name="BigApartmentSprite2D" type="Sprite2D" parent="YSort/BigApartment" index="0" unique_id=1224917630]
+position = Vector2(-24, -52)
 texture = ExtResource("2_fxbvx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/BigApartment" index="1" unique_id=1971330522]
-position = Vector2(-24, -74)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/BigApartment" index="1" unique_id=1971330522]
+position = Vector2(-24, -58)
 shape = SubResource("RectangleShape2D_eur1h")
 
-[node name="EnterPlayerHome" parent="MapTransitionAreas/BigApartment" index="2" unique_id=1094113024 instance=ExtResource("3_dixh4")]
+[node name="EnterPlayerHome" parent="YSort/BigApartment" index="2" unique_id=1094113024 instance=ExtResource("3_dixh4")]
 unique_name_in_owner = true
-position = Vector2(0, 12)
+position = Vector2(0, 28)
 script = ExtResource("4_85y4l")
 enter_scene = "uid://btyvthmwfo23r"
 enter_node_name = "%ExitPlayerHome"
 with_door_sound = true
 action_name = "[E] to enter"
 
-[node name="ActionLabel" parent="MapTransitionAreas/BigApartment/EnterPlayerHome" index="0" unique_id=867611635]
+[node name="ActionLabel" parent="YSort/BigApartment/EnterPlayerHome" index="0" unique_id=867611635]
 offset_left = -56.0
 offset_top = -48.0
 offset_right = 29.0
 offset_bottom = -30.0
 text = "[E] to enter"
 
-[node name="InteractionIndicator" parent="MapTransitionAreas/BigApartment/EnterPlayerHome" index="1" unique_id=1650588540]
+[node name="InteractionIndicator" parent="YSort/BigApartment/EnterPlayerHome" index="1" unique_id=1650588540]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/BigApartment/EnterPlayerHome" index="2" unique_id=40820673]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/BigApartment/EnterPlayerHome" index="2" unique_id=40820673]
 shape = SubResource("CircleShape2D_voso6")
 debug_color = Color(0.69480294, 0.49427986, 0.09549292, 0.41960785)
 
-[node name="SmallApartment" type="StaticBody2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="2" unique_id=1862571695]
-position = Vector2(968, 176)
+[node name="SmallApartment" type="StaticBody2D" parent="YSort" parent_id_path=PackedInt32Array(1352064636) index="4" unique_id=1862571695]
+position = Vector2(968, 102)
 
-[node name="BigApartmentSprite2D" type="Sprite2D" parent="MapTransitionAreas/SmallApartment" index="0" unique_id=359650758]
-position = Vector2(-24, -68)
+[node name="BigApartmentSprite2D" type="Sprite2D" parent="YSort/SmallApartment" index="0" unique_id=359650758]
+position = Vector2(-24, 7)
 texture = ExtResource("5_dixh4")
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/SmallApartment" index="1" unique_id=936743213]
-position = Vector2(-28, -55)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SmallApartment" index="1" unique_id=936743213]
+position = Vector2(-28, 20)
 shape = SubResource("RectangleShape2D_85y4l")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapTransitionAreas/SmallApartment" index="2" unique_id=2022260556]
-position = Vector2(22, -47.5)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/SmallApartment" index="2" unique_id=2022260556]
+position = Vector2(22, 27.5)
 shape = SubResource("RectangleShape2D_dixh4")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapTransitionAreas/SmallApartment" index="3" unique_id=1018577095]
-position = Vector2(10, -76)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="YSort/SmallApartment" index="3" unique_id=1018577095]
+position = Vector2(10, -1)
 shape = SubResource("RectangleShape2D_my53i")
 
-[node name="EnterOffice" parent="MapTransitionAreas/SmallApartment" index="4" unique_id=213181018 instance=ExtResource("3_dixh4")]
+[node name="EnterOffice" parent="YSort/SmallApartment" index="4" unique_id=213181018 instance=ExtResource("3_dixh4")]
 unique_name_in_owner = true
-position = Vector2(8, -60)
+position = Vector2(8, 16)
 script = ExtResource("4_85y4l")
 enter_scene = "uid://bhn8w7wsgfp5d"
 enter_node_name = "%ExitOffice"
 with_door_sound = true
 action_name = "[E] to enter"
 
-[node name="ActionLabel" parent="MapTransitionAreas/SmallApartment/EnterOffice" index="0" unique_id=867611635]
+[node name="ActionLabel" parent="YSort/SmallApartment/EnterOffice" index="0" unique_id=867611635]
 offset_left = -72.0
 offset_top = 4.0
 offset_right = 13.0
 offset_bottom = 22.0
 text = "[E] to enter"
 
-[node name="InteractionIndicator" parent="MapTransitionAreas/SmallApartment/EnterOffice" index="1" unique_id=1650588540]
+[node name="InteractionIndicator" parent="YSort/SmallApartment/EnterOffice" index="1" unique_id=1650588540]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/SmallApartment/EnterOffice" index="2" unique_id=250400251]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SmallApartment/EnterOffice" index="2" unique_id=250400251]
 position = Vector2(-36, 48)
 shape = SubResource("CircleShape2D_voso6")
 debug_color = Color(0.69480294, 0.49427986, 0.09549292, 0.41960785)
 
-[node name="EnterCave" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="3" unique_id=1106873759 instance=ExtResource("3_dixh4")]
+[node name="InvisibleWalls" type="StaticBody2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=2094373189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/InvisibleWalls" index="0" unique_id=1794446665]
+position = Vector2(378, 224)
+shape = SubResource("RectangleShape2D_s515p")
+
+[node name="EnterCave" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="1" unique_id=1106873759 instance=ExtResource("3_dixh4")]
 unique_name_in_owner = true
 position = Vector2(1080, -204)
 script = ExtResource("4_85y4l")
@@ -158,11 +157,11 @@ position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_fxbvx")
 debug_color = Color(0.69480294, 0.49427986, 0.09549292, 0.41960785)
 
-[node name="VisibleCaveNotifier" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="4" unique_id=1464701159 instance=ExtResource("6_85y4l")]
+[node name="VisibleCaveNotifier" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="2" unique_id=1464701159 instance=ExtResource("6_85y4l")]
 position = Vector2(1116, -228)
 start_from_title = "spot_mp3_cave"
 
-[node name="VisibleOfficeNotifier" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="5" unique_id=1440122258 instance=ExtResource("6_85y4l")]
+[node name="VisibleOfficeNotifier" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="3" unique_id=1440122258 instance=ExtResource("6_85y4l")]
 position = Vector2(1008, 208)
 start_from_title = "spot_fax_office"
 
@@ -170,6 +169,6 @@ start_from_title = "spot_fax_office"
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_rhg7h")
 
-[editable path="MapTransitionAreas/BigApartment/EnterPlayerHome"]
-[editable path="MapTransitionAreas/SmallApartment/EnterOffice"]
+[editable path="YSort/BigApartment/EnterPlayerHome"]
+[editable path="YSort/SmallApartment/EnterOffice"]
 [editable path="MapTransitionAreas/EnterCave"]
