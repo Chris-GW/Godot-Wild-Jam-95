@@ -11,6 +11,7 @@ script = ExtResource("1_lquwl")
 
 [node name="MapManager" type="Node2D" parent="." unique_id=234274128]
 script = ExtResource("1_h2yge")
+maps = Array[String](["uid://b04nnqh1q5gno", "uid://btyvthmwfo23r", "uid://dgicwcsjnabar", "uid://cynliqpulvsgy", "uid://bhn8w7wsgfp5d"])
 
 [node name="CurrentMap" parent="MapManager" unique_id=632494233 instance=ExtResource("2_lquwl")]
 

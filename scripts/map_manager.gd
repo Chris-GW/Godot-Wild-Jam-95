@@ -1,6 +1,11 @@
 class_name WorldMapManager
 extends Node2D
 
+@export_group("Debug")
+
+@export_file("*.tscn")
+var maps: Array[String] = []
+
 @onready var current_map: BaseMap = $CurrentMap
 
 var _current_map_path := ""
@@ -13,6 +18,13 @@ func _ready() -> void:
 		return current_map
 
 	SignalHelper.persist(GameEvents.player_defeated, _reload_map)
+
+	set_process(OS.has_feature("editor_runtime"))
+
+func _process(_delta: float) -> void:
+	for i in maps.size():
+		if Input.is_action_just_pressed("debug_load_map_%d" % i):
+			_load_map(maps[i], "")
 
 func transition_map_to(map: BaseMap, enter_node_name: String = "") -> void:
 	remove_child(current_map)
