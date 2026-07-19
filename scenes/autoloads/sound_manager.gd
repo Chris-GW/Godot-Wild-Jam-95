@@ -2,8 +2,8 @@ extends Node
 
 const GAME_START := preload("res://assets/audio/sfx/menu-up-down.mp3")
 
-const MENU_UP_DOWN := preload("res://assets/audio/sfx/menu-up-down.mp3")
-const MENU_SELECT := preload("res://assets/audio/sfx/more clicky 2.wav")
+const MENU_UP_DOWN := preload("res://assets/audio/sfx/more clicky 2.wav")
+const MENU_SELECT := preload("res://assets/audio/sfx/select from menu (2).mp3")
 
 const INVENTORY_OPEN := preload("res://assets/audio/sfx/inventory open MASTER 2.wav")
 const INVENTORY_CLOSE := preload("res://assets/audio/sfx/inventory close MASTER 2.wav")
