@@ -2,6 +2,8 @@ extends BaseMap
 
 @onready var world_teleporter: WorldTeleporter = %WorldTeleporter
 @onready var discord_notification_sfx: AudioStreamPlayer = $DiscordNotificationSfx
+@onready var meccha_sfx: AudioStreamPlayer = $MecchaSfx
+@onready var meccha_ending_sfx: AudioStreamPlayer = $MecchaEndingSfx
 @onready var pc_interaction_sfx: AudioStreamPlayer = $PcInteractionSfx
 @onready var exit_player_home: Interactable = %ExitPlayerHome
 @onready var pc_interaction_area_2d: Interactable = %PcInteractionArea2D
@@ -9,7 +11,7 @@ extends BaseMap
 
 func _ready() -> void:
 	super._ready()
-	
+
 	await get_tree().process_frame
 	if PlayerManager.prologue_wakeup:
 		show_prologue_wakeup()
@@ -32,6 +34,13 @@ func play_discord_notification_sfx() -> void:
 	discord_notification_sfx.play()
 	await discord_notification_sfx.finished
 
+func play_meccha_sfx() -> void:
+	meccha_sfx.play()
+	await meccha_sfx.finished
+
+func play_meccha_ending_sfx() -> void:
+	meccha_ending_sfx.play()
+	await meccha_ending_sfx.finished
 
 func play_pc_keyboard_sfx() -> void:
 	for i in 3:

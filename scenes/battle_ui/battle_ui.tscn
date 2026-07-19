@@ -16,7 +16,7 @@
 layer = 2
 script = ExtResource("1_pyo4n")
 
-[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "item_description_panel", "enemy_battler_panel", "enemy_battler_sprite_panel", "enemy_intent_panel", "player_battler_panel", "player_battler_sprite_panel")]
+[node name="Appearance" type="Node" parent="." unique_id=964281883 node_paths=PackedStringArray("base_control", "text_panel", "item_description_panel", "enemy_battler_panel", "enemy_battler_sprite_panel", "player_battler_panel", "player_battler_sprite_panel")]
 unique_name_in_owner = true
 script = ExtResource("2_uvu3y")
 base_control = NodePath("../MarginContainer")
@@ -24,7 +24,6 @@ text_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/BattleTextP
 item_description_panel = NodePath("../MarginContainer/VBoxContainer/BattlePanels/VBoxContainer/ItemDescriptionPanel")
 enemy_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerPanel")
 enemy_battler_sprite_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/EnemyBattlerSpritePanel")
-enemy_intent_panel = NodePath("")
 player_battler_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerPanel")
 player_battler_sprite_panel = NodePath("../MarginContainer/VBoxContainer/BattlerPanels/PlayerBattlerSpritePanel")
 

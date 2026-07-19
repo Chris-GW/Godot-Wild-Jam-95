@@ -8,6 +8,7 @@ Nathan: I should check who is online.
 if is_back_home:
 	$>> play_discord_notification_sfx()
 	Nathan: A discord message..[$> play_pc_keyboard_sfx()].
+	$>> play_meccha_ending_sfx()
 	Phil: MECCHA CHAMELEON lobby up, you joining?
 	[speed=0.1]The End.
 	$>> do_end_game()
@@ -22,6 +23,7 @@ elif prologue_has_game:
 	=> END
 
 $> play_pc_keyboard_sfx()
+$>> play_meccha_sfx()
 if prologue_pc_interaction_count <= 0
 	Nathan: I have absolutely no games left to play, and we only have {{3 - prologue_pc_interaction_count}} people online for MECCHA CHAMELEON.
 else
@@ -79,7 +81,7 @@ CRT TV: I indeed did do that just now. And please keep your fatphobic remarks fo
 Nathan: ...
 CRT TV: I despise children of your era, all fond of thin flatscreen televisions, with flashy colors and silk-smooth animations. Unacceptable! It says a lot about your beauty standards.
 Nathan: ...
-CRT TV: Just think about it: who made video gaming popular? 
+CRT TV: Just think about it: who made video gaming popular?
 CRT TV: WHO has entranced a generation with our staple aesthetic, limited yet beautiful color palette, all while manifesting aura like no other simply by taking so much space in your rooms?
 CRT TV: YES! IT IS NONE OTHER THAN YOURS TRULY!
 CRT TV: We will not tolerate your lack of respect.
