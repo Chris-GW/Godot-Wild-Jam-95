@@ -25,6 +25,10 @@ func _ready() -> void:
 		_refresh()
 		return
 
+	# calling _refresh() immediately at the start of this _ready() method was
+	# causing a crash - CrashHandlerException: Program crashed with signal 11
+	SignalHelper.once_next_frame(_refresh)
+
 	list_menu_interaction.set_tracker_name("InventorySelectedIndex")
 
 	switch_state(InventoryUI.State.HIDDEN)
