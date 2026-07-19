@@ -11,13 +11,13 @@
 size = Vector2(116, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eur1h"]
-size = Vector2(88, 140)
+size = Vector2(88, 148)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_voso6"]
 radius = 18.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85y4l"]
-size = Vector2(56, 98)
+size = Vector2(56, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dixh4"]
 size = Vector2(4, 65)
@@ -64,7 +64,7 @@ position = Vector2(-24, -68)
 texture = ExtResource("2_fxbvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/BigApartment" index="1" unique_id=1971330522]
-position = Vector2(-24, -70)
+position = Vector2(-24, -74)
 shape = SubResource("RectangleShape2D_eur1h")
 
 [node name="EnterPlayerHome" parent="MapTransitionAreas/BigApartment" index="2" unique_id=1094113024 instance=ExtResource("3_dixh4")]
@@ -91,7 +91,6 @@ shape = SubResource("CircleShape2D_voso6")
 debug_color = Color(0.69480294, 0.49427986, 0.09549292, 0.41960785)
 
 [node name="SmallApartment" type="StaticBody2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="2" unique_id=1862571695]
-z_index = -1
 position = Vector2(968, 176)
 
 [node name="BigApartmentSprite2D" type="Sprite2D" parent="MapTransitionAreas/SmallApartment" index="0" unique_id=359650758]
@@ -100,7 +99,7 @@ texture = ExtResource("5_dixh4")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/SmallApartment" index="1" unique_id=936743213]
-position = Vector2(-28, -67)
+position = Vector2(-28, -55)
 shape = SubResource("RectangleShape2D_85y4l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapTransitionAreas/SmallApartment" index="2" unique_id=2022260556]
