@@ -85,6 +85,7 @@ position = Vector2(96, -24)
 script = ExtResource("4_ab7vt")
 enter_scene = "uid://dgicwcsjnabar"
 enter_node_name = "%EnterCave"
+with_door_sound = false
 action_name = "[E] to exit"
 
 [node name="ActionLabel" parent="MapTransitionAreas/ExitCave" index="0" unique_id=867611635]
