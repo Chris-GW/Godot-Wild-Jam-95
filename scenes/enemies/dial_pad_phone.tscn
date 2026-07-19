@@ -22,9 +22,8 @@ wait_time = 0.2
 z_index = 1
 position = Vector2(0, -1)
 texture = ExtResource("4_70k87")
-flip_h = true
 region_enabled = true
-region_rect = Rect2(112, 32, 16, 16)
+region_rect = Rect2(16, 112, 16, 16)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Sprite2D" unique_id=328010939]
 path_desired_distance = 6.0
