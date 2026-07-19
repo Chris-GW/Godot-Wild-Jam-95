@@ -45,20 +45,20 @@ if prologue_has_game:
 Nathan: NO WAY! They actually have a copy of Meme Man: Riddle of the Rocks 1967!
 Nathan: This is a real rare find. I should absolutely get this before anyone else does...
 Nathan: How much for this one?
-Garage Owner: This one. I can't remember ever playing this game.
+Garage Owner: This one? I can't remember ever playing this game.
 Garage Owner: I guess you can have it for 10 $
 - buy it
-	Nathan: That is a steal, I take it 10 $
+	Nathan: That's a steal, I'll take it for 10$!
 	Garage Owner: Thanks, I hope you will have fun with it.
 - negotiate
-	Nathan: For 5 $ I will buy it.
+	Nathan: I will buy it for 5$.
 	Garage Owner: Fine, but I won't take it back.
 - bluff
 	Nathan: Does this old game even run?
 	Garage Owner: I.. I don't know. You can have it for free.
 $> prologue_has_game = true
 Nathan receives Meme Man!
-Nathan: I can't wait to play at my home pc.
+Nathan: I can't wait to play it at home!
 => END
 
 # Scene 5 - new world
