@@ -21,6 +21,11 @@ var _player: Player = null
 
 signal defeated
 
+func _ready() -> void:
+	if encounter and EncounterProgress.is_complete(encounter):
+		CustomLogger.debug("%s encounter is already completed, freeing %s..." % [start_from_title, name])
+		queue_free()
+
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
 		return

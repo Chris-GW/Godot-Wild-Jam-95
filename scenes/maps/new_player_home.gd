@@ -1,30 +1,22 @@
 extends BaseMap
 
-@onready var exit_player_home: Interactable = %ExitPlayerHome
-@onready var crt_tv: EnemyEntity = %CrtTv
-@onready var dial_pad_phone: EnemyEntity = %DialPadPhone
+@onready
+var crt_tv: EnemyEntity = %CrtTv
 
-@export var mp3_player_encounter: Encounter
-
+@onready
+var dial_pad_phone: EnemyEntity = %DialPadPhone
 
 func _ready() -> void:
 	super._ready()
-	
-	var complete_crt_tv := EncounterProgress.is_complete(crt_tv.encounter)
-	var complete_dial_pad_phone := EncounterProgress.is_complete(dial_pad_phone.encounter)
-	var complete_mp3_player_encounter := EncounterProgress.is_complete(mp3_player_encounter)
-	
-	if complete_crt_tv:
-		crt_tv.queue_free()
+
+	_try_enable_enemy(crt_tv)
+	_try_enable_enemy(dial_pad_phone)
+
+func _try_enable_enemy(enemy: EnemyEntity) -> void:
+	if enemy.is_queued_for_deletion():
+		CustomLogger.info("Enemy %s entity is queued for deletion, ignoring" % enemy.name)
+	elif EncounterProgress.is_available(enemy.encounter):
+		enemy.monitoring = true
+		CustomLogger.info("Enabled encounter with enemy %s" % enemy.name)
 	else:
-		_enable_enemy(crt_tv)
-	
-	if complete_dial_pad_phone:
-		dial_pad_phone.queue_free()
-	elif complete_mp3_player_encounter:
-		_enable_enemy(dial_pad_phone)
-
-
-func _enable_enemy(enemy: EnemyEntity) -> void:
-	enemy.monitoring = true
-	CustomLogger.info("Enable encounter with enemy %s" % enemy.name)
+		CustomLogger.info("%s encounter is not yet available" % enemy.name)

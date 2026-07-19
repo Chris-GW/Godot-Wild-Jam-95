@@ -17,7 +17,7 @@ func set_enter_node(enter_node_name: String) -> void:
 	player.set_global_position(enter_node.global_position)
 
 
-func _on_enemy_chasing() -> void:
+func _on_enemy_chasing(_enemy_entity: EnemyEntity) -> void:
 	for interactable: Interactable in get_tree().get_nodes_in_group("interactable"):
 		interactable.set_monitoring.call_deferred(false)
 

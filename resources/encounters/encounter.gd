@@ -13,6 +13,9 @@ var enemy_defeated_dialogue: DialogueResource
 @export
 var start_from_title: String
 
+@export
+var prerequisites: Array[Encounter] = []
+
 signal enemy_defeated
 
 func finish(is_won: bool) -> void:

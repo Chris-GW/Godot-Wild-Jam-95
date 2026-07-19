@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://dv0ug2pu77imo" path="res://resources/dialoge/prologue.dialogue" id="2_0atue"]
 [ext_resource type="Resource" uid="uid://bsvdnmij7ywsm" path="res://resources/items/item_mp3.tres" id="3_0atue"]
 [ext_resource type="Script" uid="uid://qnbiwj0vitic" path="res://resources/encounters/encounter.gd" id="3_siai7"]
+[ext_resource type="Resource" uid="uid://b4dcdx6aikmcb" path="res://resources/encounters/encounter_crttv.tres" id="4_siai7"]
 
 [resource]
 script = ExtResource("3_siai7")
@@ -11,4 +12,5 @@ enemy = ExtResource("1_4qjyr")
 reward = ExtResource("3_0atue")
 enemy_defeated_dialogue = ExtResource("2_0atue")
 start_from_title = "mp3_player_defeated"
+prerequisites = Array[ExtResource("3_siai7")]([ExtResource("4_siai7")])
 metadata/_custom_type_script = "uid://qnbiwj0vitic"

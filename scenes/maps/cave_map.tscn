@@ -70,18 +70,18 @@ position = Vector2(-88, 32)
 shape = SubResource("RectangleShape2D_ab7vt")
 debug_color = Color(0.87097377, 0.30885124, 0.43573985, 0.41960785)
 
-[node name="Mp3PlayerBooArea" type="Area2D" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=505870755]
+[node name="Mp3PlayerBooArea" type="Area2D" parent="YSort/Mp3Player" index="4" unique_id=505870755]
 unique_name_in_owner = true
-position = Vector2(112, -144)
+position = Vector2(-448, -112)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransitionAreas/Mp3PlayerBooArea" index="0" unique_id=428760028]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Mp3Player/Mp3PlayerBooArea" index="0" unique_id=428760028]
 position = Vector2(66, 24)
 shape = SubResource("RectangleShape2D_eur1h")
 debug_color = Color(0.88588387, 0.31001318, 0.31653532, 0.41960785)
 
-[node name="ExitCave" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="1" unique_id=1094113024 instance=ExtResource("3_jhm7s")]
+[node name="ExitCave" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=1094113024 instance=ExtResource("3_jhm7s")]
 unique_name_in_owner = true
 position = Vector2(96, -24)
 script = ExtResource("4_ab7vt")
