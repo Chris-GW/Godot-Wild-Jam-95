@@ -4,7 +4,7 @@ extends Node2D
 func _ready() -> void:
 	SignalHelper.once_next_frame(Inventory.emit_changed)
 	SignalHelper.once_next_frame(Loadout.emit_changed)
-	#skip_game_parts_chirs_debug()
+	skip_game_parts_chirs_debug()
 
 
 func skip_game_parts_chirs_debug() -> void:
@@ -16,6 +16,6 @@ func skip_game_parts_chirs_debug() -> void:
 	
 	await get_tree().process_frame
 	#GameEvents.emit_map_transition_requested("res://scenes/maps/new_player_home.tscn", "%ExitPlayerHome")
-	#GameEvents.emit_map_transition_requested("res://scenes/maps/cave_map.tscn", "%ExitCave")
+	GameEvents.emit_map_transition_requested("res://scenes/maps/cave_map.tscn", "%ExitCave")
 	#GameEvents.emit_map_transition_requested("res://scenes/maps/map_03.tscn", "%ExitOffice")
 	return

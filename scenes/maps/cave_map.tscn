@@ -77,7 +77,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Mp3Player/Mp3PlayerBooArea" index="0" unique_id=428760028]
 position = Vector2(66, 24)
 shape = SubResource("RectangleShape2D_eur1h")
-disabled = true
 debug_color = Color(0.88588387, 0.31001318, 0.31653532, 0.41960785)
 
 [node name="ExitCave" parent="MapTransitionAreas" parent_id_path=PackedInt32Array(1833662961) index="0" unique_id=1094113024 instance=ExtResource("3_jhm7s")]
